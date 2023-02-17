@@ -9,3 +9,10 @@
 ## 레이아웃 연습
 ### 레이아웃01
 ### 레이아웃02
+
+
+.cupang {
+    margin-bottom: 80px;
+    padding-top: 80px;
+    border-top: #e8e8e8;
+}
