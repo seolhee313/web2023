@@ -453,6 +453,138 @@
                 </div>
                 <!-- //sample12 -->
 
+                <div id="sample13" class="sample">
+                    <h3>13. 객체 : 데이터 저장(키와 값) : 표현방법5 : 배열 안에 객체</h3>
+                <p>객체를 이용한 데이터를 저장하는 다섯 번째 표현 방법입니다.</p>
+                <p>배열 안에 객체를 불러옵니다.</p>
+                <div class="script">
+<pre><code class="language-js">{ 
+    const obj = [
+        {a:100, b:200},
+        {c:"javascript"}
+    ];
+
+    console.log(obj[0].a);
+    console.log(obj[0].b);
+    console.log(obj[1].c);
+}
+</code></pre>                       
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<Br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample13 -->
+
+                <div id="sample14" class="sample">
+                    <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법6 : 객체 안에 배열</h3>
+                <p>객체를 이용한 데이터를 저장하는 여섯 번째 표현 방법입니다.</p>
+                <p>객체 안에 배열이 있습니다.</p>
+                <div class="script">
+<pre><code class="language-js">{ 
+    const obj = {
+        a: 100,
+        b: [200,300],
+        c: {x: 400, y: 500},
+        d: "javascript"
+    }
+    
+    console.log(obj.a);
+    console.log(obj.b[0]);
+    console.log(obj.b[1]);
+    console.log(obj.c.x);
+    console.log(obj.c.y);
+    console.log(obj.d);
+}
+</code></pre>                       
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<Br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample14 -->
+
+                <div id="sample14" class="sample">
+                    <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법7</h3>
+                <p>객체를 이용한 데이터를 저장하는 일곱 번째 표현 방법입니다.</p>
+                <div class="script">
+<pre><code class="language-js">{ 
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = {a,b,c};
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+</code></pre>                       
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<Br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample15 -->
+
+                <div id="sample14" class="sample">
+                    <h3>16. 객체 : 데이터 저장(키와 값) : 표현방법8</h3>
+                <p>객체를 이용한 데이터를 저장하는 여덟 번째 표현 방법입니다.</p>
+                <div class="script">
+<pre><code class="language-js">{ 
+    const obj = {
+        a: 100,
+        b: [200,300],
+        c: "javascript",
+        d: function(){
+            console.log("javascript가 실행되었습니다.")
+        }
+    }
+
+    console.log(obj.a);
+    console.log(obj.b[0]);
+    console.log(obj.b[1]);
+    console.log(obj.b[2]);  //undefined
+    console.log(obj.c);
+    console.log(obj.d);     //(X)
+    obj.d();
+}
+</code></pre>                       
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<Br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample16 -->
+
             </div>
         </div>
     </main>
