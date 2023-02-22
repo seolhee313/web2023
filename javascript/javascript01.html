@@ -578,6 +578,12 @@
         c: "javascript",
         d: function(){
             document.wirte("javascript가 실행되었습니다.");
+        },
+        e: function(){
+            console.log(obj.c + "가 실행되었습니다.");
+        },
+        f: function(){
+            console.log(this.c + "가 실행되었습니다.")
         }
     };
 
@@ -587,6 +593,8 @@
     console.log(obj.c);
     console.log(obj.d); //이렇게 하면 문자가 써지는 것이 아니라 console로 인식되어 console창에 써짐
     obj.d();
+    obj.e();
+    obj.f();
 }
 </code></pre>                       
                 </div>
@@ -596,7 +604,11 @@
                             <div>
                                 100<br>
                                 200<Br>
-                                javascript
+                                300<br>
+                                javascript<br>
+                                javascript가 실행되었습니다.<br>
+                                javascript가 실행되었습니다.<br>
+                                javascript가 실행되었습니다.
                             </div>
                         </details>
                     </div>
@@ -738,6 +750,7 @@
             // console.log(obj.d);     //(X)
             obj.d();
             obj.e();
+            obj.f();
         }
     </script>
 </body>
