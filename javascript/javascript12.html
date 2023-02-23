@@ -52,6 +52,9 @@
                     <li><a href="#">02. 데이터 이펙트 : 0부터 50까지 출력하기</a></li>
                     <li><a href="#">03. 데이터 이펙트 : 1부터 100까지 짝수만 출력하기</a></li>
                     <li><a href="#">04. 데이터 이펙트 : 1부터 100까지 5의 배수 출력하기</a></li>
+                    <li><a href="#">05. 데이터 이펙트 : 1부터 100까지 짝수(파란색) 홀수(빨간색) 출력하기</a></li>
+                    <li><a href="#">06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</a></li>
+                    <li><a href="#">07. 데이터 이펙트 : 중첩 for문을 이용해서 구구단 만들기</a></li>
                 </ul>
             </div>
             <div class="main__sample">
@@ -167,6 +170,95 @@ for(i=0; i&lt=100; i++){
                     </div>
                 </div>
                 <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. 데이터 이펙트 : 1부터 100까지 짝수(파란색) 홀수(빨간색) 출력하기</h3>
+                    <p>for문을 이용해서 1부터 100까지 짝수(파란색) 홀수(빨간색) 출력할 수 있다.</p>
+<pre class="line-numbers"><code class="language-js">for(let i=1; i&lt;=99; i++){
+    if( i % 2 ==0){
+        document.write("&lt;span style='color:blue'&gt;"+i+"&lt;/span&gt;");
+    }
+    if( i % 2 ==1){
+        document.write("&lt;span style='color:red'&gt;"+i+"&lt;/span&gt;");
+    }                
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</h3>
+                    <p>for문을 이용해서 100칸 테이블을 만들 수 있다.</p>
+<pre class="line-numbers"><code class="language-js">let table = "&lt;table border='1'&gt;";
+    for(let i=1; i&lt;=10; i++){
+        table += "&lt;tr&gt;";
+        for(let j=1; j&lt;=10; j++){
+            table += "&lt;td&gt;"+j+"&lt;/td&gt;";
+        }
+        table += "&lt;/tr&gt;";
+    }
+    table += "&lt;/table&gt;";
+document.write(table);
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <script>
+                                let table = "<table border='1'>";
+                                    for(let i=1; i<=10; i++){
+                                        table += "<tr>";
+                                        for(let j=1; j<=10; j++){
+                                            table += "<td>"+j+"</td>";
+                                        }
+                                        table += "</tr>";
+                                    }
+                                    table += "</table>";
+                                document.write(table);
+                            </script>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 데이터 이펙트 : 중첩 for문을 이용해서 구구단 만들기</h3>
+                    <p>중첩for문을 이용해서 구구단을 만들 수 있다.</p>
+<pre class="line-numbers"><code class="language-js">for(let i=2; i&lt;=9; i++){
+    document.write(i + "단","&lt;br&gt;");
+
+    for(let j=1; j&lt;=9; j++){
+        document.write(i + "*" + j + "=" + i*j);
+        document.write("&lt;br&gt;")
+    }
+
+    document.write("&lt;br&gt;&lt;br&gt;");
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <script>
+                                for(let i=2; i<=9; i++){
+                                    document.write(i + "단","<br>");
+
+                                    for(let j=1; j<=9; j++){
+                                        document.write(i + "*" + j + "=" + i*j);
+                                        document.write("<br>")
+                                    }
+
+                                    document.write("<br><br>");
+                                }
+                            </script>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample07 -->
                 
             </div>
         </div>
@@ -180,32 +272,7 @@ for(i=0; i&lt=100; i++){
 
     <script src="assets/js/prism.js"></script>
     <script>
-        // 01. 1부터 100까지 출력하기
-        // for(let i=1; i<=100; i++){
-        //     console.log(i)
-        // }
-
-        // 02. 0부터 50까지 출력하기
-        // for(let i=0; i<=50; i++){ //i = i + 1
-        //     console.log(i)
-        // }
-
-        // 03. 0부터 100까지 짝수만 출력하기
-        // for(let i=0; i<=100; i+=2){ //i = i + 2
-        //     console.log(i)
-        // }
-
-        // 04. 0부터 100까지 5의 배수 출력하기
-        // for(let i=0; i<=100; i+=5){
-        //     console.log(i)
-        // }
-
-        // if문 사용해서 1부터 100까지 5의 배수 출력하기
-        for(let i=1; i<=100; i++){
-            if( i % 5 == 0){
-                console.log(i)
-            }
-        }
+        
     </script>
 </body>
 </html>
