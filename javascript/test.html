@@ -66,12 +66,12 @@
         // 06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기
         {
             let table = "<table border='1'>";
-                for(let i=1; i<=10; i++){
+            for(let i=1; i<=10; i++){
                 table += "<tr>";
                 for(let j=1; j<=10; j++){
-                table += "<td>"+j+"</td>";
-            }
-            table += "</tr>";
+                    table += "<td>"+j+"</td>";
+                }
+                table += "</tr>";
             }
             table += "</table>";
             document.write(table);
@@ -88,6 +88,8 @@
 
             document.write("<br><br>");
         }
+
+        
 
     </script>
 </body>

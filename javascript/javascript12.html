@@ -130,16 +130,16 @@
                 <div id="sample04" class="sample">
                     <h3>04. 데이터 이펙트 : 1부터 100까지 5의 배수 출력하기</h3>
                     <p>for문을 이용해서 0-100까지 5의 배수만 출력하는 예제입니다. 조건문 if문과 증감연산자를 이용한 방법입니다.</p>
-<pre class="line-numbers"><code class="language-js">// 1. for(let i=0; i&lt;=100; i+=5){
+<pre class="line-numbers"><code class="language-js">// 1. 증감 연산자를 이용한 방법
+for(let i=0; i&lt;=100; i+=5){
     console.log(i)  //초기값을 0으로 설정하고 5씩 증가시켜서 100번을 반복함
 };
 
 
-// 2. if문을 이용해서 1-100까지 5의 배수만 출력하는 예제입니다.
+// 2. if문을 이용한 방법
 for(i=0; i&lt=100; i++){
     if(i % 5 == 0){
-        console.log(i)  //초기값을 0으로 설정하고 i를 100까지 1씩 증가시키고
-                        //5로 나눈 후에 나머지의 값이 0이면 출력하는 예제입니다.
+        console.log(i)  // % 연산자를 이용하여 나머지가 0이면 짝수를 의미한다.
     }
 }
 </code></pre>
@@ -186,7 +186,7 @@ for(i=0; i&lt=100; i++){
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
-                            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
+                            12345678910111213141516171819202122
                         </details>
                     </div>
                 </div>
@@ -196,14 +196,14 @@ for(i=0; i&lt=100; i++){
                     <h3>06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</h3>
                     <p>for문을 이용해서 100칸 테이블을 만들 수 있다.</p>
 <pre class="line-numbers"><code class="language-js">let table = "&lt;table border='1'&gt;";
-    for(let i=1; i&lt;=10; i++){
-        table += "&lt;tr&gt;";
-        for(let j=1; j&lt;=10; j++){
-            table += "&lt;td&gt;"+j+"&lt;/td&gt;";
-        }
-        table += "&lt;/tr&gt;";
+for(let i=1; i&lt;=10; i++){
+    table += "&lt;tr&gt;";
+    for(let j=1; j&lt;=10; j++){
+        table += "&lt;td&gt;"+j+"&lt;/td&gt;";
     }
-    table += "&lt;/table&gt;";
+    table += "&lt;/tr&gt;";
+}
+table += "&lt;/table&gt;";
 document.write(table);
 </code></pre>
                     <div class="result">

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #aside {
+            width: 300px;
+            height: 1000px;;
+            float: left;
+        }
+        .side1 {
+            height: 200px;
+            background-color: #333;
+        }
+        .side2 {
+            height: 200px;
+            background-color: #444;
+        }
+        .side3 {
+            height: 600px;
+            background-color: #555;
+        }
+        #contents {
+            width: 900px;
+            height: 1000px;
+            background-color: #222;
+            float: left;
+        }
+        .banner {
+            height:500px;
+            background-color: #222;
+        }
+        .content {
+            width: 900px;
+            height: 300px;
+        }
+        .c1 {
+            width: 300px;
+            height: 300px;
+            background-color: #861212;
+            float: left;
+        }
+        .c2 {
+            width: 300px;
+            height: 300px;
+            background-color: #30a80b;
+            float: left;
+        }
+        .c3 {
+            width: 300px;
+            height: 300px;
+            background-color: #331286;
+            float: left;
+        }
+        .footer {
+            width: 900px;
+            height: 200px;
+        }
+        .f1 {
+            width: 300px;
+            height: 200px;
+            background-color: #561742;
+            float: left;
+        }
+        .f2 {
+            width: 600px;
+            height: 100px;  background-color: #0c6a82;
+            float: left;
+        }
+        .f3 {
+            width: 600px;
+            height: 100px;  background-color: #147162;
+            float: left;
+        }
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix::after {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="aside">
+            <div class="side1"></div>
+            <div class="side2"></div>
+            <div class="side3"></div>
+        </div>
+        <div id="contents">
+            <div class="banner"></div>
+            <div class="content clearfix">
+                <div class="c1"></div>
+                <div class="c2"></div>
+                <div class="c3"></div>
+            </div>
+            <div class="footer clearfix">
+                <div class="f1"></div>
+                <div class="f2"></div>
+                <div class="f3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

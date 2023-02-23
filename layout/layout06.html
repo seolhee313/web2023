@@ -4,74 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃6 - float 방식</title>
+    <title>레이아웃06- float 반응형</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+
+        /*
+            float으로 인한 깨짐 현상 방지법
+            1. clear:both 
+            2. 부모 박스 overflow: hidden
+            3. clearfix를 이용하는 법   // 가장 완벽한 방법
+        */
+        /*clearfix*/
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix:after {
+            clear:both;
+        }
         body {
-            background-color: #E1F5FE;
+            background-color: #FFF3E0;
         }
         #wrap {
             width: 1200px;
             margin: 0 auto;
         }
         #header {
-            width: 1200px;
+            width: 100%;
             height: 100px;
-            background-color: #B3E5FC;
+            background-color: #FFE0B2;
         }
         #nav {
-            width: 1200px;
+            width: 100%;
             height: 100px;
-            background-color: #81D4FA;
-        }
-        #main {
-            width: 1200px;
-            overflow: hidden;
+            background-color: #FFCC80;
         }
         #aside {
-            width: 300px;
+            width: 30%;
             height: 780px;
-            background-color: #4FC3F7;
+            background-color: #FFB74D;
             float: left;
         }
-        #article {
-            width: 900px;
-            height: 260px;
-            background-color: #29B6F6;
-            float: left;
-        }
-        #article2 {
-            width: 900px;
-            height: 260px;
-            background-color: #03A9F4;
-            float: left;
-        }
-        #article3 {
-            width: 900px;
-            height: 260px;
-            background-color: #039BE5;
+        #contents {
+            width: 70%;
+            height: 780px;
+            background-color: #FFA726;
             float: left;
         }
         #footer {
-            width: 1200px;
+            width: 100%;
             height: 100px;
-            background-color: #0288D1;
+            background-color: #FF9800;
+            clear: both;
         }
+        
+        @media (max-width: 1220px){
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width: 600px){
+            #aside {
+                width: 100%;
+                height: 300px;
+            }
+            #contents {
+                width: 100%;
+                height: 480px;
+            }
+        }
+        
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
-        <div id="main">
-            <div id="aside"></div>
-            <div id="article"></div>
-            <div id="article2"></div>
-            <div id="article3"></div>
-        </div>
+        <div id="aside"></div>
+        <div id="contents"></div>
         <div id="footer"></div>
     </div>
 </body>
