@@ -11,35 +11,41 @@
         let arr = [1,2,3,4,5,6,7,8,9,10]
         document.write(arr[4], "<br>");
         document.write(arr[6],arr[7],"<br>");
-        document.write(arr[3]*arr[2],"<br>");
+        document.write(arr[1]+arr[9],"<br>");
         document.write(arr[9]*arr[8],"<br>");
+
+        document.write("<br>");
+        
         //1부터 8
         for(let i=1; i<=8; i++){
-            document.write(i,"<br>");
+            document.write(i);
         }
+        document.write("<br>");
 
         //짝수
         for(let i=0; i<=100; i+=2){
-            document.write(i,"<br>");
+            document.write(i);
         }
+        document.write("<br>");
 
         //4배수
         for(let i=1; i<=100; i++){
             if( i % 4 == 0){
-                document.write(i,"<br>")
+                document.write(i)
             }
         }
+        document.write("<br>");
+
 
         //8단
         for(let i=8; i<=8; i++){
             document.write(i + "단","<br>");
 
             for(let j=1; j<=8; j++){
-                document.write(i + "*" + j + "=" + i*j);
+                document.write(i+"*"+j+"="+ i*j);
                 document.write("<br>")
             }
-
-            document.write("<br><br>");
+            document.write("<br>");
         }
 
         //테이블
