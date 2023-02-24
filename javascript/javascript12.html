@@ -196,14 +196,14 @@ for(i=0; i&lt=100; i++){
                     <h3>06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</h3>
                     <p>for문을 이용해서 100칸 테이블을 만들 수 있다.</p>
 <pre class="line-numbers"><code class="language-js">let table = "&lt;table border='1'&gt;";
-for(let i=1; i&lt;=10; i++){
-    table += "&lt;tr&gt;";
-    for(let j=1; j&lt;=10; j++){
-        table += "&lt;td&gt;"+j+"&lt;/td&gt;";
+    for(let i=1; i&lt;=10; i++){
+        table += "&lt;tr&gt;";
+        for(let j=1; j&lt;=10; j++){
+            table += "&lt;td&gt;"+j+"&lt;/td&gt;";
+        }
+        table += "&lt;/tr&gt;";
     }
-    table += "&lt;/tr&gt;";
-}
-table += "&lt;/table&gt;";
+    table += "&lt;/table&gt;";
 document.write(table);
 </code></pre>
                     <div class="result">

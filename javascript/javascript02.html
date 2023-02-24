@@ -197,14 +197,14 @@
             
                 <div id="sample06" class="sample">
                     <h3>06. 배열 : 데이터 불러오기 : for()문</h3>
-                    <p>for()문을 사용하여 데이터를 불러오는 방법입니다.</p>
+                    <p>여러개의 배열된 데이터를 for()문을 사용하여 데이터를 불러오는 방법입니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-    for(let i=0; i&lt=8; i++) {
-    console.log(arr[i]);
-    };
+    for(let i=0; i&lt;9; i++){
+        console.log(arr[i]);
+    }
 }
 </code></pre>
                     </div>
@@ -249,6 +249,39 @@
                     </div>
                 </div>
                 <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 배열 : 데이터 불러오기 : 중첩 for()문</h3>
+                    <p>여러개의 배열된 데이터를 for()문을 이용해서 불러오는 방법입니다.</p>
+                    <p>for()문 안에 새로운 for(문)이 들어가 있는 것이다.</p>
+                    <div class="script">
+<pre><code class="language-js">for(let i=1; i&lt=10; i++){
+    console.log("i : " + i);
+    for(let j=1; j&lt=10; j++){
+        console.log("j : " + j);
+    }
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                i : 1 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 2 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 3 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 4 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 5 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 6 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 7 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 8 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 9 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                                i : 10 , j : 1 , j : 2 , j : 3 , j : 4 , j : 5 , j : 6 , j : 7 , j : 8 , j : 9 , j : 10<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample07 -->
         </div>
     </main>
     <!-- //main -->
