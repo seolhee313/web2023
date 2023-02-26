@@ -9,13 +9,113 @@
         * {
             margin: 0;
             padding: 0;
+            font-size: 40px;
+            color: black;
+            text-align: center;
         }
+        body {
+            background-color: #b4b2f1;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #aside {
+            width: 30%;
+            float: left;
+        }
+        .side1 {
+            width: 100%;
+            height: 300px;
+            background-color: #a9e7f0;
+        }
+        .side2 {
+            width: 100%;
+            height: 700px;
+            background-color: #f7b8b8;
+        }
+        #section {
+            width: 70%;
+            float: left;
+        }
+        .banner {
+            width: 100%;
+            height: 500px;
+            background-color: #d7fad6;
+        }
+        .contents {
+            width: 100%;
+        }
+        #section .contents .c1 {
+            width: 33.3333%;
+            height: 300px;
+            background-color: #96a7f7;
+            float: left;
+        }
+        #section .contents .c2 {
+            width: 33.3333%;
+            height: 300px;
+            background-color: #506ef5;
+            float: left;
+        }
+        #section .contents .c3 {
+            width: 33.3333%;
+            height: 300px;
+            background-color: #153ff7;
+            float: left;
+        }
+        .footer {
+            width: 100%;
+        }
+        #section .footer .f1 {
+            width: 20%;
+            height: 200px;
+            background-color: #f7a8e3;
+            float: left;
+        }
+        #section .footer .f2 {
+            width: 80%;
+            height: 100px;
+            background-color: #f35a5a;
+            float: left;
+        }
+        #section .footer .f3 {
+            width: 80%;
+            height: 100px;
+            background-color: #b40f0f;
+            float: left;
+        }
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix::after{
+            clear: both;
+        }
+
     </style>
 </head>
 <body>
     <div id="wrap">
-        <aside id="aside"></aside>
-        <section id="section"></section>
+        <aside id="aside">
+            <div class="side1">로고</div>
+            <div class="side2">메뉴</div>
+        </aside>
+        <section id="section">
+            <div class="banner">배너</div>
+            <div class="contents clearfix">
+                <div class="c1">공지사항</div>
+                <div class="c2">갤러리</div>
+                <div class="c3">팝업</div>
+            </div>
+            <div class="footer clearfix">
+                <div class="f1">로고</div>
+                <div class="f2">하단메뉴</div>
+                <div class="f3">카피라이터</div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
