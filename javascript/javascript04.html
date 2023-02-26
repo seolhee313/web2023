@@ -268,7 +268,7 @@
 
     <script>
         // 01. if문
-        {
+        // {
         // false : 0 , null, undefined, false, ""(빈문자열)
         // true : 1, 2, 3, "0", "1", "ABC", [], {}, true
         // if(1){
@@ -276,11 +276,11 @@
         // } else {
         //     document.write("실행되었습니다. (false)");
         // }
-        }
+        // }
 
         // 02.if문 생략
-        {
-            const num = 100;
+        // {
+            // const num = 100;
             // if(num){
             //     document.write("실행되었습니다.(true)");
             // } else {
@@ -289,7 +289,7 @@
 
             // if(num) document.write("실행되었습니다.(true)");
             // else document.write("실행되었습니다.(false)");
-        }
+        // }
 
         // 03. 삼항 연산자
         // {
@@ -374,35 +374,136 @@
         //     }
         // }
 
-        document.write("<br>")
+        // document.write("<br>")
 
-        let table = "<table border = '1'>"
-            for(let i=0; i<5; i++){
-                table += "<tr>";
+        // let table = "<table border = '1'>"
+        //     for(let i=0; i<5; i++){
+        //         table += "<tr>";
             
-                for(let j=0; j<5; j++){
-                    table += "<td>"+j+"</td>";
-                }
-                table += "</tr>";
+        //         for(let j=0; j<5; j++){
+        //             table += "<td>"+j+"</td>";
+        //         }
+        //         table += "</tr>";
                 
-            }
+        //     }
         
-        table += "</table>";
+        // table += "</table>";
 
-        document.write(table);
+        // document.write(table);
 
 
-        // 1부터 25까지 출력
-        document.write("<br>")
-        
+
+
+        // // 1부터 25까지 출력
+
         let num = 0;
-        for(let i=1; i<=25; i++){
+        for(let i=1; i<26; i++){
             document.write(i);
             num++;
         }
         document.write("<br>");
-        document.write(num);
+        // document.write(num);
+        
+        document.write("<br>");
 
+
+        // 테이블 만들기 안에 숫자 넣기
+        {
+        let num = 1
+        let table = "<table border = '1'>"
+            for(let i=1; i<6; i++){
+                table += "<tr>";
+                    
+                for(let j=1; j<6; j++){
+                    table += "<td>"+num+"</td>";
+                    num++;
+                }
+                
+                table += "</tr>";
+            }
+            table += "</table>";
+            
+
+        document.write(table);
+        }
+        
+        document.write("<br>");
+        
+        // 짝수, 홀수 색 넣기
+        for(let i=1; i<=25; i++){
+            if(i % 2 == 0){
+                document.write("<span style='color:red'>"+i+"</span>");
+            } else {
+            document.write(`<span style='color:blue'>${i}</span>`);
+            }
+        }
+
+
+        // 테이블에 색 넣기 1
+        // {
+        // let table = "<table border = '1'>";
+        // let num = 1;    
+        //     for(let i=1; i<6; i++){
+        //         table += "<tr>";
+                    
+        //         for(let j=1; j<6; j++){
+        //             if(num % 2 === 0){
+        //                 table += "<td><span style='color:red'>"+num+"</span></td>";
+        //             } else {
+        //                 table += "<td><span style='color:blue'>"+num+"</span></td>";
+        //             num++;
+        //         }                
+        //         table += "</tr>";
+        //     }
+        //     table += "</table>";
+        //     document.write(table);
+        //     }
+        // }
+        
+
+        //테이블에 색 넣기 2
+        {
+        let num = 1;
+        let table = "<table border = '1'>";
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                    for(let j=0; j<5; j++){
+                        if(num % 2 === 0){
+                            table += "<td><span style='color:red'>"+num+"</span></td>";
+                        } else {
+                            table += "<td><span style='color:blue'>"+num+"</span></td>";
+                            num++;
+                        }
+                    }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.write(table);
+        }
+
+
+        document.write("<br>");
+        //테이블에 색 넣기 3
+        {
+        let num = 1;
+        let table = "<table border = '1'>";
+            for(let i=0; i<5; i++){
+                table += "<tr>";
+                    for(let j=0; j<5; j++){
+                        if(num % 0 === 0){
+                            table += "<td><span style='color:red'>"+num+"</span></td>";
+                        } else {
+                            table += "<td><span style='color:blue'>"+num+"</span></td>";
+                            num++;
+                        }
+                    }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.write(table);
+        }
+
+        
     </script>
 </body>
 </html>
