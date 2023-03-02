@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지유형01</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 70px;
+            font-weight: 300;
+        }
+
+        /* image__wrap */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image__inner .image{
+            width: 570px;
+            height: 370px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .image__body {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+            text-align: left;
+            padding: 30px;
+        }
+        .image__body .title {
+            font-size: 32px;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        .image__body .desc {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            padding-right: 18%;
+        }
+        .image__body .btn {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 30px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="image__wrap section Nexon">
+        <div class="container">
+            <h2 class="section__h2">서리커피</h2>
+            <p class="section__desc">훔치지 않았습니다. 직접 만들었습니다. </p>
+            <div class="image__inner">
+                <article class="image">
+                    <figure class="image__header">
+                        <img src="../asset/img/imagetype01_01.jpg" alt="맛있는 커피">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">맛있는 커피</h3>
+                        <p class="desc">커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께비쥬얼, 맛, 건강함, 그리고 마시는 재미까지 함께 선사합니다</p>
+                        <a href="#" class="btn">자세히보기</a>
+                    </div>
+                </article>
+                <article class="image">
+                    <figure class="image__header">
+                        <img src="../asset/img/imagetype01_02.jpg" alt="서리 커피">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">서리 커피</h3>
+                        <p class="desc">최첨 시설에서 탄생하는 고품질의 원두로 최고의 커피맛을 고객들에게 제공합니다.</p>
+                        <a href="#" class="btn">자세히보기</a>
+                    </div>
+                    </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
