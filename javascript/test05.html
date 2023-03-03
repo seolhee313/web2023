@@ -3,147 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <script>
-        //01. 선언적 함수
+        //1
+        {
+            for(let i=1; i<=50; i++){
+                document.write(i);
+            }
+        }
+        document.write("<br>")
+        //2
+        {
+            let num=1
+            while(num<=50){
+                document.write(num);
+                num++;
+            }
+        }
+        document.write("<br>")
+        //3
+        {
+            for(let i=2; i<=100; i+=2){
+                document.write(i);
+            }
+        }
+        document.write("<br>")
+        //4
+        {
+            for(let i=1; i<=100; i++){
+                if(i % 2 == 0){
+                    document.write(i);
+                }
+            }
+        }
+        document.write("<br>")
+        //5
+        {   
+            let num = 1
+            let table = "<table border = '1'>";
+            for(let i=1; i<=25; i++){
+                table += "<tr>";
+                for(let j=1; j<=2; j++){
+                    table += "<td>"+num+"</td>";
+                    num++;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.write(table);
+        }
+        document.write("<br>")
+        //6
+        {
+            let sum = 0
+            for(let i=0; i<11; i++){
+                sum = sum+i;
+            }
+            document.write(sum);
+        }
+        document.write("<br>")
+        //7
+        {
+            for(let i=2; i<=9; i++){
+                document.write(i+"단","<br>");
+                for(let j=1; j<=9; j++){
+                    document.write(i+"*"+j+"="+i*j,"<br>");
+                }
+            }
+        }
+        document.write("<br>")
+        //8
+        //선언
         {
             function func(){
-                document.write("01. 함수가 실행되었습니다.<br>");
+                document.write("실행<br>");
             }
             func();
         }
+        //익명
         {
-            func = () => document.write("01. 함수가 실행되었습니다.<br>");
-            func();
-        }
-        //02. 익명 함수
-        {
-            const func = function (){
-                document.write("02. 함수가 실행되었습니다.<br>");
+            const func = function(){
+                document.write("실행<br>");
             }
             func();
         }
-
-        //03. 선언적 안에 for문 10번
-        {
-            function func(){
-                for(let i=1; i<=10; i++){
-                document.write("03. 함수가 실행되었습니다.<br>");
-            }
-            }
-            func();
-        }
-        //04. 리턴 함수
-        {
-            function func(){
-                const str = "04. 실행되었습니다<br>"
-                return str;
-            }
-            document.write(func());
-        }
-        //05. 매개변수
+        //매개변수
         {
             function func(str){
                 document.write(str);
             }
-            func("05. 실행되었습니다<br>");
+            func("실행<br>");
         }
-        // 선언적 화살표
+        //리턴
+        {
+            function func(){
+                const str = "실행"
+                return str;
+            }
+            document.write(func());
+        }
+        document.write("<br>")
+        //화살표 함수
+        //선언
+        {
+            func =() => {
+                document.write("실행<br>");
+            }
+            func();
+        }
+        //익명
+        {
+            const func = () => {
+                document.write("실행<br>");
+            }
+            func();
+        }
+        //매개변수
+        {
+            func = (str) => {
+                document.write(str);
+            }
+            func("실행<br>");
+        }
+        //리턴
         {
             func = () => {
-                document.write("06. 실행되었습니다.<br>");
-            }
-            func();
-        }
-        // 함수 안에 10칸 테이블 
-        {   
-            function func(){
-                let table = "<table border = '1'>";
-                for(let i=1; i<=5; i++){
-                    table += "<tr>";
-                    for(let j=1; j<=2; j++){
-                        table += "<td>"+j+"</td>";
-                    }
-                    table += "</tr>";
-                }
-                table += "</table>";
-                document.write(table);
-            }
-            func();
-        }
-        // 함수 안에 10칸 테이블 안에 숫자 1~10까지
-        {   
-            function func(){
-                let num = 1;
-                let table = "<table border = '1'>";
-                for(let i=1; i<=5; i++){
-                    table += "<tr>";
-                    for(let j=1; j<=2; j++){
-                        table += "<td>"+num+"</td>";
-                        num++;
-                    }
-                    table += "</tr>";
-                }
-                table += "</table>";
-                document.write(table);
-            }
-            func();
-        }
-        //forEach
-        {
-            const arr = [1,2,3,4,5,6,7,8,9,10]
-
-            arr.forEach(function(el){
-                document.write(el);
-            });
-        }
-        {
-            const arr = [1,2,3,4,5,6,7,8,9,10]
-
-            arr.forEach((el) => {
-                document.write(el);
-            });
-        }
-        {
-            const arr = [1,2,3,4,5,6,7,8,9,10]
-
-            arr.forEach(el => {
-                document.write(el);
-            });
-        }
-        {
-            const arr = [1,2,3,4,5,6,7,8,9,10]
-
-            arr.forEach(el => document.write(el));
-        }
-
-        document.write("<br>")
-        // 09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값
-        {
-            const func = (str) => {
+                const str = "실행"
                 return str;
             }
-            document.write(func("실행되었습니다."));
-        }
-        {
-            const func = (str) => {
-                return str;
-            }
-            document.write(func("실행되었습니다."));
-        }
-        {
-            const func = str => str;
-            document.write(func("실행되었습니다."));
-        }
-        {
-            func = str => str;
-            document.write(func("실행되었습니다."));
+            document.write(func());
         }
         
-        
+        // 10. 스크립트 하면서 가장 어려운 부분과 이해 안되는 부분 서술
+        // 응용 문제가 나왔을 때 너무 어렵습니다.
     </script>
 </body>
 </html>
