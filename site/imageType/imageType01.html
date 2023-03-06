@@ -8,12 +8,14 @@
 
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
+        /* reset */
         * {
             margin: 0;
             padding: 0;
         }
         a {
             text-decoration: none;
+            color: #000;
         }
         h1,h2,h3,h4,h5,h6 {
             font-weight: normal;
@@ -21,6 +23,7 @@
         img {
             vertical-align: top;
         }
+        /* common */
         .container {
             width: 1160px;
             margin: 0 auto;
@@ -33,6 +36,8 @@
         }
         .section {
             padding: 120px 0;
+        }
+        .section.center {
             text-align: center;
         }
         .section__h2 {
@@ -46,9 +51,10 @@
             color: #666;
             margin-bottom: 70px;
             font-weight: 300;
+            line-height: 1.5;
         }
 
-        /* image__wrap */
+        /* image__type */
         .image__inner {
             display: flex;
             justify-content: space-between;
@@ -87,7 +93,7 @@
     </style>
 </head>
 <body>
-    <section class="image__wrap section Nexon">
+    <section class="image__wrap section center Nexon">
         <div class="container">
             <h2 class="section__h2">서리커피</h2>
             <p class="section__desc">훔치지 않았습니다. 직접 만들었습니다. </p>
@@ -111,7 +117,7 @@
                         <p class="desc">최첨 시설에서 탄생하는 고품질의 원두로 최고의 커피맛을 고객들에게 제공합니다.</p>
                         <a href="#" class="btn">자세히보기</a>
                     </div>
-                    </article>
+                </article>
             </div>
         </div>
     </section>

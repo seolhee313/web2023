@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section.center {
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        /* card__type */
+        .card__wrap {
+        }
+        .card__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card__inner .card {
+            width: 32.3333%;
+            background-color: #f8f8f8;
+        }
+        .card__header {}
+        .card__body {
+            padding: 24px;
+        }
+        .card__body .title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .card__body .desc {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .card__body .btn {
+            padding-right: 40px;
+            background-image: url("data:image/svg+xml,%3Cspan%3E%3Csvg width='32' height='8' viewBox='0 0 32 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5V3.5ZM31.3536 4.35355C31.5488 4.15829 31.5488 3.84171 31.3536 3.64645L28.1716 0.464466C27.9763 0.269204 27.6597 0.269204 27.4645 0.464466C27.2692 0.659728 27.2692 0.976311 27.4645 1.17157L30.2929 4L27.4645 6.82843C27.2692 7.02369 27.2692 7.34027 27.4645 7.53553C27.6597 7.7308 27.9763 7.7308 28.1716 7.53553L31.3536 4.35355ZM1 4.5H31V3.5H1V4.5Z' fill='black'/%3E%3C/svg%3E%3C/span%3E");
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+    </style>
+</head>
+<body>
+    <section class="card__wrap section nexon">
+        <div class="container">
+            <h2 class="section__h2">전국 어디에서나 서리커피와 함께!</h2>
+            <p class="section__desc">나의 취향이 머무는 곳, 서리커피 리저브 매장. 더욱 편리하게 서리커피를 만나보는 드라이브 스루 매장. 함께해서 더 따뜻한 지역사회 소통 공간, 커뮤니티 스토어까지. 다양한 서리커피 매장이 여러분을 기다립니다.</p>
+            <div class="card__inner">
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="../asset/img/cardType01_01.jpg" alt="에스프레소 즐기기">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="title">에스프레소 즐기기</h3>
+                        <p class="desc">에스프레소는 이탈리아 국민 커피이다. 이탈리아의 북부 지방 사람들은 아라비카 위주의 우아한 에스프레소를 좋아하고, 나폴리와 같은 남부 사람들은 로부스타가 포함되어 크레마가 풍부한...</p>
+                        <a href="#" class="btn">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="../asset/img/cardType01_02.jpg" alt="원두 취향 설명서">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="title">원두 취향 설명서</h3>
+                        <p class="desc">커피를 고르라고 하면 무의식적으로 아메리카노와 라떼 중에서 고른다. 하지만 이제 그것도 라떼는 말이야 시절의 이야기다. 스페셜티 커피라는 이름조차 생소하던 초창기를 지나 이제 누구나...</p>
+                        <a href="#"  class="btn">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="../asset/img/cardType01_03.jpg" alt="다양한 추출 방법">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="title">다양한 추출 방법</h3>
+                        <p class="desc">사람들은 커피를 ‘현대인의 필수품’이라 말한다. 커피 없이는 하루도 시작할 수도, 일과 공부에 집중할 수도, 졸음을 물리칠 수도 없다고. 하지만 그게 전부일까? 원두, 추출 방식, 만드는 사람...</p>
+                        <a href="#"  class="btn">자세히 보기</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
