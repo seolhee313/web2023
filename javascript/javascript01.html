@@ -70,9 +70,6 @@
                     <li><a href="#">++ 연산자(전치,후치)</a></li>
                     <li><a href="#">++ 형변환, typeof</a></li>
                 </ul>
-                <ul>
-                    <li>형변화 </li>
-                </ul>
             </div>
             <div class="main__sample">
                 <div id="sample01" class="sample">
@@ -688,9 +685,61 @@
 
                 <div id="sample18" class="sample">
                     <h3>++ 식별자, 예약자</h3>
-                    <p></p>
+                    <p>식별자(identifier)는 변수나 함수의 이름을 작성할 때 사용하는 이름을 의미합니다.<br>
+                        예약자는 언어에서 특별한 의미를 가지는 단어로, 변수 또는 함수 이름으로 사용할 수 없습니다.</p>
                     <div class="script">
-<pre><code class="language-js">
+<pre><code class="language-js">{
+    식별자 규칙
+    1. 키워드를 사용하면 안 된다.
+    2. 숫자로 시작하면 안 된다.
+    3. 특수 문자는 _와 $만 허용된다.
+    4. 공백 문자를 포함할 수 없다.
+
+    예약어 목록
+    abstract, arguments, boolean, break, byte, case, catch, char, class*, const, continue, debugger, default, delete  
+    do, double, else, enum*, eval, export*, extends*, false, 
+final, 
+finally, 
+float, 
+for, 
+function,  
+goto, 
+if, 
+implements, 
+import*, 
+in, 
+instanceof, 
+int, 
+interface, 
+let, 
+long, 
+native, 
+new, 
+null, 
+package, 
+private 
+protected 
+public  
+return
+short 
+static  
+super*  
+switch  
+synchronized
+this  
+throw 
+throws  
+transient 
+true
+try 
+typeof  
+var 
+void  
+volatile
+while 
+with  
+yield
+}
 </code></pre>                       
                     </div>
                     <div class="result">
@@ -706,7 +755,7 @@
 
                 <div id="sample19" class="sample">
                     <h3>++ 연산자(전치,후치)</h3>
-                    <p></p>
+                    <p>연산자에는 전치,후치가 있습니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
     var score = 10;
@@ -853,7 +902,7 @@
 
                 <div id="sample20" class="sample">
                     <h3>++ 형변환, typeof</h3>
-                    <p></p>
+                    <p>typeof( )는 JavaScript에서 사용하는 연산자이며, 주어진 값의 데이터 유형을 반환합니다.</p>
                     <div class="script">
 <pre><code class="language-js">
 </code></pre>                       
