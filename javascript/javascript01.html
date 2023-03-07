@@ -697,58 +697,12 @@
 
     예약어 목록
     abstract, arguments, boolean, break, byte, case, catch, char, class*, const, continue, debugger, default, delete  
-    do, double, else, enum*, eval, export*, extends*, false, 
-final, 
-finally, 
-float, 
-for, 
-function,  
-goto, 
-if, 
-implements, 
-import*, 
-in, 
-instanceof, 
-int, 
-interface, 
-let, 
-long, 
-native, 
-new, 
-null, 
-package, 
-private 
-protected 
-public  
-return
-short 
-static  
-super*  
-switch  
-synchronized
-this  
-throw 
-throws  
-transient 
-true
-try 
-typeof  
-var 
-void  
-volatile
-while 
-with  
-yield
+    do, double, else, enum*, eval, export*, extends*, false, final, finally, float, for, function,  goto, if, implements, 
+    import*, in, instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return, 
+    short, static, super*, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, void, volatile, while, 
+    with, yield
 }
 </code></pre>                       
-                    </div>
-                    <div class="result">
-                        <details>
-                            <summary>결과 확인하기</summary>
-                            <div>
-                                
-                            </div>
-                        </details>
                     </div>
                 </div>
                 <!-- //sample18 -->
@@ -902,16 +856,41 @@ yield
 
                 <div id="sample20" class="sample">
                     <h3>++ 형변환, typeof</h3>
-                    <p>typeof( )는 JavaScript에서 사용하는 연산자이며, 주어진 값의 데이터 유형을 반환합니다.</p>
+                    <p>typeof 연산자는 undefined, null, boolean, number, string, symbol, object, function의 자바스크립트가 가진 7가지 변수 타입을 구분하는 용도로 사용합니다.</p>
                     <div class="script">
-<pre><code class="language-js">
+<pre><code class="language-js">{
+    문법
+
+    typeof operand
+    typeof(operand)
+}
+
+
+{
+    사용법
+    console.log(typeof undeclaredVariable);
+    console.log(typeof null);
+    console.log(typeof true);
+    console.log(typeof 27);
+    console.log(typeof 'YD');
+    console.log(typeof Symbol());
+    console.log(typeof function() {});
+    console.log(typeof {});
+}
 </code></pre>                       
                     </div>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                
+                                undefined<br>
+                                object<br>
+                                boolean<br>
+                                number<br>
+                                string<br>
+                                symbol<br>
+                                function<br>
+                                object<br>
                             </div>
                         </details>
                     </div>
