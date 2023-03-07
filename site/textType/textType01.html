@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형01</title>
+    
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+        }
+        .mt10 {margin-top: 10px !important;}
+        .mt20 {margin-top: 20px !important;}
+        .mt30 {margin-top: 30px !important;}
+        .mt40 {margin-top: 40px !important;}
+        .mt50 {margin-top: 50px !important;}
+        .mt60 {margin-top: 60px !important;}
+        .mt70  {margin-top: 70px !important;}
+
+        .mb10 {margin-bottom: 10px !important;}
+        .mb20 {margin-bottom: 20px !important;}
+        .mb30 {margin-bottom: 30px !important;}
+        .mb40 {margin-bottom: 40px !important;}
+        .mb50 {margin-bottom: 50px !important;}
+        .mb60 {margin-bottom: 60px !important;}
+        .mb70  {margin-bottom: 70px !important;}
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section.center {
+            text-align: center;
+        }
+        .section__small {
+            font-size: 14px;
+            border-radius: 50px;
+            background-color: #ff7c7c;
+            color: #fff;
+            padding: 1px 23px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        /* text__wrap */
+        .text__wrap {}
+        .text__inner {
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__inner .text {
+            width: 32.33333%;
+            border: 1px solid #f5f5f5;
+            border-radius: 10px;
+            padding: 90px 20px 20px 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        .text__inner .text:hover {
+            background: #f5f5f5;
+        }
+        .text__inner .text::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #ce9393;
+            background-image: url(../asset/img/textType01_01.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border-radius: 50%;
+        }
+        .text__inner .text.t1::before {
+            background-color: rgba(247, 227, 109, 0.3);
+            background-image: url(../asset/img/textType01_01.svg);
+        }.text__inner .text.t2::before {
+            background-color: rgba(247, 109, 217, 0.2);
+            background-image: url(../asset/img/textType01_02.svg);
+        }.text__inner .text.t3::before {
+            background-color: rgba(51, 255, 206, 0.2);
+            background-image: url(../asset/img/textType01_03.svg);
+        }.text__inner .text.t4::before {
+            background-color: rgba(141, 255, 51, 0.2);
+            background-image: url(../asset/img/textType01_04.svg);
+        }.text__inner .text.t5::before {
+            background-color: rgba(72, 87, 236, 0.2);
+            background-image: url(../asset/img/textType01_05.svg);
+        }.text__inner .text.t6::before {
+            background-color: rgba(255, 51, 52, 0.2);
+            background-image: url(../asset/img/textType01_06.svg);
+        }
+        .text__title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .text__desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .text__btn {
+            float: right;
+            position: relative;
+            padding-right: 20px;
+        }
+        .text__btn::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background-image: url(../asset/img/icon_plus.svg);
+            transition: all 0.3s;
+        }
+        .text__btn:hover::before {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <section class="text__wrap section center nexon">
+        <div class="container">
+            <span class="section__small">NOTICE</span>
+            <h2 class="section__h2 mb70">리저브에서 취향을 더해보세요.</h2>
+            <div class="text__inner">
+                <div class="text t1">
+                    <h3 class="text__title">브루드 커피 + 콜드 밀크</h3>
+                    <p class="text__desc">혀끝에 감기는 브루드 커피의 투명함이 더할 나위 없이 편안하다. 여기에 변주를 주기 알맞은 것은 소량의 콜드 밀크. 조금씩 더 넣을수록, 고소한 맛과 견과류 풍미가 살아나고 질감이 부드러워...</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">카푸치노 + 카라멜 드리즐</h3>
+                    <p class="text__desc">코 끝에 맴도는 카라멜의 둥글고 달달한 향. 입술에는 폭신한 거품이 닿지만, 입안으로 흘러 들어오는 커피는 짙고 부드럽다. 한 모금 마시고 난 후 입술에 묻은 거품과 시럽을 살짝 핥으면, 커피의...</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">코르타도 + 황설탕</h3>
+                    <p class="text__desc">우유가 적절히 섞여 살짝 부드러워진 코르타도는 평소에도 최애 메뉴. 거기에 활설탕을 넣으니 달콤함 더해지면서, 묘하게 투명해지는 느낌이 신기하다. 균일한 맛을 원한다면 황설탕을 넣자마자...</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">바크 초콜릿 활용법</h3>
+                    <p class="text__desc">톡톡한 질감의 초콜릿이 혀끝에 먼저 닿고 그 뒤를 고소한 커피가 감싼다. 거친 듯 부드럽고, 달지만 달지 않다. 기분 좋은 이 모순! 서리커피 리저브에서 제공하는 바크 초콜릿은 두 가지. 헤이즐...</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">에스프레소 즐기기</h3>
+                    <p class="text__desc">에스프레소는 이탈리아 국민 커피이다. 이탈리아의 북부 지방 사람들은 아라비카 위주의 우아한 에스프레소를 좋아하고, 나폴리와 같은 남부 사람들은 로부스타가 포함되어 크레마가 풍부한...</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">에스프레소 즐기기</h3>
+                    <p class="text__desc">에스프레소는 이탈리아 국민 커피이다. 이탈리아의 북부 지방 사람들은 아라비카 위주의 우아한 에스프레소를 좋아하고, 나폴리와 같은 남부 사람들은 로부스타가 포함되어 크레마가 풍부한...</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
