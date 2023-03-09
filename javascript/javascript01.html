@@ -857,15 +857,79 @@
 
                 <div id="sample20" class="sample">
                     <h3>++ 비트연산자</h3>
-                    <p>비트 연산자는 이진수를 다루는 연산자로, 이진수의 각 자리를 비교하여 연산합니다. 비트 연산자는 주로 저수준 프로그래밍에서 사용되며, 비트 조작과 데이터 압축, 암호화 등 다양한 분야에서 사용됩니다.</p>
+                    <p>비트 연산자는 이진수를 다루는 연산자로, 이진수의 각 자리를 비교하여 연산합니다. 비트 연산자는 주로 저수준 프로그래밍에서 사용되며, 비트 조작과 데이터 압축, 암호화 등 다양한 분야에서 사용됩니다.</p>     
+                </div>
+                <div class="notice">
+                    <h4>비트 연산자 종류</h4>
+                    <br>
+                    <p>1. AND 연산 (&): 두 비트가 모두 1일 때만 1을 반환합니다.<br>
+                        2. OR 연산 (|): 두 비트 중 하나 이상이 1이면 1을 반환합니다.<br>
+                        3. XOR 연산 (^): 두 비트 중 하나만 1일 때 1을 반환합니다.<br>
+                        4. NOT 연산 (~): 비트를 반전시킵니다. 0은 1로, 1은 0으로 변환됩니다.<br>
+                        5. 왼쪽 시프트 (<<): 비트를 왼쪽으로 이동시킵니다. 예를 들어, 0001 << 2는 0100을 반환합니다.<br>
+                        6. 오른쪽 시프트 (>>): 비트를 오른쪽으로 이동시킵니다. 예를 들어, 0100 >> 2는 0001을 반환합니다.
+                    </p>
+                </div>
+                <div id="sample114" class="sample">
+                    <h4>1. & (AND 논리 연산자) : 비교하는 비트가 모두 1이면 1을 반환한다.</h4>
                     <div class="script">
-<pre><code class="language-js">
-</code></pre>                       
-                    </div>
+<pre><code class="language-js">{
+    const b1 = 2 & 3;
+    
+    console.log(b1); //2
+    //2 0010
+    //3 0011
+    //  0010 = 2
+}
+</code></pre>
+                    </div>          
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
+                                2
+                            </div>
+                        </details>
+                    </div>
+                <div id="sample115" class="sample">
+                    <h4>2. | (OR 논리 연산자) : 비교하는 비트 중에서 하나라도 1이면 1을 반환한다.</h4>
+                    <div class="script">
+<pre><code class="language-js">{
+    const b2 = 2 | 3;
+
+    console.log(b2); //3
+    //2 0010
+    //3 0011
+    //  0011 = 3
+}
+</code></pre>
+                    </div>          
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                3
+                            </div>
+                        </details>
+                    </div>
+                <div id="sample116" class="sample">
+                    <h4>3. ^ (배타 논리 연산자) : 비교하는 두 개의 비트가 같으면 0을, 다르면 1을 반환한다.</h4>
+                    <div class="script">
+<pre><code class="language-js">{
+    const b3 = 5 ^ 3;
+
+    console.log(b3); //6
+    //5 0101
+    //3 0011
+    //  0110 = 6
+}
+</code></pre>
+                    </div>          
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                6
                             </div>
                         </details>
                     </div>

@@ -231,15 +231,15 @@ document.write(sum);
                     <h3>07. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</h3>
                     <p>for문을 이용해서 100칸 테이블을 만들 수 있습니다.</p>
 <pre class="line-numbers"><code class="language-js">let table = "&lt;table border='1'&gt;";
-    for(let i=1; i&lt;=10; i++){
-        table += "&lt;tr&gt;";
-        for(let j=1; j&lt;=10; j++){
-            table += "&lt;td&gt;"+j+"&lt;/td&gt;";
-        }
-        table += "&lt;/tr&gt;";
+for(let i=1; i&lt;=10; i++){
+    table += "&lt;tr&gt;";
+    for(let j=1; j&lt;=10; j++){
+        table += "&lt;td&gt;"+j+"&lt;/td&gt;";
     }
+    table += "&lt;/tr&gt;";
+}
     table += "&lt;/table&gt;";
-document.write(table);
+    document.write(table);
 </code></pre>
                     <div class="result">
                         <details>
@@ -269,7 +269,7 @@ document.write(table);
 
     for(let j=1; j&lt;=9; j++){
         document.write(i + "*" + j + "=" + i*j);
-        document.write("&lt;br&gt;")
+        document.write("&lt;br&gt;");
     }
 
     document.write("&lt;br&gt;&lt;br&gt;");
@@ -284,7 +284,7 @@ document.write(table);
 
                                     for(let j=1; j<=9; j++){
                                         document.write(i + "*" + j + "=" + i*j);
-                                        document.write("<br>")
+                                        document.write("<br>");
                                     }
 
                                     document.write("<br><br>");
@@ -300,21 +300,21 @@ document.write(table);
                     <p>중첩 for문과 if문을 사용해서 테이블 25칸(짝수:빨간색, 홀수:파란색) 만들 수 있습니다.</p>
 <pre class="line-numbers"><code class="language-js">{
     let num = 1;
-    let table = "&lt;table border = '1'&gt;"
-        for(let i=1; i&lt;=5; i++){
-            table += "&lt;tr&gt;"
-                for(let j=1; j&lt;=5; j++){
-                    if(num % 2 === 0){
-                        table += "&lt;td&gt;&lt;span style='color:red'&gt;"+num+"&lt;/span&gt;&lt;/td&gt;"
-                    } else {
-                        table += "&lt;td&gt;&lt;span style='color:blue'&gt;"+num+"&lt;/span&gt;&lt;/td&gt;"
-                        num++;
-                    }
+    let table = "&lt;table border = '1'&gt;";
+    for(let i=1; i&lt;=5; i++){
+        table += "&lt;tr&gt;";
+            for(let j=1; j&lt;=5; j++){
+                if(num % 2 === 0){
+                    table += "&lt;td&gt;&lt;span style='color:red'&gt;"+num+"&lt;/span&gt;&lt;/td&gt;";
+                } else {
+                    table += "&lt;td&gt;&lt;span style='color:blue'&gt;"+num+"&lt;/span&gt;&lt;/td&gt;";
+                    num++;
                 }
-            table += "&lt;/tr&gt;"
-        }
-        table += "&lt;/table&gt;"
-        document.write(table)
+            }
+        table += "&lt;/tr&gt;";
+    }
+    table += "&lt;/table&gt;";
+    document.write(table);
 }
 </code></pre>
                     <div class="result">
@@ -323,21 +323,21 @@ document.write(table);
                             <script>
                                 {
                                     let num = 1;
-                                    let table = "<table border = '1'>"
+                                    let table = "<table border = '1'>";
                                         for(let i=1; i<=5; i++){
-                                            table += "<tr>"
+                                            table += "<tr>";
                                                 for(let j=1; j<=5; j++){
                                                     if(num % 2 === 0){
-                                                        table += "<td><span style='color:red'>"+num+"</span></td>"
+                                                        table += "<td><span style='color:red'>"+num+"</span></td>";
                                                     } else {
-                                                        table += "<td><span style='color:blue'>"+num+"</span></td>"
+                                                        table += "<td><span style='color:blue'>"+num+"</span></td>";
                                                     }
                                                         num++;
                                                 }
-                                            table += "</tr>"
+                                            table += "</tr>";
                                         }
-                                        table += "</table>"
-                                        document.write(table)
+                                        table += "</table>";
+                                        document.write(table);
                                 }
                             </script>
                         </details>
@@ -399,7 +399,7 @@ document.write(table);
                 </div>
                 <!-- //sample10 -->
 
-                <div id="sample11" class="sample"></div>
+                <div id="sample11" class="sample">
                 <h3>11. 배열 데이터에서 10보다 큰 수 찾기</h3>
                     <p>for문과 if문을 사용하여 배열 데이터에서 10보다 큰 수를 찾을 수 있습니다.</p>
 <pre class="line-numbers"><code class="language-js">{
