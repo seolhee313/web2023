@@ -2,9 +2,8 @@
 
 나의 블로그 : https://seolheeone.tistory.com/
 
-# HTML
-블록구조와 인라인구조
-시멘틱 태그
-
 # JAVASCRIPT
-변수, 상수, 배열, 객체
+ 퀴즈 게임01 :
+
+# 사이트
+이미지 우형01 :
