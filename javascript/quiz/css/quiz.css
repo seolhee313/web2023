@@ -141,7 +141,6 @@
     transition: all 0.3s;
     text-shadow: 2px 2px 0px #7d93ad;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 .quiz__answer .confirm:hover {
     background-color: #b1d0f7;
