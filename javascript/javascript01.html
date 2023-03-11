@@ -216,23 +216,17 @@
                     <p>상수는 데이터 저장은 가능하나 변경은 불가능합니다. 상수(const)는 이미 선언한 상수에 대해 중복 선언이 불가능하며 상수의 값을 재지정할 수도 없습니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
-    let x = 100;    //전역 변수
-    let y = 200;    //전역 변수
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
 
-    function func(){
-        x = 300;    //전역 변수 (let 있으면 지역 변수 100에서 300으로 바뀜)
-        let y = 400;    // 지역 변수
-        z = "javascript";   //전역 변수 (let이 생략되었다고 생각함(원래는 틀린 문법))
-        
-        console.log("함수안"+x);
-        console.log("함수안"+y);
-        console.log("함수안"+z);
-    }
-    func();
+    x = 300;        //Assignment to constant variable.
+    y = 400;
+    z = "react";        
 
-    console.log("함수밖"+x);
-    console.log("함수밖"+y);
-    console.log("함수밖"+z);
+    console.log(x);
+    console.log(y);
+    console.log(z);
 }
 </code></pre>
                     </div>
