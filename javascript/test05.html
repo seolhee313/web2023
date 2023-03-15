@@ -20,7 +20,7 @@
 
 
     
-        //01 1부터 100
+        // for문 1-100까지 출력
         {
             for(let i=1; i<=100; i++){
                 document.write(i);
@@ -29,81 +29,9 @@
 
         document.write("<br>")
 
-        //02 0부터 50까지
+        // 2. 100칸 테이블
         {
-            for(let i=0; i<=50; i++){
-                document.write(i);
-            }
-        }
-
-        document.write("<br>")
-
-        //03 1부터 100까지 짝수만
-        {
-            for(let i=2; i<=100; i+=2){
-                document.write(i);
-            }
-        }
-
-        document.write("<br>")
-
-        //if문으로
-        {
-            for(let i=0; i<=100; i++){
-                if(i % 2 == 0){
-                    document.write(i);
-                }
-            }
-        }
-
-        document.write("<br>")
-        
-        //04 1부터 100까지 5의배수
-        {
-            for(let i=0; i<=100; i+=5){
-                document.write(i);
-            }
-        }
-
-        document.write("<br>")
-        
-        //if문으로
-        {
-            for(let i=0; i<=100; i++){
-                if(i % 5 == 0){
-                    document.write(i);
-                }
-            }
-        }
-
-        document.write("<br>")
-
-        //05 1부터 100까지 짝수(파랑) 홀수(빨강)
-        {
-            for(let i=1; i<=100; i++){
-                if(i % 2 == 0){
-                    document.write("<span style = 'color:blue'>"+i+"</span>");
-                } else {
-                    document.write("<span style = 'color:red'>"+i+"</span>");
-                }
-            }
-        }
-
-        document.write("<br>")
-
-        //06 1부터 100까지 합
-        {
-            let sum = 0;
-            
-            for(let i=0; i<=100; i++){
-                sum+= i;
-            }
-            document.write(sum);
-        }
-
-        //07 for문 테이블 10*10
-        {
-            let table = "<table border = '1'>";
+            let table = "<table border = '1'>"
             for(let i=1; i<=10; i++){
                 table += "<tr>";
                     for(let j=1; j<=10; j++){
@@ -114,76 +42,94 @@
             table += "</table>";
             document.write(table);
         }
-        
+
         document.write("<br>")
 
-        //08 구구단
+        // 3. 구구단(20단)
         {
             for(let i=2; i<=9; i++){
                 document.write(i + "단<br>");
                 for(let j=1; j<=9; j++){
-                    document.write(i+"*"+j+"="+i*j+"<br>");
+                    document.write(i+"*"+j+"="+i*j,"<br>");
                 }
-                document.write("<br>");
+                document.write("<br>")
+            }
+        }
+
+        document.write("<br>")
+
+        // 4. 1-100까지 짝수의 합
+        {
+            let sum = 0;
+            
+            for(let i=1; i<=100; i++){
+                if(i % 2 == 0){
+                }
+                sum += i;
+            }
+            document.write(sum);
+        }
+
+        document.write("<br>")
+
+        // 5. 1-100까지 출력(짝수는 파란색 홀수는 빨간색)
+        {
+            for(let i=0; i<=100; i++){
+                if(i % 2 == 0){
+                    document.write("<span style = 'color:blue'>"+i+"</span>");
+                } else {
+                    document.write("<span style = 'color:red'>"+i+"</span>");
+                }
             }
         }
         
         document.write("<br>")
 
-        //09 테이블 25칸 짝수 빨 홀수 파
-        {   
-            let num = 1
-            let table = "<table border = '1'>";
-            for(let i=1; i<=5; i++){
-                table += "<tr>";
-                    for(let j=1; j<=5; j++){
-                        if(j % 2 == 0){
-                        table += "<td style = 'color:red'>"+num+"</td>";
-                        } else{
-                            table += "<td style = 'color:blue'>"+num+"</td>";
-                        }
-                        num++;
-                    }
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.write(table);
-        }
-
-        document.write("<br>")
-
-        //10 테이블 25 3의 배수인데 5의 배수는 빨강
-        {   
-            let num = 3
-            let table = "<table border = '1'>";
-            for(let i=1; i<=5; i++){
-                table += "<tr>";
-                    for(let j=1; j<=5; j++){
-                        if(j % 5 == 0){
-                        table += "<td style = 'color:red'>"+num+"</td>";
-                        } else{
-                            table += "<td style = 'color:black'>"+num+"</td>";
-                        }
-                        num += 3;
-                    }
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.write(table);
-        }
-
-        document.write("<br>")
-
-        //11 배열 데이터에서 10보다 큰 수 찾기
+        // 6. 배열안에 1-10까지 데이터가 있음 (forEach문을 통해 출력하시오)
         {
-            const arr = [1,3,5,7,9,10,11,13,15,17,19];
+            const arr = [1,2,3,4,5,6,7,8,9,10];
 
-            for(let i=1; i<=arr.length; i++){
-                if(arr[i]>10){
-                    document.write(arr[i]);
-                }
-            }
+            arr.forEach(function (el){
+                document.write(el)
+            });
         }
+        document.write("<br>")
+        
+        // 7. 함수의 유형 4가지
+        //선언
+        {
+            function func(){
+                document.write("실행")
+            }
+            func();
+        }
+        document.write("<br>")
+        //익명
+        {
+            const func = function(){
+                document.write("실행");
+            }
+            func();
+        }
+        document.write("<br>")
+        //매개변수
+        {
+            function func(str){
+                document.write(str);
+            }
+            func("실행");
+        }
+        document.write("<br>")
+        //리턴
+        {
+            function func (){
+                const str = "실행";
+                return str;
+            }
+            document.write(func());
+        }
+
+        // 8. 7번을 화살표 함수로
     </script>
 </body>
 </html>
