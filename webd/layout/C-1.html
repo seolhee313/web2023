@@ -1,115 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C-1</title>
+    <title>Document</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            color: #000000;
-            text-align: center;
-        }
-        body {
-            background-color: #fff;
-        }
-        .clearpix::before,
-        .clearpix::after{
-            content: "";
-            display: block;
-            line-height: 0;
-        }
-        .clearpix::after{
-            clear: both;
         }
         #wrap {
             width: 1000px;
+            display: flex; 
         }
         #aside {
-            width: 200px;
-            float: left;
+            width: 20%;
+            background-color: #fff;
         }
-        #aside .logo{
+        #aside .logo {
             width: 100%;
-            height: 650px;
+            height: 200px;
             background-color: #e2eafc;
         }
-        #section {
-            width: 800px;
-            float: left;
-        }
-        #section .slider {
+        #aside .menu {
             width: 100%;
-            height: 350px;
+            height: 450px;
             background-color: #d7e3fc;
         }
-        #section .contents {
-            width: 100%;
-        }
-        #section .contents .con1{
-            width: 33.3333%;
-            height: 200px;
+        #article {
+            width: 80%;
+            height: 650px;
             background-color: #ccdbfd;
-            float: left;
         }
-        #section .contents .con2{
-            width: 33.3333%;
-            height: 200px;
-            background-color: #c1d3fe;
-            float: left;
-        }
-        #section .contents .con3{
-            width: 33.3333%;
-            height: 200px;
-            background-color: #b6ccfe;
-            float: left;
-        }
-        #section .footer {
+        #article .slider {
             width: 100%;
+            height: 350px;
+            background-color: #c1d3fe;
         }
-        #section .footer .foot1{
+        #article .contents {
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+        #article .contents .cont1 {
+            width: 33.3333%;
+            background-color: #b6ccfe;
+        }
+        #article .contents .cont2 {
+            width: 33.3333%;
+            background-color: #abc4ff;
+        }
+        #article .contents .cont3 {
+            width: 33.3333%;
+            background-color: #9dbafd;
+        }
+        #article .footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap; 
+            flex-direction: column;
+        }
+        #article .footer .foot1{
             width: 20%;
             height: 100px;
-            background-color: #abc4ff;
-            float: left;
-        }
-        #section .footer .foot2{
-            width: 80%;
-            height: 50px;
-            background-color: #9dbafd;
-            float: left;
-        }
-        #section .footer .foot3{
-            width: 80%;
-            height: 50px;
             background-color: rgb(127, 150, 202);
-            float: left;
+        }
+        #article .footer .foot2{
+            width: 80%;
+            height: 50px;
+            background-color: rgb(118, 143, 204);
+        }
+        #article .footer .foot3{
+            width: 80%;
+            height: 50px;
+            background-color: rgb(106, 134, 204);
         }
     </style>
-    
 </head>
 <body>
     <div id="wrap">
         <aside id="aside">
             <div class="logo">로고</div>
+            <div class="menu">메뉴</div>
         </aside>
-        <section id="section">
+        <section id="article">
             <div class="slider">이미지 슬라이드</div>
-            <div class="contents clearfix">
-                <div class="con1">공지사항</div>
-                <div class="con2">갤러리</div>
-                <div class="con3">배너</div>
+            <div class="contents">
+                <div class="cont1">공지사항</div>
+                <div class="cont2">배너</div>
+                <div class="cont3">바로가기</div>
             </div>
-            <div class="footer clearfix">
+            <div class="footer">
                 <div class="foot1">로고</div>
-                <div class="foot2">하단메뉴</div>
-                <div class="foot3">카피라이터</div>
+                <div class="foot2">하단 메뉴</div>
+                <div class="foot3">카피라이트</div>
             </div>
         </section>
     </div>
-</script>
 </body>
 </html>
