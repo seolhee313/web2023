@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트(웹디)06</title>
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html">Quiz</a> <em>객관식 확인하기(여러문제) 유형</em></h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li><a href="quizEffect04.html">4</a></li>
+            <li class="active"><a href="quizEffect05.html">5</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <!-- <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main ">
+                    <div class="quiz__question">
+                        <em></em>. <span></span>
+                    </div>
+                    <div class="quiz__view">
+                        <div class="dog__wrap">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="card-container">
+                                <div class="dog">
+                                    <div class="head">
+                                        <div class="ears"></div>
+                                        <div class="face"></div>
+                                        <div class="eyes">
+                                            <div class="teardrop"></div>
+                                        </div>
+                                        <div class="nose"></div>
+                                        <div class="mouth">
+                                            <div class="tongue"></div>
+                                        </div>
+                                        <div class="chin"></div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="tail"></div>
+                                        <div class="legs"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="quiz__answer">
+                        <button class="confirm">정답 확인하기</button>
+                    </div>
+                    <div class="quiz__desc"></div>
+                </div>
+            </div> -->
+        
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:gp2617@naver.com">gp2617@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //문제 정보
+        const quizInfo = [
+            {
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140501",
+                infoQuestion : "빛의 스펙트럼에서 인간의 눈에 색상 기호로 인지되는 파장의 범위는?",
+                infoChoice : {
+                    1: "180nm ~ 780nm",
+                    2: "180nm ~ 1080nm",
+                    3: "380nm ~ 780nm",
+                    4: "380nm ~ 1080nm"
+                },
+                infoAnswer: "3",
+                infoDesc : "<br>가시광선의 파장범위 : 380nm~780nm"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140502",
+                infoQuestion : "기계화와 대량생산에 의한 제품의 품질저하에 반대하며 영국에서 일어난 미술공예운동(Art Crafts Movement)의 창시자는?",
+                infoChoice : {
+                    1: "윌리엄 모리스",
+                    2: "헨리 포드",
+                    3: "반 데 벨데",
+                    4: "무테지우스"
+                },
+                infoAnswer: "1",
+                infoDesc : "<br>미술공예운동의 창시자는 윌리엄 모리스입니다. (미술공예운동이 일어난 배경은 기계화와 대량생산으로 인해 제품의 품질저하에 반대했으므로)"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140503",
+                infoQuestion : "회색 바탕 위의 흰색 보다 검정 바탕 위의 흰색이 더 밝게 보이는 대비효과를 무엇이라고 하는가?",
+                infoChoice : {
+                    1: "색상대비",
+                    2: "명도대비",
+                    3: "보색대비",
+                    4: "한난대비"
+                },
+                infoAnswer: "2",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140504",
+                infoQuestion : "그레이 스케일(Gray Scale)이란?",
+                infoChoice : {
+                    1: "색상환에서 서로 마주보는 색을 혼합하는 것이다.",
+                    2: "흰색, 회색, 검은색을 말한다.",
+                    3: "명도의 기준 척도로 검은색과 흰색 사이의 단계를 나누어 놓은 것이다.",
+                    4: "색의 순환성에 따라 원형으로 배열한 것이다."
+                },
+                infoAnswer: "3",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140505",
+                infoQuestion : "색의 활용 효과에 대한 설명으로 틀린 것은?",
+                infoChoice : {
+                    1: "밝은 바탕에 어두운 색 글자보다 어두운 바탕에 밝은 색 글자가 더 굵고 커 보인다.",
+                    2: "같은 크기의 노란색 공과 파란색 공을 비교하면 노란색 공이 더 가볍게 느껴진다.",
+                    3: "천장을 좀 더 높게 보이게 하려면 벽면과 동일계열의 고명도 색을 천장에 칠한다.",
+                    4: "상의를 하의보다 더 어두운 색상으로 하면 키가 더 커 보인다."
+                },
+                infoAnswer: "4",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140506",
+                infoQuestion : "다음 ( ) 안에 들어갈 알맞은 용어는?<br><br><center><img src='../assets/img/quizwebd_img01_01jpg'></center>",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140507",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140508",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140509",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140510",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140511",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140512",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140513",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140514",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140515",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140516",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140517",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : "<br>"
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140518",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140519",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140520",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140521",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140522",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140523",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140524",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140525",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140526",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140527",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140528",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140529",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140530",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140531",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140532",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140533",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140534",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140535",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140536",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140537",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140538",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140539",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140540",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140541",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140542",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140543",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140544",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140545",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140546",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140547",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140548",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140549",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140550",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140551",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140552",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140553",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140554",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140555",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140556",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140557",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140558",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140559",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            },{
+                infoType : "웹디자인 기능사",
+                infoTime : "2014년 5회",
+                infoNumber : "20140560",
+                infoQuestion : "",
+                infoChoice : {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: " "
+                },
+                infoAnswer: "",
+                infoDesc : ""
+            }
+        ];
+
+
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        let quizScore = 0;
+        
+
+        //문제 출력 
+        //익명 화살표 함수 + forEach + push()
+        const updateQuiz = () => {
+            const exam = [];
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <div class="quiz__header">
+                            <h2 class="quiz__title">${question.infoType} ${question.infoTime}</h2>
+                        </div>
+                        <div class="quiz__main ">
+                            <div class="quiz__question">
+                                <em>${number+1}</em>. ${question.infoQuestion}</div>
+                            <div class="quiz__view">
+                                <div class="dog__wrap">
+                                    <div class="true">정답입니다!</div>
+                                    <div class="false">틀렸습니다!</div>
+                                    <div class="card-container">
+                                        <div class="dog">
+                                            <div class="head">
+                                                <div class="ears"></div>
+                                                <div class="face"></div>
+                                                <div class="eyes">
+                                                    <div class="teardrop"></div>
+                                                </div>
+                                                <div class="nose"></div>
+                                                <div class="mouth">
+                                                    <div class="tongue"></div>
+                                                </div>
+                                                <div class="chin"></div>
+                                            </div>
+                                            <div class="body">
+                                                <div class="tail"></div>
+                                                <div class="legs"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz__choice">
+                                <label for="choice1${number}">
+                                    <input type="radio" id="choice1${number}" name="choice${number}" value="1">
+                                    <span>${question.infoChoice[1]}</span>
+                                </label>
+                                <label for="choice2${number}">
+                                    <input type="radio" id="choice2${number}" name="choice${number}" value="2">
+                                    <span>${question.infoChoice[2]}</span>
+                                </label>
+                                <label for="choice3${number}">
+                                    <input type="radio" id="choice3${number}" name="choice${number}" value="3">
+                                    <span>${question.infoChoice[3]}</span>
+                                </label>
+                                <label for="choice4${number}">
+                                    <input type="radio" id="choice4${number}" name="choice${number}" value="4">
+                                    <span>${question.infoChoice[4]}</span>
+                                </label>
+                            </div>
+                            <div class="quiz__desc"> 정답은 <em>${question.infoAnswer}</em>번 입니다.${question.infoDesc}</div>
+                        </div>
+                    </div>
+                `);
+            });
+
+            exam.push(`
+                <div class="quiz__info"><b>??점</b></div>
+                <div class="quiz__check">💛<b>정답 확인</b>💛</div>
+            `);
+            
+            quizWrap.innerHTML = exam.join(" ");
+
+            //설명 숨기기
+            document.querySelectorAll(".quiz__desc").forEach(el => el.style.display = "none");
+       
+        }
+        
+
+        updateQuiz();
+
+        //정답 확인
+        const answerQuiz = () => {
+            const quizChoices = document.querySelectorAll(".quiz__choice");
+
+            //사용자가 체크한 정답과 == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const userSelector = `input[name=choice${number}]:checked`;
+                const quizSelectorWrap = quizChoices[number];
+                const userAnswer = (quizSelectorWrap.querySelector(userSelector) || {}).value;
+                const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
+                
+                if(userAnswer == question.infoAnswer){
+                    console.log("정답");
+                    dogWrap[number].classList.add("like");
+                    quizScore++;
+                } else {
+                    console.log("오답");
+                    dogWrap[number].classList.add("dislike");
+                    //
+                }
+            });
+
+            //설명 보이기
+            document.querySelectorAll(".quiz__desc").forEach(el => el.style.display = "block");
+            
+            // 점수 보이기
+            document.querySelector(".quiz__info").innerHTML = Math.ceil((quizScore / quizInfo.length) * 100) + "점";
+        }
+
+        // 정답 클릭
+        document.querySelector(".quiz__check").addEventListener("click", answerQuiz);
+
+
+
+    </script>
+</body>
+</html>

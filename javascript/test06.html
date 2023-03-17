@@ -8,104 +8,81 @@
 </head>
 <body>
     <script>
-        // //선언적 함수
-        // //함수가 실행되었습니다.1
-        // {
-        //     function func(){
-        //         document.write("함수가 실행되었습니다.01<br>");
-        //     }
-        //     func();
-        // }
-        // //익명 함수
-        // //함수가 실행되었습니다.2
-        // {
-        //     const func = function(){
-        //         document.write("함수가 실행되었습니다.02<br>");
-        //     }
-        //     func();
-        // }
+        //1부터10까지
+        {
+            for(let i=1; i<=10; i++){
+                document.write(i);
+            }
+        }
 
-        // //매개변수 함수
-        // //함수가 실행되었습니다.3
-        // {
-        //     function func(str){
-        //         document.write(str);
-        //     }
-        //     func("함수가 실행되었습니다.03<br>");
-        // }
-
-        // //리턴 함수
-        // //함수가 실행되었습니다.4
-        // {
-        //     function func(){
-        //         const str = "함수가 실행되었습니다.04<br>";
-        //         return str;
-        //     }
-        //     document.write(func());
-        // }
-
-        // //선언적 함수 (화살표함수)
-        // //함수가 실행되었습니다.5
-        // {
-        //     func = () => {
-        //         document.write("함수가 실행되었습니다.05<br>");
-        //     }
-        //     func();
-        // }
+        document.write("<br>");
     
-        // //익명 함수 (화살표함수)
-        // //함수가 실행되었습니다.6
-        // {
-        //     const func = () => {
-        //         document.write("함수가 실행되었습니다.06<br>");
-        //     }
-        //     func();
-        // }
-        // //매개변수 함수 (화살표함수)
-        // //함수가 실행되었습니다.7
-        // {
-        //     func = (str) => {
-        //         document.write(str);
-        //     }
-        //     func("함수가 실행되었습니다.07<br>");
-        // }
-        // //리턴 함수 (화살표함수)
-        // //함수가 실행되었습니다.8
-        // {
-        //     func = () => {
-        //         const str = "함수가 실행되었습니다.08<br>";
-        //         return str;
-        //     }
-        //     document.write(func());
-        // }
-        // //익명함수 + 매개변수 + 리턴값 (화살표함수)
-        // //함수가 실행되었습니다.9
-        // {
-        //     const func = (str) => {
-        //         return str;
-        //     }
-        //     document.write(func("함수가 실행되었습니다.09<br>"))
-        // }
-        // //익명함수 + 매개변수 + 리턴값 +괄호생략 (화살표함수)
-        // //함수가 실행되었습니다.10
-        // {
-        //     const func = str => {
-        //         return str;
-        //     }
-        //     document.write(func("함수가 실행되었습니다.10<br>"))
-        // }
-        // //익+매+리+중괄+리턴 (화살표함수)
-        // //함수가 실행되었습니다.11
-        // {
-        //     const func = str => str;
-        //     document.write(func("함수가 실행되었습니다.11<br>"))
-        // }
-        // //선+매+리+중괄+리턴 (화살표함수)
-        // //함수가 실행되었습니다.12
-        // {
-        //     func = str => str;
-        //     document.write(func("함수가 실행되었습니다.12<br>"))
-        // }
-</script>
+        //1부터 10 짝수
+        {
+            for(let i=1; i<=10; i++){
+                if(i % 2 == 0){
+                    document.write(i);
+                }
+            }
+        }
+
+        document.write("<br>");
+
+        //1부터 10까지 출력 홀수 빨 짝 파
+        {
+            for(let i=1; i<=10; i++){
+                if(i % 2 == 0){
+                    document.write("<span style = 'color:blue'>"+i+"</span>");
+                } else {
+                    document.write("<span style = 'color:red'>"+i+"</span>");
+                }
+            }
+        }
+    
+        document.write("<br>");
+
+        // num 배열 100 200 300 400 500
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+
+            for(let i=0; i<=8; i++){
+                document.write(arr[i]);
+            }
+
+        }
+
+        document.write("<br>");
+
+        //for문을 forEach로
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+
+            arr.forEach(function(el){
+                document.write(el);
+            });
+        }
+
+        document.write("<br>");
+
+        // for in
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+            
+            for(let el in arr){
+                document.write(arr[el]);
+            }
+        }
+
+        document.write("<br>");
+
+        // for of
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+            
+            for(let el of arr){
+                document.write(el);
+            }
+        }
+    </script>
 </body>
 </html>
