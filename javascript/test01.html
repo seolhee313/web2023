@@ -9,64 +9,302 @@
 <body>
     <script>
         document.write("<br>");
-       //01. (즉시 실행 함수)
-       {
-        (function(){
-            document.write("함수가 실행되었습니다.");
-        })();
-       }
-
-       document.write("<br>");
-
-       //02. (파라미터 함수)
-       {
-        function func(str = "함수가 실행되엇습니다."){
-            document.write(str);
+        //01. (즉시 실행 함수)
+        {
+            (function(){
+                document.write("함수가 실행되었습니다.");
+            })();
         }
-        func();
-       }
 
-       document.write("<br>");
+        document.write("<br>");
 
-       //03. sum
-       // 1부터 10까지 2씩 커지면 1,3,5,7,9 이다.
-       {
-        let sum = 0;
+        //02. (파라미터 함수)
+        {
+            function func(str = "함수가 실행되엇습니다."){
+                document.write(str);
+            }
+            func();
+        }
+
+        document.write("<br>");
+
+        //03. sum
+        // 1부터 10까지 2씩 커지면 1,3,5,7,9 이다.
+        {
+            let sum = 0;
+            
+            for(var i=1; i<=10; i+=2){
+                sum += i;
+            };
+            document.write(sum);
+        }
+
+        document.write("<br>");
+
+        //04. 객체
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            
+            const {a, b, c} = obj;
+
+            document.write(a,"<br>");
+            document.write(b,"<br>");
+            document.write(c);
+        }
+
+        document.write("<br>");
+
+        //05. 객체 펼침 연산자
+        {
+            const objA = {
+                a: 100,
+                b: 200
+            }
+            const objB = {
+                c: "javascript",
+                d: "react"
+            }
+            const spread = {...objA,...objB}
+
+            document.write(spread.a,"<br>");
+            document.write(spread.b,"<br>");
+            document.write(spread.c,"<br>");
+            document.write(spread.d,"<br>");
+        }
+
+        document.write("<br>");
+
+        //06. false가 되는
+        {
+            if(false){
+                document.write("조건문이 실행되었습니다.(true)");
+            } else {
+                document.write("조건문이 실행되었습니다.(false)");
+            }
+
+            // document.write("조건문이 실행되었습니다.(false)");
+            // 보기
+            // true, false, 1, "1", "", 0, nul, undefined, [], {}
+        }
+
+        document.write("<br>");
+
+        //07. if문을 삼항 연산자로 변경
+        {
+            const num = 100;
+
+            // if(num == 100){
+            //     document.write("true");
+            // } else {
+            //     document.write("false");
+            // }
+
+            (num == 100) ? document.write("true") : document.write("false")
+        }
+       
+        document.write("<br>");
+    
+        //08.
+        {
+            for(var i=1; i<=1; i++){
+                document.write(i);
+                for(var j=1; j<=5; j++){
+                    document.write(j);
+                }
+            }
+        }
+
+        document.write("<br>");
+
+        //09. 
+        {
+            const num = [100,200,300,400,500];
+
+            for(let i=0; i<num.length; i++){
+                document.write(num[i]);
+            }
+        }
+
+        document.write("<br>");
         
-        for(var i=1; i<=10; i+=2){
-            sum += i;
-        };
-        document.write(sum);
-       }
+        //10. for.Each문
+        {
+            const num = [100,200,300,400,500];
 
-       document.write("<br>");
-
-       //04. 객체
-       {
-        const obj = {
-            a: 100,
-            b: 200,
-            c: "javascript"
+            num.forEach(function(el){
+                document.write(el);
+            });
         }
+
+        document.write("<br>");
+
+        //11. 익+매+리+괄,리생략
+        {
+            const func = str => str;
+            
+            document.write("실행");
+        }
+       
+        document.write("<br>");
         
-        const {a, b, c} = obj;
+        //12. for of문
+        {
+            const num = [100,200,300,400,500];
 
-        document.write(a,"<br>");
-        document.write(b,"<br>");
-        document.write(c);
-       }
+            for(let index of num){
+                document.write(index);
+            }
+        }
 
-       //05. 객체 펼침 연산자
-       {
-        const obj1 = {
-            a: 100,
-            b: 200
+        document.write("<br>");
+
+        //13.
+        {
+            function func(){
+                let i=5, j=4, k=1, l, m;
+
+                l = i>5 || j != 0;
+                m = j<=4 && k<1;
+
+                document.write(l);
+                document.write(m);
+            }
+            func();
         }
-        const obj2 = {
-            c: "javascript",
-            d: "react"
+
+        document.write("<br>");
+
+        //14
+        //push() : 배열 마지막 요소에 요소를 추가
+        //unshift() : 배열 처음 요소에 요소를 추가
+        {
+            const arr = [100,200,300,400,500];
+            const text = arr.push(600);
+
+            document.write(arr,"<br>");
+
+            const arr2 = [100,200,300,400,500];
+            const text2 = arr2.unshift(600);
+
+            document.write(arr2);
         }
-       }
+
+        document.write("<br>");
+        
+        //15. 데이터 불러오기 for in : 객체 데이터 
+        {
+            const obj = {
+                a: 100,
+                b: 200
+            };
+
+            for(let key in obj){
+                document.write(key);
+            }
+        }
+
+        document.write("<br>");
+
+        //16
+        {
+            let num = 0;
+
+            while(false){
+                num++;
+                if(num == 3){
+                    continue;
+                }
+                if(num > 6){
+                    break;
+                }
+            }
+            document.write(num);
+        }
+
+        document.write("<br>");     // 0    // 만약 true 였다면 답은 7
+
+        // 테스트 3회때 나온 문제 
+        //document.write(num); 위치가 달라서 답이 다름
+        // 실행문이 while문 밖에 있냐 안에 있냐 차이
+        {
+            let num = 0;
+
+            while( true ){
+                num++;
+                if( num == 3 ){
+                    continue;
+                }
+                if( num > 6 ){
+                    break;
+                }
+                document.write(num);    // 12456
+            }
+        }
+
+        document.write("<br>");
+
+        //17. 비트 연산자
+        {
+            let a, b, result;
+            
+            a = 7, b = 4
+            result = a & b;
+
+            document.write(result, a, b);
+        }
+
+        document.write("<br>");
+
+        //18. 전치 후치
+        {
+            let a = 1, b = 2, c = 3, result;
+            result = ++a + b++ + ++c;
+
+            document.write(result);
+            document.write(a);
+            document.write(b+c);
+            document.write(c);
+        }
+
+        document.write("<br>");
+
+        //19. 외우기
+        //이 코드는 주어진 배열(data)에서 80보다 큰 숫자가 몇 개 있는지(best)와 배열에서 가장 큰 숫자(score)를 찾는 JavaScript 코드입니다.
+        //for 루프를 사용하여 배열의 모든 요소를 반복하고, if 문을 사용하여 요소가 80보다 큰 경우 best 변수를 증가시킵니다. 또한, score 변수에 현재 요소가 이전 요소보다 큰 경우 현재 요소의 값으로 갱신합니다.
+        //마지막으로, document.write() 함수를 사용하여 best와 score 변수의 값을 출력합니다. best는 80보다 큰 숫자의 개수이며, score는 배열에서 가장 큰 숫자입니다.
+        {
+            let data = [70, 80, 75, 60, 90];
+            let best = 0;
+            let score = 0;
+
+            for(let i=0; i<data.length; i++){
+                if(data[i]>80) {
+                    best++;
+                }
+                if(score < data[i]) {
+                    score = data[i];
+                }
+            }
+
+            document.write(best,"<br>", score);
+        }
+
+        document.write("<br>");
+
+        // 20. 참 ,거짓
+        //num1이 num2보다 크면 num1을 반환하고, 그렇지 않으면 num2를 반환
+        //둘 다 false이므로 23+50 = 73 이 되는 것.
+        {
+            function func(num1,num2){
+                if(num1>num2) return num1
+                else return num2
+            }
+            document.write(func(10,23)+ func(40,50));
+        }
     </script>
 </body>
 </html>
