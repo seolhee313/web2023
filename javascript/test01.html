@@ -8,59 +8,65 @@
 </head>
 <body>
     <script>
-        let arr = [1,2,3,4,5,6,7,8,9,10]
-        document.write(arr[4], "<br>");
-        document.write(arr[6],arr[7],"<br>");
-        document.write(arr[1]+arr[9],"<br>");
-        document.write(arr[9]*arr[8],"<br>");
-
         document.write("<br>");
+       //01. (즉시 실행 함수)
+       {
+        (function(){
+            document.write("함수가 실행되었습니다.");
+        })();
+       }
+
+       document.write("<br>");
+
+       //02. (파라미터 함수)
+       {
+        function func(str = "함수가 실행되엇습니다."){
+            document.write(str);
+        }
+        func();
+       }
+
+       document.write("<br>");
+
+       //03. sum
+       // 1부터 10까지 2씩 커지면 1,3,5,7,9 이다.
+       {
+        let sum = 0;
         
-        //1부터 8
-        for(let i=1; i<=8; i++){
-            document.write(i);
+        for(var i=1; i<=10; i+=2){
+            sum += i;
+        };
+        document.write(sum);
+       }
+
+       document.write("<br>");
+
+       //04. 객체
+       {
+        const obj = {
+            a: 100,
+            b: 200,
+            c: "javascript"
         }
-        document.write("<br>");
+        
+        const {a, b, c} = obj;
 
-        //짝수
-        for(let i=0; i<=100; i+=2){
-            document.write(i);
+        document.write(a,"<br>");
+        document.write(b,"<br>");
+        document.write(c);
+       }
+
+       //05. 객체 펼침 연산자
+       {
+        const obj1 = {
+            a: 100,
+            b: 200
         }
-        document.write("<br>");
-
-        //4배수
-        for(let i=1; i<=100; i++){
-            if( i % 4 == 0){
-                document.write(i)
-            }
+        const obj2 = {
+            c: "javascript",
+            d: "react"
         }
-        document.write("<br>");
-
-
-        //8단
-        for(let i=8; i<=8; i++){
-            document.write(i + "단","<br>");
-
-            for(let j=1; j<=8; j++){
-                document.write(i+"*"+j+"="+ i*j);
-                document.write("<br>")
-            }
-            document.write("<br>");
-        }
-
-        //테이블
-        {
-            let table = "<table border='1'>";
-            for(let i=1; i<=3; i++){
-                table += "<tr>";
-                for(let j=1; j<=5; j++){
-                    table += "<td>"+j+"</td>";
-                }
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.write(table);
-        }
+       }
     </script>
 </body>
 </html>

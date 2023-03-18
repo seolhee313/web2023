@@ -8,63 +8,81 @@
 </head>
 <body>
     <script>
-        //1~10
-        const arr = [1,2,3,4,5,6,7,8,9,10]
-        document.write(arr[2],"<br>");
-        document.write(arr[4]*arr[2],"<br>");
-        document.write(arr[9]+arr[7]);
-
-        document.write("<br>");
-        document.write("<br>");
-
-        //1부터 8
-        for(let i=1; i<=8; i++){
-            document.write(i)
-        }
-        document.write("<br>");
-        document.write("<br>");
-
-        //짝수
-        for(let i=0; i<=100; i+=2){
-            document.write(i)
-        }
-        document.write("<br>");
-        document.write("<br>");
-
-        //4배수
-        for(let i=1; i<=100; i++){
-            if( i % 4 == 0){
-                document.write(i)
+        //1부터10까지
+        {
+            for(let i=1; i<=10; i++){
+                document.write(i);
             }
         }
-        document.write("<br>");
-        document.write("<br>");
 
-        //8단
-        for(let i=8; i<=8; i++){
-            document.write(i+"단","<br>");
-            
-            for(let j=1; j<=9; j++){
-                document.write(i+"*"+j+"="+i*j);
-                document.write("<br>")
-            }
-        }
         document.write("<br>");
-        document.write("<br>");
-
-        //테이블 15칸
-        let table = "<table border='1'>";
-            for(let i=1; i<=3; i++){
-                table += "<tr>";
-                for(let j=1; j<=5; j++){
-                    table += "<td>"+j+"</td>";
+    
+        //1부터 10 짝수
+        {
+            for(let i=1; i<=10; i++){
+                if(i % 2 == 0){
+                    document.write(i);
                 }
-                table += "</tr>";
+            }
         }
-            table += "</table>";
-            document.write(table)
+
+        document.write("<br>");
+
+        //1부터 10까지 출력 홀수 빨 짝 파
+        {
+            for(let i=1; i<=10; i++){
+                if(i % 2 == 0){
+                    document.write("<span style = 'color:blue'>"+i+"</span>");
+                } else {
+                    document.write("<span style = 'color:red'>"+i+"</span>");
+                }
+            }
+        }
+    
+        document.write("<br>");
+
+        // num 배열 100 200 300 400 500
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+
+            for(let i=0; i<=8; i++){
+                document.write(arr[i]);
+            }
+
+        }
+
+        document.write("<br>");
+
+        //for문을 forEach로
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+
+            arr.forEach(function(el){
+                document.write(el);
+            });
+        }
+
+        document.write("<br>");
+
+        // for in
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
             
-            document.write("<br>")
+            for(let el in arr){
+                document.write(arr[el]);
+            }
+        }
+
+        document.write("<br>");
+
+        // for of
+        {
+            const arr = [100,200,300,400,500,600,700,800,900]
+            
+            for(let el of arr){
+                document.write(el);
+            }
+        }
     </script>
 </body>
 </html>
