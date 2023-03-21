@@ -159,12 +159,13 @@
 
         // 선택자
         const cursor = document.querySelector(".mouse__cursor");
-        const mouseinfo = document.querySelectorAll(".mouse__text ul li span");
 
+        //커서 좌표값 할당
         window.addEventListener("mousemove", function(e){
             cursor.style.left = e.clientX -25 + "px";
             cursor.style.top = e.clientY -25 + "px";
         });
+
 
         // // s1
         // document.querySelector(".s1").addEventListener("mouseover", function(){
