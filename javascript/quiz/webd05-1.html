@@ -33,7 +33,7 @@
                 <div class="quiz__header">
                     <h2 class="quiz__title"></h2>
                 </div>
-                <div class="quiz__main ">
+                <div class="quiz__main">
                     <div class="quiz__question">
                         <em></em>. <span></span>
                     </div>
@@ -900,7 +900,7 @@
                         <div class="quiz__header">
                             <h2 class="quiz__title">${question.infoType} ${question.infoTime}</h2>
                         </div>
-                        <div class="quiz__main ">
+                        <div class="quiz__main">
                             <div class="quiz__question">
                                 <em>${number+1}</em>. ${question.infoQuestion}</div>
                             <div class="quiz__view">
@@ -980,13 +980,12 @@
                 const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
                 
                 if(userAnswer == question.infoAnswer){
-                    console.log("정답");
+                    // console.log("정답");
                     dogWrap[number].classList.add("like");
                     quizScore++;
                 } else {
-                    console.log("오답");
+                    // console.log("오답");
                     dogWrap[number].classList.add("dislike");
-                    //
                 }
             });
 
