@@ -337,14 +337,14 @@
         
         //검색
         searchBox.addEventListener("keyup", () => {
-            const uesrWord = searchBox.value;    //사용자가 입력한 키워드
+            const userWord = searchBox.value;    //사용자가 입력한 키워드
 
             searchList.forEach(el => {
                 // const cssName = el.getAttribute("data-name");    //이용방법1
                 const cssName = el.dataset.name;    //이용방법2
                 
 
-                if(cssName.indexOf(uesrWord)){
+                if(cssName.indexOf(userWord)){
                     //데이터가 있을 때
                     el.classList.add("hide");
                 } else {
