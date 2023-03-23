@@ -235,51 +235,8 @@
     <script>
 
         //시험 문제
-        // "javascript reference".indexOf("javascript");   // 0 
-        // "javascript reference".indexOf("javascripts");  // -1
-        // "javascript reference".indexOf("j");   // 0
-        // "javascript reference".indexOf("J");   // -1
-        // "javascript reference".indexOf("a");   // 1
-        // "javascript reference".indexOf("ja");  // 0
-        // "javascript reference".indexOf("jv");  // -1
-        // "javascript reference".indexOf("reference")   // 11
-        // "javascript reference".indexOf("r");    // 6
-        // "javascript reference".indexOf("re");   // 11
-        // "javascript reference".indexOf("javascript", 0);    // 0
-        // "javascript reference".indexOf("javascript", 1);    // -1
-        // "javascript reference".indexOf("reference", 0);   // 11
-        // "javascript reference".indexOf("reference", 11);  // 11
-        // "javascript reference".indexOf("reference", 12);  // -1
-        // "javascript reference".indexOf("r", 7);    // 11
-        // "javascript reference".indexOf("r", 12);   // 15
-        
-        // console.log("javascript reference".indexOf("r", 12)); 
 
-
-        "javascript reference".lastIndexOf("javascript");       //0
-        "javascript reference".lastIndexOf("javascripts");      //-1
-        "javascript reference".lastIndexOf("j");                //0
-        "javascript reference".lastIndexOf("a");                //3
-        "javascript reference".lastIndexOf("jv");               //-1
-        "javascript reference".lastIndexOf("reference");       //11
-        "javascript reference".lastIndexOf("r");                //15
-
-
-
-        "reference".lastIndexOf("e")    //8
-        "reference".lastIndexOf("e", 0)    //-1
-        "reference".lastIndexOf("e", 1)    //1
-        "reference".lastIndexOf("e", 2)    //1
-        "reference".lastIndexOf("e", 3)    //3
-        "reference".lastIndexOf("e", 4)    //3
-        "reference".lastIndexOf("e", 5)    //5
-        "reference".lastIndexOf("e", 6)    //5
-
-
-        console.log("reference".lastIndexOf("e", -1));
-
-
-
+        //06. includes()
         // "javascript reference".includes("javascript");           //true
         // "javascript reference".includes("j");                    //true
         // "javascript reference".includes("J");                    //false
@@ -287,11 +244,70 @@
         // "javascript reference".includes("reference");            //true
         // "javascript reference".includes("reference", 11);        //true
         // "javascript reference".includes("reference", 12);        //false
+        // "javascript reference".includes("r", 6);    //true
+        // "javascript reference".includes("r", 11);    //true
+        // "javascript reference".includes("r", 15);    //true
 
 
-        // console.log("javascript reference".includes(""));
+        // console.log("javascript reference".includes("e"));
 
 
+        //07. indexOf()
+        // "javascript reference".indexOf("javascript");        // 0 
+        // "javascript reference".indexOf("javascripts");       // -1
+        // "javascript reference".indexOf("j");                 // 0
+        // "javascript reference".indexOf("J");                 // -1
+        // "javascript reference".indexOf("a");                 // 1
+        // "javascript reference".indexOf("ja");                // 0
+        // "javascript reference".indexOf("jv");                // -1
+        // "javascript reference".indexOf("reference")          // 11
+        // "javascript reference".indexOf("r");                 // 6
+        // "javascript reference".indexOf("re");                // 11
+        // "javascript reference".indexOf("javascript", 0);     // 0
+        // "javascript reference".indexOf("javascript", 1);     // -1
+        // "javascript reference".indexOf("reference", 0);      // 11
+        // "javascript reference".indexOf("reference", 11);     // 11
+        // "javascript reference".indexOf("reference", 12);     // -1
+        // "javascript reference".indexOf("r", 7);              // 11
+        // "javascript reference".indexOf("r", 12);             // 15
+        
+        // console.log("javascript reference".indexOf("r", 7)); 
+
+
+        //08. lastIndexOf()
+        // "javascript reference".lastIndexOf("javascript");        //0
+        // "javascript reference".lastIndexOf("javascripts");       //-1
+        // "javascript reference".lastIndexOf("j");                 //0
+        // "javascript reference".lastIndexOf("a");                 //3
+        // "javascript reference".lastIndexOf("jv");                //-1
+        // "javascript reference".lastIndexOf("reference");         //11
+        // "javascript reference".lastIndexOf("r");                 //15
+
+
+        // console.log("javascript reference".lastIndexOf("e"));
+
+
+        //10. match()
+        // "javascript reference".match("javascript");      //"javascript"
+        // "javascript reference".match("reference");       //"reference"
+        // "javascript reference".match("r");               //"r"
+        // "javascript reference".match("R");               //null
+        // "javascript reference".match(/reference/);       //reference
+        // "javascript reference".match(/Reference/);       //null
+        // "javascript reference".match(/Reference/i);      //reference
+        // "javascript reference".match(/Reference/g);      //null
+        // "javascript reference".match(/reference/g);      //reference
+        // "javascript reference".match(/Reference/ig);      //reference
+        // "javascript reference".match(/r/);               //r
+        // "javascript reference".match(/r/g);              //r r r
+        // "javascript reference".match(/w/g);              //null
+        // "javascript reference".match(/R/ig);             //r r r
+
+
+        // console.log("javascript reference".match(""));
+
+
+        //18. search()
         // "javascript reference".search("javascript");     //0
         // "javascript reference".search("reference");      //11
         // "javascript reference".search("r");              //6
@@ -306,28 +322,7 @@
 
 
         // console.log("javascript refercence".search(/[a-z]/g));
-
-
-
-        // "javascript reference".match("javascript");      //"javascript"
-        // "javascript reference".match("reference");       //"reference"
-        // "javascript reference".match("r");               //"r"
-        // "javascript reference".match("R");               //null
-        // "javascript reference".match(/reference/);       //reference
-        // "javascript reference".match(/Reference/);       //null
-        // "javascript reference".match(/Reference/i);      //reference
-        // "javascript reference".match(/Reference/g);      //reference
-        // "javascript reference".match(/r/);               //r
-        // "javascript reference".match(/r/g);              //r r r
-        // "javascript reference".match(/w/g);              //null
-        // "javascript reference".match(/R/ig);             //r R r
-
-
-        // console.log("javascript Reference".match(/R/ig));
-
-
-
-
+        
     </script>
 </body>
 </html>
