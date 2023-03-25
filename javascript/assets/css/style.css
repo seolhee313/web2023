@@ -40,7 +40,7 @@
         #header h1 a {
             font-size: 80px;
             font-weight: 800;
-            color: #0243f1;
+            color: #3f71fa;
         }
         #header nav ul li {
             display: inline;
@@ -54,11 +54,11 @@
             transition: background-color 0.3s, color 0.3s;
         }
         #header nav ul li a:hover {
-            background-color: #0243f1;
+            background-color: #3f71fa;
             color: #fff;
         }
         #header nav ul li.active a {
-            background-color: #0243f1;
+            background-color: #3f71fa;
             color: #fff
         }
 
