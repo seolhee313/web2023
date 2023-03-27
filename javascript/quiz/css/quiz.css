@@ -148,7 +148,7 @@
     background-color: #b1d0f7;
 }
 .quiz__answer .next {
-    background-color: #fffdcd;
+    background-color: #cedef1;
     border: 6px ridge #cacaca;
     width: 100%;
     font-family: 'PyeongChang';
@@ -160,7 +160,7 @@
     font-weight: bold;
 }
 .quiz__answer .next:hover {
-    background-color: #e4e193;
+    background-color: #b1d0f7;
 }
 .quiz__answer .result {
     background-color: #fff;

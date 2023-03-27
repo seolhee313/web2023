@@ -42,6 +42,7 @@
                         <div class="dog__wrap">
                             <div class="true">😇정답입니다!</div>
                             <div class="false">😈틀렸습니다!</div>
+                            <div class="count">총 몇 문제 남았습니다.</div>
                             <div class="card-container">
                                 <div class="dog">
                                     <div class="head">
@@ -106,7 +107,7 @@
                 infoNumber : "20060501",
                 infoQuestion : "아래의 논리 대수식을 갖는 게이트(gate)는?",
                 infoChoice : ["NOR", "AND", "NAND", "XOR"],
-                infoAnswer: "XOR",
+                infoAnswer: "NAND",
                 infoDesc : "<br>AND 전체에 NOT가 되어 있습니다.<br>NOT AND 이므로 NAND가 됩니다."
             },{
                 infoType : "정보처리 기능사",
@@ -122,20 +123,15 @@
                 infoNumber : "20060503",
                 infoQuestion : "이항(binary) 연산에 해당하는 것은?",
                 infoChoice : ["COMPLEMENT", "AND", "ROTATE", "SHIFT"],
-                infoAnswer: "SHIFT",
+                infoAnswer: "AND",
                 infoDesc : "<br>단항연산 : ROTATE, SHIFT, MOVE, NOT(COMPLEMENT) 입니다. "
             },{
                 infoType : "정보처리 기능사",
                 infoTime : "2006년 5회",
                 infoNumber : "20060504",
                 infoQuestion : "다음 그림의 연산결과는?",
-                infoChoice : {
-                    1: "1010",
-                    2: "1110",
-                    3: "1101",
-                    4: "1001"
-                },
-                infoAnswer: "1001",
+                infoChoice : ["1010", "1110", "1101", "1001"],
+                infoAnswer: "1010",
                 infoDesc : "<br>1110 AND 1010의 결과를 묻는 문제 입니다."
             },{
                 infoType : "정보처리 기능사",
@@ -143,7 +139,7 @@
                 infoNumber : "20060505",
                 infoQuestion : "인스트럭션 레지스터(Instruction register), 부호기, 번지해독기, 제어계수기 등과 관계있는 장치는?",
                 infoChoice : ["제어장치", "연산장치", "입력장치", "기억장치"],
-                infoAnswer: "기억장치",
+                infoAnswer: "제어장치",
                 infoDesc : "<br>제어 계수기에서 힌트를 얻을수 있습니다.<br>제어장치의 일종입니다."
             },{
                 infoType : "정보처리 기능사",
@@ -162,7 +158,10 @@
         const quizQuestion = quizWrap.querySelector(".quiz__question");
         const quizChoice = quizWrap.querySelector(".quiz__choice");
         const dogWrap = quizWrap.querySelector(".dog__wrap");
+        const dogWrapCount = quizWrap.querySelector(".dog__wrap");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
         const quizNext = quizWrap.querySelector(".quiz__answer .next");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
 
         let quizCount = 0;
         let quizScore = 0;
@@ -202,10 +201,20 @@
                     <span>${quizInfo[index].infoChoice[3]}</span>
                 </label>
             `;
+            let descTag = `
+                정답은 ${quizInfo[index].infoAnswer}입니다.<br>
+                ${quizInfo[index].infoDesc}
+            `;
+            let countTag = `
+                <div class="quiz__info"><b>??점</b></div>
+                <div class="quiz__check">💛<b>정답 확인</b>💛</div>
+            `;
             
             quizTitle.innerHTML = typeTag;
             quizQuestion.innerHTML = questionTag;
             quizChoice.innerHTML = choiceTag;
+            quizDesc.innerHTML = descTag;
+            // dogWrapCount.innerHTML = "총 5문제 남았습니다.";
             
             //보기 선택자
             const quizChoiceSpan = quizWrap.querySelectorAll(".quiz__choice span");
@@ -221,23 +230,33 @@
                 quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
                 // quizChoiceInput[i].disabled = "true";
             }
-            
+
+            //다음 버튼 숨기기, 해설 숨기기
+            quizAnswer.style.display = "none";
+            quizDesc.style.display = "none";
+
         };
         updateQuiz(quizCount);
 
         
         function choiceSelected(answer){
-            let userAnswer = answer.textContent;                //사용자 정답
-            let currentAnswer = quizInfo[quizCount].infoAnswer; //문제 정답
+            let userAnswer = answer.textContent;                    //사용자 정답
+            let currentAnswer = quizInfo[quizCount].infoAnswer;     //문제 정답
 
             if(userAnswer == currentAnswer){
-                console.log("정답");
+                // console.log("정답");
                 dogWrap.classList.add("like");
+                dogWrap.classList.remove("dislike");
             } else {
-                console.log("오답");
+                // console.log("오답");
+                dogWrap.classList.remove("like");
                 dogWrap.classList.add("dislike");
 
             }
+
+            //다음 버튼, 해설 나타나기
+            quizAnswer.style.display = "block";
+            quizDesc.style.display = "block";
         };
 
 
