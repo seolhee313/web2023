@@ -24,6 +24,8 @@
             <li><a href="quizEffect05.html">5</a></li>
             <li><a href="webd05-1.html">5-1</a></li>
             <li class="active"><a href="quizEffect06.html">6</a></li>
+            <li><a href="quizEffect07.html">7</a></li>
+
         </ul>
     </header>
     <!-- //header -->
@@ -36,11 +38,11 @@
                 </div>
                 <div class="quiz__main ">
                     <div class="quiz__question"></div>
-                    <h4></h4>
                     <div class="quiz__view">
                         <div class="dog__wrap">
                             <div class="true">😇정답입니다!</div>
                             <div class="false">😈틀렸습니다!</div>
+                            <div class="count">총 5문제 중에 3문제 남았습니다.</div>
                             <div class="card-container">
                                 <div class="dog">
                                     <div class="head">
@@ -85,8 +87,8 @@
                         <button class="next">다음 문제</button>
                     </div>
                     <div class="quiz__desc"></div>
-                    <div class="quiz__info"><b>??점</b></div>
-                    <div class="quiz__check">💛 총 <span>❔</span>개 💛</div>
+                    <!-- <div class="quiz__info"><b>??점</b></div>
+                    <div class="quiz__check">💛 총 <span>❔</span>개 💛</div> -->
                 </div>
             </div>
         </div>
@@ -159,13 +161,15 @@
         const quizQuestion = quizWrap.querySelector(".quiz__question");
         const quizChoice = quizWrap.querySelector(".quiz__choice");
         const dogWrap = quizWrap.querySelector(".dog__wrap");
+        const dogWrapCount = quizWrap.querySelector(".dog__wrap .count");
         const quizAnswer = quizWrap.querySelector(".quiz__answer");
         const quizNext = quizWrap.querySelector(".quiz__answer .next");
         const quizDesc = quizWrap.querySelector(".quiz__desc");
         const quizCheck = quizWrap.querySelector(".quiz__check span");
 
-        let quizCount = 0;
-        let quizScore = 0;
+        let quizCount = 0;  //퀴즈 번호
+        let quizScore = 0;  // 현재 점수
+        let quizLength = quizInfo.length;
 
 
         const updateQuiz = (index) => {
@@ -201,16 +205,16 @@
                 정답은 ${quizInfo[index].infoAnswer}입니다.<br>
                 ${quizInfo[index].infoDesc}
             `;
-            let h4Tag = `
-                총 ${quizInfo.length - (index+1)}문제 남았습니다.
-            `;
             
             quizTitle.innerHTML = typeTag;
             quizQuestion.innerHTML = questionTag;
             quizChoice.innerHTML = choiceTag;
             quizDesc.innerHTML = descTag;
-            quizMainH4.innerHTML = h4Tag;
+
+            let quizLength = quizInfo.length - quizCount;
+            dogWrapCount.innerHTML = "총 "+quizLength+ "문제 중에 "+(quizLength-1)+"문제 남았습니다."
             
+
             //보기 선택자
             const quizChoiceSpan = quizWrap.querySelectorAll(".quiz__choice span");
             const quizChoiceInput = quizWrap.querySelectorAll(".quiz__choice input");
@@ -242,22 +246,32 @@
                 // console.log("정답");
                 dogWrap.classList.add("like");
                 dogWrap.classList.remove("dislike");
+                quizAnswer.style.display = "block";     //다음 버튼, 해설 나타나기
+                quizDesc.style.display = "block";       //다음 버튼, 해설 나타나기
                 quizScore++;
             } else {
                 // console.log("오답");
                 dogWrap.classList.remove("like");
                 dogWrap.classList.add("dislike");
+                quizAnswer.style.display = "block";
+                quizDesc.style.display = "block";   
 
             }
 
-            //다음 버튼, 해설 나타나기
-            quizAnswer.style.display = "block";
-            quizDesc.style.display = "block";
+            let countLast = Math.ceil((quizScore/quizInfo.length)*100);
 
-            if(quizInfo.length - quizCount == 1){
-                // alert(quizScore + "개 맞았습니다. 점수는" + Math.ceil((quizScore / quizInfo.length) * 100) + "점 입니다.");
-                document.querySelector(".quiz__info").innerHTML = Math.ceil((quizScore / quizInfo.length) * 100) + "점";
-                quizCheck.innerHTML = quizScore;
+            if(countLast > 60){
+                console.log("합격입니다.")
+            } else {
+                console.log("불합격입니다.")
+            }
+            let countResult = (countLast > 60) ? "합격." : "불합격"
+
+            //마지막 문제일 때
+            if(quizCount == quizInfo.length - 1){
+                quizAnswer.style.display = "none";
+                dogWrapCount.innerHTML = "총 "+quizScore+"문제를 맞추었습니다.<br>점수는 "+countLast+"점입니다. "+countResult+"입니다.";
+                
             }
         };
 

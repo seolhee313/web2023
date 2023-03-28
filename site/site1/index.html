@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기1</title>
+
+    <!-- SEO -->
+    <meta name="author" content="천설희">
+    <meta name="description" content="천설희와 함께 만드는 사이트 튜토리얼입니다.">
+    <meta name="keyword" content="천설희, 사이트, 사이트 만들기, 튜토리얼">
+    <meta name="robots" content="all">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/ico/favicon.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/favicon.png"/>
+    <link rel="apple-touch-icon" href="assets/ico/favicon.png"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css"/>
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/common.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+</head>
+<body>
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가기</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배너 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType">
+        <h1>사이트 로고</h1>
+    </header>
+    <!-- //headerType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="nexon">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <div class="slider">
+                    <div class="slider__info container">
+                        <span class="small">event</span>
+                        <h3 class="title">커피 이야기</h3>
+                        <p class="desc">한 잔의 완벽한 커피를 위한 서리커피의 여정. 커피 농장에서부터 당신의 취향에 꼭 맞춘 한 잔의 커피가 되기까지. 서리커피만의 커피 이야기를 지금 바로 만나보세요. </p>
+                        <div class="btn">
+                            <a href="#">자세히 보기</a>
+                            <a href="#">상담 신청</a>
+                        </div>
+                    </div>
+                <div class="slider__arrow">
+                    <a href="#"><span class="blind">이전 이미지</span></a>
+                    <a href="#"><span class="blind">다음 이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="#" class="dot active"><span class="blind">첫번째 이미지</span></a>
+                    <a href="#" class="dot"><span class="blind">두번째 이미지</span></a>
+                    <a href="#" class="dot"><span class="blind">세번째 이미지</span></a>
+                    <a href="#" class="dot"><span class="blind">네번째 이미지</span></a>
+                    <a href="#" class="dot"><span class="blind">다섯번째 이미지</span></a>
+                    <a href="#" class="play"><span class="blind">플레이</span></a>
+                    <a href="#" class="stop"><span class="blind">정지</span></a>
+                </div>
+            </div>
+                <!-- <div class="slider"></div>
+                <div class="slider"></div> -->
+            </div>
+        </section>
+        <!-- //sliderType -->
+
+        <section id="imageType" class="nexon section center">
+            <h2 class="blind">이미지 영역</h2>
+            <h2 class="section__h2">서리커피</h2>
+            <p class="section__desc">훔치지 않았습니다. 직접 만들었습니다. </p>
+            <div class="image__inner container">
+                <article class="image">
+                    <figure class="image__header">
+                        <img src="assets/img/imagetype01_01.jpg" alt="맛있는 커피">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">맛있는 커피</h3>
+                        <p class="desc">커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께비쥬얼, 맛, 건강함, 그리고 마시는 재미까지 함께 선사합니다</p>
+                        <a href="#" class="btn">자세히보기</a>
+                    </div>
+                </article>
+                <article class="image">
+                    <figure class="image__header">
+                        <img src="assets/img/imagetype01_02.jpg" alt="서리 커피">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">서리커피</h3>
+                        <p class="desc">최첨 시설에서 탄생하는 고품질의 원두로 최고의 커피맛을 고객들에게 제공합니다.</p>
+                        <a href="#" class="btn">자세히보기</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //imageType -->
+
+        <section id="imgTextType" class="nexon section gray">
+            <h2 class="blind">이미지텍스트 영역</h2>
+            <div class="imgText__inner container">
+                <article class="text">
+                    <span>NOTICE</span>
+                    <h3>다양한 커피 종류 무엇이 있을까</h3>
+                    <p>여러 종류의 커피가 있지만, 일부 일반적인 커피 종류는 다음과 같습니다.</p>
+                    <ul>
+                        <li><a href="#">에스프레소 (Espresso)</a></li>
+                        <li><a href="#">아메리카노 (Americano)</a></li>
+                        <li><a href="#">라떼 (Latte)</a></li>
+                        <li><a href="#">카푸치노 (Cappuccino)</a></li>
+                        <li><a href="#">모카 (Mocha)</a></li>
+                        <li><a href="#">프렌치 프레스 (French Press)</a></li>
+                        <li><a href="#">콜드 브루 (Cold Brew)</a></li>
+                        <li><a href="#">드립 커피 (Drip Coffee)</a></li>
+                        <li><a href="#">터키쉬 커피 (Turkish Coffee)</a></li>
+                        <li><a href="#">아이스 커피 (Iced Coffee)</a></li>
+                    </ul>
+                </article>
+                <article class="img i1">
+                    <a href="#">원두의 종류</a>
+                </article>
+                <article class="img i2">
+                    <a href="#">커피의 종류</a>
+                </article>
+            </div>
+        </section>
+        <!-- //imgTextType -->
+
+        <section id="cardType" class="nexon section">
+            <h2 class="blind">카드 영역</h2>
+            <div class="container">
+                <h2 class="section__h2">전국 어디에서나 서리커피와 함께!</h2>
+                <p class="section__desc">나의 취향이 머무는 곳, 서리커피 리저브 매장. 더욱 편리하게 서리커피를 만나보는 드라이브 스루 매장. 함께해서 더 따뜻한 지역사회 소통 공간, 커뮤니티 스토어까지. 다양한 서리커피 매장이 여러분을 기다립니다.</p>
+                <div class="card__inner">
+                    <article class="card">
+                        <figure class="card__header">
+                            <img src="../asset/img/cardType01_01.jpg" alt="에스프레소 즐기기">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="title">에스프레소 즐기기</h3>
+                            <p class="desc">에스프레소는 이탈리아 국민 커피이다. 이탈리아의 북부 지방 사람들은 아라비카 위주의 우아한 에스프레소를 좋아하고, 나폴리와 같은 남부 사람들은 로부스타가 포함되어 크레마가 풍부한...</p>
+                            <a href="#" class="btn">자세히 보기</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <figure class="card__header">
+                            <img src="../asset/img/cardType01_02.jpg" alt="원두 취향 설명서">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="title">원두 취향 설명서</h3>
+                            <p class="desc">커피를 고르라고 하면 무의식적으로 아메리카노와 라떼 중에서 고른다. 하지만 이제 그것도 라떼는 말이야 시절의 이야기다. 스페셜티 커피라는 이름조차 생소하던 초창기를 지나 이제 누구나...</p>
+                            <a href="#"  class="btn">자세히 보기</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <figure class="card__header">
+                            <img src="../asset/img/cardType01_03.jpg" alt="다양한 추출 방법">
+                        </figure>
+                        <div class="card__body">
+                            <h3 class="title">다양한 추출 방법</h3>
+                            <p class="desc">사람들은 커피를 ‘현대인의 필수품’이라 말한다. 커피 없이는 하루도 시작할 수도, 일과 공부에 집중할 수도, 졸음을 물리칠 수도 없다고. 하지만 그게 전부일까? 원두, 추출 방식, 만드는 사람...</p>
+                            <a href="#"  class="btn">자세히 보기</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- //cardType -->
+
+        <section id="bannerType" class="nexon center section banner__wrap">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner container">
+                <h3>서리커피 유튜브</h3>
+                <p>서리커피만의 다양한 커피가 궁금하다면<br>
+                    유튜브를 통해 더욱 자세히 확인할 수 있습니다.</p>
+                <a href="#">youtube.com/seoricoffee</a>
+            </div>
+        </section>
+        <!-- //bannerType -->
+
+        <section id="textType" class="nexon center section">
+            <h2 class="blind">텍스트 영역</h2>
+            <div class="container">
+                <span class="section__small ">NOTICE</span>
+                <h2 class="section__h2 mb70 ">리저브에서 취향을 더해보세요.</h2>
+                <div class="text__inner">
+                    <div class="text t1">
+                        <h3 class="text__title">브루드 커피 + 콜드 밀크</h3>
+                        <p class="text__desc">혀끝에 감기는 브루드 커피의 투명함이 더할 나위 없이 편안하다. 여기에 변주를 주기 알맞은 것은 소량의 콜드 밀크. 조금씩 더 넣을수록, 고소한 맛과 견과류 풍미가 살아나고 질감이 부드러워...</p>
+                        <a class="text__btn" href="#">더보기</a>
+                    </div>
+                    <div class="text t2">
+                        <h3 class="text__title">카푸치노 + 카라멜 드리즐</h3>
+                        <p class="text__desc">코 끝에 맴도는 카라멜의 둥글고 달달한 향. 입술에는 폭신한 거품이 닿지만, 입안으로 흘러 들어오는 커피는 짙고 부드럽다. 한 모금 마시고 난 후 입술에 묻은 거품과 시럽을 살짝 핥으면, 커피의...</p>
+                        <a class="text__btn" href="#">더보기</a>
+                    </div>
+                    <div class="text t3">
+                        <h3 class="text__title">코르타도 + 황설탕</h3>
+                        <p class="text__desc">우유가 적절히 섞여 살짝 부드러워진 코르타도는 평소에도 최애 메뉴. 거기에 활설탕을 넣으니 달콤함 더해지면서, 묘하게 투명해지는 느낌이 신기하다. 균일한 맛을 원한다면 황설탕을 넣자마자...</p>
+                        <a class="text__btn" href="#">더보기</a>
+                    </div>
+                    <div class="text t4">
+                        <h3 class="text__title">바크 초콜릿 활용법</h3>
+                        <p class="text__desc">톡톡한 질감의 초콜릿이 혀끝에 먼저 닿고 그 뒤를 고소한 커피가 감싼다. 거친 듯 부드럽고, 달지만 달지 않다. 기분 좋은 이 모순! 서리커피 리저브에서 제공하는 바크 초콜릿은 두 가지. 헤이즐...</p>
+                        <a class="text__btn" href="#">더보기</a>
+                    </div>
+                    <div class="text t5">
+                        <h3 class="text__title">리저브 나이트로</h3>
+                        <p class="text__desc">차가운 물로 서서히 완성된 콜드 브루가 질소와 만나 나이트로 커피 정통의 캐스케이딩과 부드러운 크레마를 탄생시켰습니다. 부드러운 목넘김과 완벽한 밸런스에 커피 본연의 단맛을 경험할...</p>
+                        <a class="text__btn" href="#">더보기</a>
+                    </div>
+                    <div class="text t6">
+                        <h3 class="text__title">비엔나커피(Vienna coffee)</h3>
+                        <p class="text__desc">비엔나커피는 에스프레소 2샷 위에 풍부한 휘핑크림을 얹고 코코아 가루를 뿌린 에스프레소 커피입니다. 그리고 손잡이가 있는 긴 유리잔을 사용해서 마십니다. 비엔나에서 우리가 비엔나커...</p>
+                        <a class="text__btn" href="#">더보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //textType -->
+
+    </main>
+    <!-- //mainType -->
+
+    <footer id="footerType" class="section gray">
+            <h2 class="blind">푸터</h2>
+            <div class="footer__inner container">
+                <div class="footer__menu">
+                    <div>
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">한눈에 보기</a></li>
+                            <li><a href="#">서리커피 사명</a></li>
+                            <li><a href="#">서리커피 소개</a></li>
+                            <li><a href="#">국내뉴스룸</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>구매 안내</h3>
+                        <ul>
+                            <li><a href="#">단체 구매 안내</a></li>
+                            <li><a href="#">기업 구매 안내</a></li>
+                            <li><a href="#">단체 주문 배달 안내</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>PARTNERSHIP</h3>
+                        <ul>
+                            <li><a href="#">신규 입점 제의</a></li>
+                            <li><a href="#">협력 고객사 등록신청</a></li>
+                            <li><a href="#">중개 업체 확인</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>COMMUNITY</h3>
+                        <ul>
+                            <li><a href="#">페이스북</a></li>
+                            <li><a href="#">트위터</a></li>
+                            <li><a href="#">유튜브</a></li>
+                            <li><a href="#">인스타그램</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>RECRUIT</h3>
+                        <ul>
+                            <li><a href="#">채용 소개</a></li>
+                            <li><a href="#">채용 지원하기</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>가맹 안내</h3>
+                        <ul>
+                            <li><a href="#">가맹점 개설 안내</a></li>
+                            <li><a href="#">인테리어</a></li>
+                            <li><a href="#">가맹 비용</a></li>
+                            <li><a href="#">가맹 문의 FAQ</a></li>
+                            <li><a href="#">가맹 상담 신청</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <address class="footer__right">
+                    2023 서리커피 사이트 Portfolio is Power<br>All Right Reserved 
+                </address>
+            </div>
+    </footer>
+    <!-- //footerType -->
+
+
+</body>
+</html>
