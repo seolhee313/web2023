@@ -13,7 +13,7 @@
 }
 #header::before {
     content: '';
-    border: 4px ridge #a3a3a3;
+    border: 4px ridge #c0d6df;
     position: absolute;
     left: 5px;
     top: 5px;
@@ -76,7 +76,7 @@
 }
 #footer::before {
     content: '';
-    border: 4px ridge #a3a3a3;
+    border: 4px ridge #c0d6df;
     position: absolute;
     left: 5px;
     top: 5px;
@@ -100,12 +100,12 @@
 .quiz__wrap .quiz {
     width: 500px;
     background-color: #fff;
-    border: 8px ridge #cacaca;
+    border: 8px ridge #c0d6df;
     margin: 10px;
 }
 .quiz__title {
-    background-color: #f3e0f8;
-    border: 3px ridge #cacaca;
+    background-color: #c0d6df;
+    border: 3px ridge #c0d6df;
     border-bottom-width: 6px;
     padding: 5px;
     font-family: 'NeoDunggeunmo';
@@ -119,7 +119,7 @@
     font-family: 'PyeongChang';
     font-weight: 300;
     line-height: 1.4;
-    border-bottom: 6px ridge #cacaca;
+    border-bottom: 6px ridge #c0d6df;
 }
 .quiz__question em {
     color: #2432f1;
@@ -133,23 +133,23 @@
 
 }
 .quiz__answer .confirm {
-    background-color: #cedef1;
-    border: 6px ridge #cacaca;
+    background-color: #d6e4e9;
+    border: 6px ridge #c0d6df;
     width: 100%;
     font-family: 'PyeongChang';
     padding: 10px 20px;
     font-size: 22px;
     cursor: pointer;
     transition: all 0.3s;
-    text-shadow: 2px 2px 0px #7d93ad;
+    text-shadow: 2px 2px 0px #c0d6df;
     font-weight: bold;
 }
 .quiz__answer .confirm:hover {
-    background-color: #b1d0f7;
+    background-color: #b6d3de;
 }
 .quiz__answer .next {
     background-color: #cedef1;
-    border: 6px ridge #cacaca;
+    border: 6px ridge #c0d6df;
     width: 100%;
     font-family: 'PyeongChang';
     padding: 10px 20px;
@@ -164,7 +164,7 @@
 }
 .quiz__answer .result {
     background-color: #fff;
-    border: 6px ridge #cacaca;
+    border: 6px ridge #c0d6df;
     width: 100%;
     font-family: 'PyeongChang';
     padding: 10px 20px;
@@ -172,7 +172,7 @@
 }
 .quiz__answer .input {
     background-color: #fff;
-    border: 6px groove #cacaca;
+    border: 6px groove #c0d6df;
     width: 100%;
     font-family: 'PyeongChang';
     padding: 10px 20px;
@@ -180,11 +180,11 @@
     margin-bottom: 10px;
 }
 .quiz__view {
-    border-bottom: 6px ridge #cacaca;
+    border-bottom: 6px ridge #c0d6df;
     overflow: hidden;
 }
 .quiz__desc {
-    border-top: 6px solid #cacaca;
+    border-top: 6px solid #f5f5f5;
     padding: 20px;
     font-family: 'PyeongChang';
     background-color: #f5f5f5;
@@ -226,7 +226,7 @@
     border-radius: 50%;
     margin-right: 15px;
     background-color: #fff;
-    box-shadow: inset 0 0 0 4px #7ba4fc;
+    box-shadow: inset 0 0 0 4px #4a6068;
     transition: all 0.2s;
     flex-shrink: 0;
 }
@@ -234,7 +234,7 @@
     background-color: #e8f3f8;
 }
 .quiz__choice label input:checked + span::before {
-    box-shadow: inset 0 0 0 8px #7ba4fc;
+    box-shadow: inset 0 0 0 8px #4a6068;
 }
 .quiz__check {
     position: fixed;
@@ -447,7 +447,7 @@
     width: 120px;
     height: 120px;
     line-height: 120px;
-    background-color: #6695dd;
+    background-color: #94bbf7;
     border-radius: 50%;
     text-align: center;
     color: #fff;
@@ -461,7 +461,7 @@
     width: 120px;
     height: 120px;
     line-height: 120px;
-    background-color: #f87979;
+    background-color: #ffa2a2;
     border-radius: 50%;
     text-align: center;
     color: #fff;
@@ -536,10 +536,10 @@
     top: 0;
     width: 35px;
     height: 70px;
-    background: #CB7A1D;
-    border-top: 11px solid #F7AA2B;
-    border-left: 7px solid #F7AA2B;
-    border-right: 7px solid #F7AA2B;
+    background: #979797;
+    border-top: 11px solid #C4C4C4;
+    border-left: 7px solid #C4C4C4;
+    border-right: 7px solid #C4C4C4;
 }
 .dog .ears::before {
     left: 0;
@@ -551,7 +551,7 @@
 }
 .dog .face {
     position: absolute;
-    background: #F7AA2B;
+    background: #cfcfcf;
     width: 100%;
     height: 100%;
     border-radius: 50% 50% 0 0;
@@ -588,7 +588,7 @@
     width: 12px;
     height: 12px;
     border-radius: 100%;
-    background: #451d1c;
+    background: #282828;
     margin: 0 14.5%;
 }
 .dog .teardrop {
@@ -599,7 +599,7 @@
     height: 6px;
     border-radius: 0 50% 50% 50%;
     transform: rotate(45deg);
-    background: #FEFEFE;
+    background: #afdfff;
     visibility: hidden;
 }
 .dog .nose {
@@ -608,7 +608,7 @@
     width: 16px;
     height: 8px;
     border-radius: 35px 35px 65px 65px;
-    background: #451d1c;
+    background: #282828;
     margin: auto;
 }
 .dog .mouth {
@@ -618,7 +618,7 @@
     height: 6px;
     margin: 0 auto;
     text-align: center;
-    background: #451d1c;
+    background: #282828;
 }
 .dog .mouth::before, .dog .mouth::after {
     content: "";
@@ -627,7 +627,7 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 4px solid #451d1c;
+    border: 4px solid #282828;
     border-left-color: transparent;
     border-top-color: transparent;
     z-index: 2;
@@ -652,7 +652,7 @@
     width: 18px;
     height: 0;
     border-radius: 50%;
-    background: #451d1c;
+    background: #282828;
     z-index: -1;
 }
 .dog .tongue::after {
@@ -661,7 +661,7 @@
     width: 12px;
     height: 0;
     border-radius: 20px;
-    background: #F5534F;
+    background: #ff9492;
     z-index: 5;
 }
 .dog .chin {
@@ -692,7 +692,7 @@
     display: block;
     width: 100%;
     margin: auto;
-    background: #F7AA2B;
+    background: #cfcfcf;
 }
 .dog .body::after {
     top: -2px;
@@ -704,7 +704,7 @@
     position: absolute;
     left: -60%;
     bottom: 1px;
-    background: #F7AA2B;
+    background: #cfcfcf;
     width: 93px;
     height: 15px;
     transform: rotate(45deg);
@@ -718,14 +718,14 @@
     left: -10%;
     width: 120%;
     height: 15%;
-    background: #F7AA2B;
+    background: #cfcfcf;
     border-radius: 10px 10px 0 0;
 }
 .dog .legs::before, .dog .legs::after {
     content: "";
     position: absolute;
     bottom: 1px;
-    background: #CB7A1D;
+    background: #979797;
     z-index: -1;
 }
 .dog .legs::before {
@@ -762,7 +762,7 @@
 
 /* like */
 .like {
-    background: #f3d3d3;
+    background: #fddadaeb;
 }
 .like .face::before {
     margin-top: 10px;
@@ -806,7 +806,7 @@
 
 /* dislike */
 .dislike {
-    background: #cdcddd;
+    background: #ebebf5;
 }
 .dislike .ears::before {
     transform: rotate(-50deg) translate(-7px, 2px);
