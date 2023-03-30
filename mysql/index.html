@@ -245,6 +245,15 @@ mysql> show databases;
     PRIMARY KEY(memberID)
 ) charset=utf8;
 </code></pre>
+
+<pre><code class="language-js">create table reviews(
+    reviewID int(10) unsigned auto_increment,
+    memberID int(10) unsigned,
+    youText tinytext NOT NULL,
+    regTime int(30) NOT NULL,
+    PRIMARY KEY(reviewID)
+) charset=utf8;
+</code></pre>
                     <h4 id="intro5-2" class="page-header">테이블 전체보기</h4>
                     <div class="bs-callout bs-callout-info">show tables;</div>
 <pre><code class="language-js">mysql> show tables;
@@ -323,6 +332,19 @@ INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUE
 INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dripidea77@gmail.com","김시연","1234","19930313","31","03140316");
 INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("itshena01@gmail.com","조한미","1234","19930211","31","03140316");
 INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("aimee00418@gmail.com","권현정","1234","19830211","39","03140316");
+</code></pre>
+
+<pre><code class="language-js">
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("4", "정말 감사합니다. 잘 봤어요!", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("14", "항상 감사합니다~", "7675");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("2", "진짜 감사합니다. 또 올게요!", "2676");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("5", "완전 감사합니다~ 잘 봤어요~", "87574");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "굿. 잘 봤어요", "2456");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("1", "완벽합니당. 잘 봤어요", "86745");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("9", "내용이 깔끔합니다. 잘 봤어요", "87967954");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("8", "좋은 정보 감사합니다. 잘 봤어요", "234256");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("2", "정리 깔끔하게 잘하셨네요. 잘 봤어요", "869696");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "웩.", "36356547");
 </code></pre>
                     <h4 id="intro6-2" class="page-header">✍테이블 불러오기</h4>
                     <div class="bs-callout bs-callout-info"><code>SELECT</code> 필드명 <code>FROM</code> 테이블명 <code>WHERE</code> 조건</div>
@@ -502,3 +524,33 @@ SELECT count(*) FROM member;
     <script src="../assets/js/prism.js"></script>
 </body>
 </html>
+
+// 01. 회원 테이블에서 memberID가 6, 10 멤버 데이터를 출력하기
+// SELECT * FROM members WHERE memberID IN(6,10);
+
+// 02. 회원 테이블에서 memberID가 6, 10 멤버 이름만 출력하기
+// SELECT youName FROM members WHERE memberID IN(6,10);
+
+// 03. 
+// 
+
+// 04. 
+// 
+
+// 05. 
+// 
+
+// 06. 
+// 
+
+// 07. 
+// 
+
+// 08. 
+// 
+
+// 09. 
+// 
+
+// 10. 
+// 

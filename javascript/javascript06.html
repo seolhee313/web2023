@@ -78,11 +78,11 @@
                     <li><a href="#sample27">27. <strong>array.prototype.shift()</strong>             메서드는 배열 처음 요소를 제거하고, 제거한 요소를 반환합니다.</a></li>
                     <li><a href="#sample28">28. <strong>array.prototype.unshift()</strong>           메서드는 배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</a></li>
                     <li><a href="#sample29">29. <strong>array.prototype.slice()</strong>💛             메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다.</a></li>
-                    <li><a href="#sample29">30. <strong>array.prototype.splice()</strong>💛             메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</a></li>
-                    <li><a href="#sample30">31. <strong>array.prototype.sort()</strong>💛              메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다    </a></li>
-                    <li><a href="#sample31">32. <strong>array.prototype.toLocaleString()</strong>    메서드는 배열의 요소를 문자열로 반환합니다.</a></li>
-                    <li><a href="#sample32">33. <strong>array.prototype.toString()</strong>          메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.</a></li>
-                    <li><a href="#sample33">34. <strong>array.prototype.values()</strong>            메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.</a></li>
+                    <li><a href="#sample30">30. <strong>array.prototype.splice()</strong>💛             메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</a></li>
+                    <li><a href="#sample31">31. <strong>array.prototype.sort()</strong>💛              메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다    </a></li>
+                    <li><a href="#sample32">32. <strong>array.prototype.toLocaleString()</strong>    메서드는 배열의 요소를 문자열로 반환합니다.</a></li>
+                    <li><a href="#sample33">33. <strong>array.prototype.toString()</strong>          메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.</a></li>
+                    <li><a href="#sample34">34. <strong>array.prototype.values()</strong>            메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.</a></li>
                 </ul>
             </div>
             <div class="main__sample">
@@ -94,12 +94,44 @@
                     </ul>
                     <div class="script">
 <pre><code class="language-js">{
-    
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0);         //['j','a','v','a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(1);         //['a','v','a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(2);         //['v','a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(3);         //['a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 1);      //['j']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(1, 2);      //['a']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 2);      //['j', 'a']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 3);      //['j', 'a', 'v']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, 3);      //[]
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, 10);     //['c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, -1);     //['c','r','i','p']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, -2);     //['c','r','i']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-1);        //['t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-2);        //['p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3);        //['i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -1);    //['i','p']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -2);    //['i']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -4);    //[]
 }
 </code></pre>
                     </div>
                 </div>
                 <!-- sample 29 -->
+
+                <div id="sample30" class="sample">
+                    <h3>30. splice()</h3>
+                    <div class="notice">"배열".splice(시작위치, [삭제 갯수], [요소])<br></div>
+                    <ul>
+                        <li>메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="language-js">{
+    
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample 30 -->
 
 
             </div>
@@ -149,7 +181,88 @@
 
         // console.log(text5)
     
+
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(0);         //['j','a','v','a','s','c','r','i','p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(1);         //['a','v','a','s','c','r','i','p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(2);         //['v','a','s','c','r','i','p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(3);         //['a','s','c','r','i','p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(0, 1);      //['j']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(1, 2);      //['a']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(0, 2);      //['j', 'a']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(0, 3);      //['j', 'a', 'v']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(5, 3);      //[]
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(5, 10);     //['c','r','i','p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(5, -1);     //['c','r','i','p']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(5, -2);     //['c','r','i']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(-1);        //['t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(-2);        //['p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(-3);        //['i','p','t']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -1);    //['i','p']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -2);    //['i']
+        // ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -4);    //[]
+
+
+        // console.log("javascript".slice(0, 1))
         
+
+
+        // splice()
+        //01.
+        // const arrNum1 = [100, 200, 300, 400, 500];
+        // const result1 = arrNum1.splice(1);
+
+        // console.log(arrNum1);         //[100]    //나머지 요소 
+        // console.log(result1);         //[200, 300, 400, 500] //삭제된 요소
+
+        //02.
+        // const arrNum2 = [100, 200, 300, 400, 500];
+        // const result2 = arrNum2.splice(1, 2);
+
+        // console.log(arrNum2);   //[100, 400, 500]
+        // console.log(result2);   //[200, 300]
+
+        //03.
+        // const arrNum3 = [100, 200, 300, 400, 500];
+        // const result3 = arrNum3.splice(1, 4);
+
+        // console.log(arrNum3);   //[100]
+        // console.log(result3);   //[200, 300, 400, 500]
+
+        //04.
+        // const arrNum4 = [100, 200, 300, 400, 500];
+        // const result4 = arrNum4.splice(1, 2, "javascript");
+
+        // console.log(arrNum4);   //[100, 'javascript', 400, 500]  //나머지 요소 + 추가된 요소
+        // console.log(result4);   //[200, 300]     //삭제된 요소
+        
+        //05.
+        // const arrNum5 = [100, 200, 300, 400, 500];
+        // const result5 = arrNum5.splice(1, 0, "javascript");
+
+        // console.log(arrNum5);   //[100, 'javascript', 200, 300, 400, 500]
+        // console.log(result5);   //[]
+
+        //06.
+        // const arrNum6 = [100, 200, 300, 400, 500];
+        // const result6 = arrNum6.splice(0, 4, "javascript");
+
+        // console.log(arrNum6);   //['javascript', 500]
+        // console.log(result6);   //[100, 200, 300, 400]
+
+        //07.
+        // const arrNum7 = [100, 200, 300, 400, 500];
+        // const result7 = arrNum7.splice(2, 2, "javascript", "react");
+
+        // console.log(arrNum7);   //[100, 200, 'javascript', 'react', 500]
+        // console.log(result7);   //[300, 400]
+
+        //08.
+        // const arrNum8 = [100, 200, 300, 400, 500];
+        // const result8 = arrNum8.splice(-2, 2, "javascript");
+
+        // console.log(arrNum8);   //[100, 200, 300, 'javascript']
+        // console.log(result8);   //[400, 500]
+
     </script>
 </body>
 </html>
