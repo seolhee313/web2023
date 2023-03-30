@@ -126,7 +126,64 @@
                     </ul>
                     <div class="script">
 <pre><code class="language-js">{
+    //arrNum1은 나머지 요소 + 추가된 요소
+    //result1은 삭제된 요소
+
+    //01.
+    const arrNum1 = [100, 200, 300, 400, 500];
+    const result1 = arrNum1.splice(1);
+
+    console.log(arrNum1);         //[100]    //나머지 요소 
+    console.log(result1);         //[200, 300, 400, 500] //삭제된 요소
     
+    //02.
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const result2 = arrNum2.splice(1, 2);
+
+    console.log(arrNum2);   //[100, 400, 500]
+    console.log(result2);   //[200, 300]
+
+    //03.
+    const arrNum3 = [100, 200, 300, 400, 500];
+    const result3 = arrNum3.splice(1, 4);
+
+    console.log(arrNum3);   //[100]
+    console.log(result3);   //[200, 300, 400, 500]
+
+    //04.
+    const arrNum4 = [100, 200, 300, 400, 500];
+    const result4 = arrNum4.splice(1, 2, "javascript");
+
+    console.log(arrNum4);   //[100, 'javascript', 400, 500]  //나머지 요소 + 추가된 요소
+    console.log(result4);   //[200, 300]     //삭제된 요소
+
+    //05.
+    const arrNum5 = [100, 200, 300, 400, 500];
+    const result5 = arrNum5.splice(1, 0, "javascript");
+
+    console.log(arrNum5);   //[100, 'javascript', 200, 300, 400, 500]
+    console.log(result5);   //[]
+
+    //06.
+    const arrNum6 = [100, 200, 300, 400, 500];
+    const result6 = arrNum6.splice(0, 4, "javascript");
+
+    console.log(arrNum6);   //['javascript', 500]
+    console.log(result6);   //[100, 200, 300, 400]
+
+    //07.
+    const arrNum7 = [100, 200, 300, 400, 500];
+    const result7 = arrNum7.splice(2, 2, "javascript", "react");
+
+    console.log(arrNum7);   //[100, 200, 'javascript', 'react', 500]
+    console.log(result7);   //[300, 400]
+
+    //08.
+    const arrNum8 = [100, 200, 300, 400, 500];
+    const result8 = arrNum8.splice(-2, 2, "javascript");
+
+    console.log(arrNum8);   //[100, 200, 300, 'javascript']
+    console.log(result8);   //[400, 500]
 }
 </code></pre>
                     </div>
@@ -207,62 +264,64 @@
 
 
         // splice()
-        //01.
+        // 01.
         // const arrNum1 = [100, 200, 300, 400, 500];
         // const result1 = arrNum1.splice(1);
 
         // console.log(arrNum1);         //[100]    //나머지 요소 
         // console.log(result1);         //[200, 300, 400, 500] //삭제된 요소
 
-        //02.
+        // 02.
         // const arrNum2 = [100, 200, 300, 400, 500];
         // const result2 = arrNum2.splice(1, 2);
 
         // console.log(arrNum2);   //[100, 400, 500]
         // console.log(result2);   //[200, 300]
 
-        //03.
+        // 03.
         // const arrNum3 = [100, 200, 300, 400, 500];
         // const result3 = arrNum3.splice(1, 4);
 
         // console.log(arrNum3);   //[100]
         // console.log(result3);   //[200, 300, 400, 500]
 
-        //04.
+        // 04.
         // const arrNum4 = [100, 200, 300, 400, 500];
         // const result4 = arrNum4.splice(1, 2, "javascript");
 
         // console.log(arrNum4);   //[100, 'javascript', 400, 500]  //나머지 요소 + 추가된 요소
         // console.log(result4);   //[200, 300]     //삭제된 요소
         
-        //05.
+        // 05.
         // const arrNum5 = [100, 200, 300, 400, 500];
         // const result5 = arrNum5.splice(1, 0, "javascript");
 
         // console.log(arrNum5);   //[100, 'javascript', 200, 300, 400, 500]
         // console.log(result5);   //[]
 
-        //06.
+        // 06.
         // const arrNum6 = [100, 200, 300, 400, 500];
         // const result6 = arrNum6.splice(0, 4, "javascript");
 
         // console.log(arrNum6);   //['javascript', 500]
         // console.log(result6);   //[100, 200, 300, 400]
 
-        //07.
+        // 07.
         // const arrNum7 = [100, 200, 300, 400, 500];
         // const result7 = arrNum7.splice(2, 2, "javascript", "react");
 
         // console.log(arrNum7);   //[100, 200, 'javascript', 'react', 500]
         // console.log(result7);   //[300, 400]
 
-        //08.
+        // 08.
         // const arrNum8 = [100, 200, 300, 400, 500];
         // const result8 = arrNum8.splice(-2, 2, "javascript");
 
         // console.log(arrNum8);   //[100, 200, 300, 'javascript']
         // console.log(result8);   //[400, 500]
 
+
+        
     </script>
 </body>
 </html>
