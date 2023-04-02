@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //기본
+        document.querySelector(".바꿀 위치").innerHTML = "1";    //바꿀 위치를 1로 바꿈
+
+        //클릭 했을 때
+        document.querySelector(".클릭 위치").addEventListener("click", () => {});   //한문장
+
+
+        //01
+        document.querySelector(".클릭 위치").addEventListener("click", () => {
+            document.querySelector(".입력 위치").innerHTML = ""
+        });
+
+
+        //클릭하면 경고창
+        document.querySelector(".sample01_B1").addEventListener("click", () => {
+            alert("경고");
+        });
+
+
+        //아무거나 클릭해도 경고창
+        document.querySelectorAll(".table button").forEach((el) => {
+            el.addEventListener("click", () => {
+                alert("경고");
+            });
+        });
+
+
+        
+    </script>
+</body>
+</html>
