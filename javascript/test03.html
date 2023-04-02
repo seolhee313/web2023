@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1부터10까지
+        {
+            for(let i=0; i<=10; i++){
+                document.write(i);
+            }
+        }
+
+        document.write("<br>");
+
+        //1부터 10 짝수
+        {
+            for(let i=1; i<=10; i++){
+                if(i % 2 == 0){
+                    document.write(i);
+                }
+            }
+        }
+
+        document.write("<br>");
+
+        //1부터 10까지 출력 홀수 빨 짝 파
+        {
+            for(let i=1; i<=10; i++){
+                if(i % 2 == 0){
+                    document.write("<span style = 'color:blue'>"+i+"</span>");
+                } else {
+                    document.write("<span style = 'color:red'>"+i+"</span>");
+                }
+            }
+        }
+
+        document.write("<br>");
+
+        //num 배열 100 200 300 400 500 출력
+        {
+            const num = [100,200,300,400,500];
+
+            for(let i=0; i<=4; i++){
+                document.write(num[i]);
+            }
+        }
+
+        document.write("<br>");
+
+        //위 for문을 forEach로
+        {
+            const num = [100,200,300,400,500];
+
+            num.forEach((el) => {
+                document.write(el);
+            });
+        }
+
+        document.write("<br>");
+
+        // for in
+        {
+            const num = [100,200,300,400,500];
+
+            for(let i in num){
+                document.write(i);
+            }
+        }
+
+        document.write("<br>");
+
+        //for in 배열 다 나오게
+        {
+            const num = [100,200,300,400,500];
+            
+            for(let i in num){
+                document.write(num[i]);
+            }
+        }
+
+        document.write("<br>");
+
+        // for of
+        {
+            const num = [100,200,300,400,500];
+            
+            for(let i of num){
+                document.write(i);
+            }
+        }
+
+        document.write("<br>");
+
+        // 0에서 10까지 더하기 for문
+        {
+            let sum = 0;
+
+            for(let i=0; i<=10; i++){
+                sum += i;
+            }
+            document.write(sum);
+        }
+
+        document.write("<br>");
+
+        //테이블 100칸
+        {
+            let table = "<table border = '1'>";
+            
+            for(let i=1; i<=10; i++){
+                table += "<tr>";
+                for(let j=1; j<=10; j++){
+                    table += "<td>"+j+"</td>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.write(table);
+        }
+
+        document.write("<br>");
+
+        //구구단
+        {
+            for(let i=2; i<=9; i++){
+                document.write(i+"단","<br>");
+                for(let j=1; j<=9; j++){
+                    document.write(i+"*"+j+"="+i*j,"<br>");
+                }
+                document.write("<br>");
+            }
+        }
+
+        document.write("<br>");
+
+        //함수 4개
+        //선언
+        {
+            function func(){
+                document.write("실행<br>");
+            };
+            func();
+        }
+        //익명
+        {
+            const func = function(){
+                document.write("실행<br>");
+            }
+            func();
+        }
+        //매개
+        {
+            function func(str){
+                document.write(str);
+            }
+            func("실행<br>");
+        }
+        //리턴
+        {
+            function func(){
+                const str = "실행<br>";
+                return str;
+            };
+            document.write(func());
+        }
+        //화살표 4개
+        //선언
+        {
+            func = () => {
+                document.write("실행<br>");
+            };
+            func();
+        }
+        //익명
+        {
+            const func = () => {
+                document.write("실행<br>");
+            }
+            func();
+        }
+        //매개
+        {
+            func = (str) => {
+                document.write(str);
+            }
+            func("실행<br>");
+        }
+        //리턴
+        {
+            func = () => {
+                const str = "실행<br>";
+                return str;
+            };
+            document.write(func());
+        }
+        //익매리 짧게
+        //01
+        {
+            const func = (str) => {
+                return str;
+            }
+            document.write(func("1실행<br>"));
+        }
+        //02. 익+괄호생략
+        {
+            const func = str => {
+                return str;
+            }
+            document.write(func("2실행<br>"));
+        }
+        //03. 익+괄호+중괄+리턴 생략
+        {
+            const func = str => str;
+            document.write(func("3실행<br>"));
+        }
+        //04. 선언+괄호+중괄+리턴 생략
+        {
+            func = str => str;
+            document.write(func("4실행<br>"));
+        }
+
+    </script>
+</body>
+</html>
