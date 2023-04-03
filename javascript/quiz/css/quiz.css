@@ -293,36 +293,6 @@
     justify-content: space-between;
     align-items: center;
 }
-.cbt__time {
-    position: relative;
-    padding-left: 40px !important;
-    margin: 3px 0;
-    float: right;
-}
-.cbt__time::before {
-    content: '';
-    position: absolute;
-    left: 12px;
-    top: 3px;
-    width: 22px;
-    height: 22px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' /%3E%3C/svg%3E%0A");
-}
-.cbt__submit {
-    position: relative;
-    margin: 3px 0;
-    padding-left: 40px !important;
-    float: right;
-}
-.cbt__submit::before {
-    content: '';
-    position: absolute;
-    left: 12px;
-    top: 3px;
-    width: 22px;
-    height: 22px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10' /%3E%3C/svg%3E%0A");
-}
 .cbt__header > div > div {
     background-color: #4a6068;
     display: inline-block;
@@ -332,14 +302,20 @@
     border-radius: 20px;
 }
 .cbt__aside {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 100px;
+}
+.cbt__aside .aaa {
+    height: calc(100vh - 140px);
     width: 280px;
-    height: 800px;
     background-color: #e0edf1;
     border: 8px ridge #c0d6df;
-
+    overflow-y: auto;
+}
+.bbb {
+    display: flex;
+    justify-content: space-between;
 }
 .cbt__quiz {
     display: flex;
@@ -386,7 +362,43 @@
     padding: 20px;
     text-align: center;
 }
-.cbt__info .title {
+.cbt__time {
+    position: relative;
+    background-color: #93a3aa;
+    padding: 10px 8px 10px 40px;
+    margin: 5px 0 10px 0;
+    color: #fff;
+    width: 48%;
+    border-radius: 40px;
+}
+.cbt__time::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 3;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' /%3E%3C/svg%3E%0A");
+}
+.cbt__submit {
+    position: relative;
+    background-color: #93a3aa;
+    padding: 10px 8px 10px 40px;
+    margin: 5px 0 10px 0;
+    color: #fff;
+    width: 48%;
+    border-radius: 40px;
+}
+.cbt__submit::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10' /%3E%3C/svg%3E%0A");
+}
+.cbt__title {
     text-decoration: underline;
     text-underline-offset: 4px;
     margin-bottom: 5px;
@@ -457,7 +469,7 @@
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
-.cbt__questio__img img {
+.cbt__question__img img {
     max-width: 400px;
     margin-bottom: 15px;
 }
@@ -519,11 +531,19 @@
     box-shadow: inset 0 0 0 10px #bbd7dd;
     border-color: #000;
 }
+.cbt__selects label.correct span::before {
+    border-color: red;
+    box-shadow: inset 0 0 0 10px red;
+    color: #fff;
+}
 .cbt__desc {
     background-color: #d9eaf0;
     padding: 10px 10px 10px 40px;
     margin-bottom: 5px;
     position: relative;
+}
+.cbt__desc.hide {
+    display: none;
 }
 .cbt__desc::before {
     content: '';
@@ -993,7 +1013,14 @@
 @media (max-width: 800px){
     .cbt__aside {
         position: relative;
+    }
+    .aaa {
         display: none;
+    }
+    .bbb {
+        position: fixed;
+        left: 0;
+        top: 50px;
     }
     .cbt__header {
         width: 100%;
