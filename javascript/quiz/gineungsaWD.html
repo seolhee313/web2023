@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트06</title>
+    <title>웹디자인 기능사</title>
 
 
     <link rel="stylesheet" href="css/reset.css">
@@ -28,8 +28,8 @@
             <li><a href="quizEffect05.html">5</a></li>
             <li><a href="webd05-1.html">5-1</a></li>
             <li><a href="quizEffect06.html">6</a></li>
-            <li class="active"><a href="quizEffect07.html">7</a></li>
-            <li><a href="gineungsaWD.html">WD</a></li>
+            <li><a href="quizEffect07.html">7</a></li>
+            <li class="active"><a href="gineungsaWD.html">WD</a></li>
             <li><a href="gineungsaJC.html">JC</a></li>
 
         </ul>
@@ -134,7 +134,7 @@
         
         //데이터 가져오기
         const dataQuestion = () => {
-            fetch("json/gisa2020_01.json")
+            fetch("json/gineungsaWD2023_01.json")
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
@@ -178,7 +178,7 @@
                 exam.push(`
                     <div class="cbt">
                         <div class="cbt__question"><span>${question.number}</span>. ${question.question}</div>
-                        <div class="cbt__question__img"></div>                   
+                        <div class="cbt__question__img hide"><img src="img/${question.questionImg}.jpg" alt=""></div>                   
                         <div class="cbt__selects">
                             <input type="radio" id="select${number}_1" name="select${number}" value="${number+1}_1" onclick="answerSelect(this)">
                             <label for="select${number}_1"><span>${question.choice1}</span></label>
@@ -242,7 +242,6 @@
                     quizDesc[number].classList.add("hide");
                 } else {
                     quizDesc[number].classList.remove("hide");
-
                 }
             });
         }
