@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인 기능사</title>
+    <title>정보처리기능사</title>
 
 
     <link rel="stylesheet" href="css/reset.css">
@@ -38,7 +38,7 @@
     <main id="main">
         <div class="quiz__wrap__cbt">
             <div class="cbt__header">
-                <h2>2020년 1회 정보처리기능사 기출문제</h2>
+                <h2>2006년 10월 정보처리기능사 기출문제</h2>
             </div>
             <div class="cbt__conts">
                 <div class="cbt__quiz">
@@ -133,7 +133,7 @@
         
         //데이터 가져오기
         const dataQuestion = () => {
-            fetch("json/gineungsaWD2023_01.json")
+            fetch("json/gineungsaJC2023_01.json")
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
