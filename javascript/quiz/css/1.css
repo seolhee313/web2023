@@ -280,7 +280,6 @@
     border: 8px ridge #c0d6df;
     margin-bottom: 20px;
     padding: 10px 20px;
-    background-color: #e3edff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -397,10 +396,11 @@
     background-color: #c0d6df;
 }
 .cbt__info > div {
-    border-bottom: 4px ridge #cacaca;
+    text-align: center;
+    border-bottom: 4px ridge #c0d6df;
 }
 .cbt__info > div:first-child {
-    background-color: #546482;
+    background-color: #97bdcd;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
