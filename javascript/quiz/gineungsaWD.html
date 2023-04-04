@@ -37,7 +37,7 @@
     <main id="main">
         <div class="quiz__wrap__cbt">
             <div class="cbt__header">
-                <h2>2006년 10월 정보처리기능사 기출문제</h2>
+                <h2>2014년 10월 웹디자인기능사 필기 기출문제</h2>
             </div>
             <div class="cbt__conts">
                 <div class="cbt__quiz">
@@ -169,7 +169,7 @@
         const cbtStart = document.querySelector(".cbt__start");
         const cbtMinimal = document.querySelector(".minimal");
 
-
+        //시작 버튼 누르면 모달 창 사라짐
         cbtMinimal.addEventListener("click", () => {
             cbtStart.style.display = "none";
         });
@@ -274,6 +274,7 @@
             cbtQuiz.innerHTML = exam.join('');
             cbtOmr.innerHTML = omr.join('');
 
+            //undefined로 나오는 해설 숨기기
             const quizDesc = document.querySelectorAll(".cbt__question__desc");
             quizDesc.forEach(el => {
                 if(el.innerHTML == "undefined"){
@@ -338,7 +339,32 @@
             const select = document.querySelectorAll(".cbt__quiz .cbt");      //전체 문항 수 100개
             const label = select[answerNum[0]].querySelectorAll("input");    //보기 4개
             label[answerNum[1]-1].checked = true;
+
+            const answerInputs = document.querySelectorAll(".cbt__selects input:checked");
+            cbtRest.innerHTML = questionLength - answerInputs.length;
         }
+
+
+        // 타이머 만들기
+        let minutes = 60;
+        let seconds = 0;
+
+        function countdown() {
+            const timerElement = document.querySelector(".cbt__time");
+            timerElement.innerHTML = `남은 시간<br>${minutes}분 ${seconds.toString().padStart(2, '0')}초`;
+
+            if(seconds === 0){
+                seconds = 59;
+                minutes--;
+            } else {
+                seconds--;
+            }
+            if(minutes < 0){
+                clearInterval(timer);
+                alert("시험시간이 끝났습니다. 답안을 제출해주세요.");
+            }
+        }
+        const timer = setInterval(countdown, 1000);
 
 
         cbtSubmit.addEventListener("click", answerQuiz);

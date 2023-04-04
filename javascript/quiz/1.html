@@ -330,7 +330,31 @@
             const select = document.querySelectorAll(".cbt__quiz .cbt");      //전체 문항 수 100개
             const label = select[answerNum[0]].querySelectorAll("input");    //보기 4개
             label[answerNum[1]-1].checked = true;
+
+            const answerInputs = document.querySelectorAll(".cbt__selects input:checked");
+            cbtRest.innerHTML = questionLength - answerInputs.length;
         }
+
+        // 타이머 만들기
+        let minutes = 60;
+        let seconds = 0;
+
+        function countdown() {
+            const timerElement = document.querySelector(".cbt__time");
+            timerElement.innerHTML = `남은 시간<br>${minutes}분 ${seconds.toString().padStart(2, '0')}초`;
+
+            if(seconds === 0){
+                seconds = 59;
+                minutes--;
+            } else {
+                seconds--;
+            }
+            if(minutes < 0){
+                clearInterval(timer);
+                alert("시험시간이 끝났습니다. 답안을 제출해주세요.");
+            }
+        }
+        const timer = setInterval(countdown, 1000);
 
 
         cbtSubmit.addEventListener("click", answerQuiz);
