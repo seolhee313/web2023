@@ -2,7 +2,7 @@
     {
         "subject" : "정보처리 기능사",
         "question" : "아래의 논리 대수식을 갖는 게이트(gate)는?",
-        "question_img": "gineungsaJC2023_01_01",
+        "question_img": "gineungsaJC2006_05_01",
         "correct_answer" : "NAND",
         "incorrect_answers" : ["NOR","AND","XOR"],
         "desc" : "AND 전체에 NOT가 되어 있습니다. NOT AND 이므로 NAND가 됩니다."
@@ -21,7 +21,7 @@
     },{
         "subject" : "정보처리 기능사",
         "question" : "다음 그림의 연산결과는?",
-        "question_img": "gineungsaJC2023_01_02",
+        "question_img": "gineungsaJC2006_05_02",
         "correct_answer" : "1010",
         "incorrect_answers" : ["1110","1101","1001"],
         "desc" : "1110 AND 1010의 결과를 묻는 문제 입니다."
@@ -40,7 +40,7 @@
     },{
         "subject" : "정보처리 기능사",
         "question" : "다음 논리회로는 무슨 회로인가?",
-        "question_img": "gineungsaJC2023_01_03",
+        "question_img": "gineungsaJC2006_05_03",
         "correct_answer" : "반가산기",
         "incorrect_answers" : ["전가산기","COUNTER","PARITY 발생기"],
         "desc" : "반가산기에 대한 식입니다..S = X XOR Y, C= XY"
@@ -71,7 +71,7 @@
     },{
         "subject" : "정보처리 기능사",
         "question" : "다음 회로에 해당하는 출력 Y의 논리식은?",
-        "question_img": "gineungsaJC2023_01_04",
+        "question_img": "gineungsaJC2006_05_04",
         "correct_answer" : "A' + B",
         "incorrect_answers" : ["A + B'","A' + B'","A + B"],
         "desc" : "A의 입력이 한곳으로 들어가서 한곳으로 나온다는 것에 주목해야 합니다. (AA)'+B입니다..AA=A 이므로 A'+B입니다."
@@ -102,7 +102,7 @@
     },{
         "subject" : "정보처리 기능사",
         "question" : "다음 회로(Circuit)에서 결과가 '1'(불이 켜진 상태)이 되기 위해서는 A와 B는 각각 어떠한 값을 갖는가?",
-        "question_img": "gineungsaJC2023_01_05",
+        "question_img": "gineungsaJC2006_05_05",
         "correct_answer" : "A=1 , B=1",
         "incorrect_answers" : ["A=0 , B=1","A=0 , B=0","A=1 , B=0"],
         "desc" : "A, B 모두 회로가 연결되어야 꼬마전구에 불이 들어오므로 A=1, B=1이 답이 됩니다..AND 게이트를 나타 냅니다."

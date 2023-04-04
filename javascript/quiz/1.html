@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정보처리기능사</title>
-
+    <title>퀴즈 이펙트07</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/1.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>  
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png"/> 
     <link rel="apple-touch-icon" href="img/favicon.png"/>
-    
+
 </head>
 <body>
     <header id="header">
         <h1><a href="../javascript14.html">Quiz</a> <em>객관식 확인 CBT 유형</em></h1>
         <ul>
             <li><a href="quizEffect01.html">1</a></li>
-            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect02.html">2</a></li> 
             <li><a href="quizEffect03.html">3</a></li>
             <li><a href="quizEffect04.html">4</a></li>
             <li><a href="quizEffect05.html">5</a></li>
-            <li><a href="webd05-1.html">5-1</a></li>
             <li><a href="quizEffect06.html">6</a></li>
-            <li><a href="quizEffect07.html">7</a></li>
-            <li><a href="gineungsaWD.html">WD</a></li>
-            <li class="active"><a href="gineungsaJC.html">JC</a></li>
+            <li class="active"><a href="quizEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //header -->
@@ -36,13 +32,13 @@
     <main id="main">
         <div class="quiz__wrap__cbt">
             <div class="cbt__header">
-                <h2>2006년 10월 정보처리기능사 기출문제</h2>
+                <h2>2020년 1회 정보처리기능사 기출문제</h2>
             </div>
             <div class="cbt__conts">
                 <div class="cbt__quiz">
                     <!-- <div class="cbt good">
                         <div class="cbt__question"><span>1</span>. 객체지향 프로그램에서 데이터를 추상화하는 단위는?</div>
-                        <div class="cbt__question__img"><img src="img/gineungsaJC2023_01_01.jpg" alt="기능사"></div>                       
+                        <div class="cbt__question__img"><img src="img/gineungsaWD2023_01_01.jpg" alt="기능사"></div>
                         <div class="cbt__selects">
                             <input type="radio" id="select1">
                             <label for="select1"><span>클래스</span></label>
@@ -53,7 +49,7 @@
                             <input type="radio" id="select4">
                             <label for="select4"><span>메시지</span></label>
                         </div>
-                        <div class="cbt__desc">객체지향언어는 이다.</div>
+                        <div class="cbt__desc">객체지향언어는 이다. 객체지향언어는 이다. 객체지향언어는 이다. 객체지향언어는 이다. 객체지향언어는 이다. 객체지향언어는 이다.</div>
                         <div class="cbt__keyword">객체지향언어</div>
                     </div> -->
                 </div>
@@ -155,10 +151,9 @@
         </div>
     </main>
     <!-- //main -->
-    
+
 
     <script>
-        //선택자
         const cbt = document.querySelectorAll(".cbt");
         const cbtQuiz = document.querySelector(".cbt__quiz");
         const cbtOmr = document.querySelector(".cbt__omr");
@@ -172,16 +167,16 @@
         cbtMinimal.addEventListener("click", () => {
             cbtStart.style.display = "none";
         });
-        
+
 
         let questionAll = [];                   //모든 퀴즈 정보
         let questionLength = 0;                 //전체 문제수
         let questionRest = questionLength;      //남은 문제수
-        
+
 
         //데이터 가져오기
         const dataQuestion = () => {
-            fetch("json/gineungsaJC2023_01.json")
+            fetch("json/gisa2020_01.json")
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
@@ -191,10 +186,10 @@
                     }
                     const answerChoices = [...item.incorrect_answers];  //오답 불러오기
                     formattedQuestion.answer = Math.floor(Math.random() * answerChoices.length) + 1;
-                    answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer);
+                    answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer); 
 
                     //보기를 추가
-                    answerChoices.forEach((choice, index) => {
+                    answerChoices.forEach((choice, index) => {                  
                         formattedQuestion["choice" + (index+1)] = choice;
                     });
 
@@ -206,7 +201,7 @@
                     //문제에 대한 이미지가 있으면 출력
                     if(item.hasOwnProperty("question_img")){
                         formattedQuestion.question_img = item.question_img;
-                    }
+                    } 
 
                     //해설이 있으면 출력
                     if(item.hasOwnProperty("desc")){
@@ -217,7 +212,7 @@
                     return formattedQuestion;
                 });
                 newQuestion();  //문제 만들기
-                
+
 
                 //전체 문제수
                 questionLength = questionAll.length;
@@ -233,13 +228,13 @@
         const newQuestion = () => {
             const exam = [];
             const omr = [];
-            
+
             questionAll.forEach((question, number) => {
                 exam.push(`
                     <div class="cbt">
                         <div class="cbt__question"><span>${question.number}</span>. ${question.question}</div>
                         <div class="cbt__question__img"><img src="img/${question.question_img}.jpg" alt=""></div>
-                        <div class="cbt__question__desc">${question.question_desc}</div>                   
+                        <div class="cbt__question__desc">${question.question_desc}</div>
                         <div class="cbt__selects">
                             <input type="radio" id="select${number}_1" name="select${number}" value="${number}_1" onclick="answerSelect2(this)">
                             <label for="select${number}_1"><span>${question.choice1}</span></label>
@@ -289,14 +284,14 @@
                 const userSelector = `input[name=select${number}]:checked`;
                 const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
                 const numberAnswer = userAnswer ? userAnswer.slice(-1) : undefined;
-            
+
                 if(numberAnswer == question.answer){
                     console.log("정답입니다.");
                     cbtSelects[number].parentElement.classList.add("good");
                 } else {
                     console.log("오답입니다.")
                     cbtSelects[number].parentElement.classList.add("bad");
-
+                    
                     //오답 일 경우 정답 표시
                     const label = cbtSelects[number].querySelectorAll("label");
                     label[question.answer-1].classList.add("correct");
