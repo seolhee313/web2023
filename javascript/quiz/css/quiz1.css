@@ -30,7 +30,10 @@
 #header h1 a {
     color: #fff;
 }
-#header h1 em {
+#header li a {
+    font-size: 0.5em;
+}
+#header li em {
     font-size: 0.5em;
 }
 #header ul {
@@ -80,8 +83,11 @@
     width: calc(100% - 10px);
     height: calc(100% - 10px);
 }
+
+/* main */
 #main {
-    padding: 80px 0;
+    padding: 100px 0;
+
 }
 
 /* quiz__wrap */
@@ -113,10 +119,10 @@
     font-family: 'PyeongChang';
     font-weight: 300;
     line-height: 1.4;
-    border-bottom: 6px ridge #c0d6df; 
+    border-bottom: 6px ridge #c0d6df;
 }
 .quiz__question em {
-    color: #2432f1
+    color: #2432f1;
 }
 .quiz__answer {
     font-family: 'PyeongChang';
@@ -124,6 +130,7 @@
     text-align: center;
     font-size: 24px;
     /* border-bottom: 6px ridge #cacaca; */
+
 }
 .quiz__answer .confirm {
     background-color: #d6e4e9;
@@ -134,6 +141,7 @@
     font-size: 22px;
     cursor: pointer;
     transition: all 0.3s;
+    text-shadow: 2px 2px 0px #c0d6df;
     font-weight: bold;
 }
 .quiz__answer .confirm:hover {
@@ -148,6 +156,7 @@
     font-size: 22px;
     cursor: pointer;
     transition: all 0.3s;
+    text-shadow: 2px 2px 0px #7d93ad;
     font-weight: bold;
 }
 .quiz__answer .next:hover {
@@ -175,13 +184,13 @@
     overflow: hidden;
 }
 .quiz__desc {
-    border-top: 6px ridge #f5f5f5;
+    border-top: 6px solid #f5f5f5;
     padding: 20px;
     font-family: 'PyeongChang';
     background-color: #f5f5f5;
 }
 .quiz__desc::before {
-    content: "🎉 Tip ";
+    content: "😎Tip ";
     color: #ff3c3c;
     font-weight: bold;
 }
@@ -200,6 +209,7 @@
     height: 1px;
     margin: -1px;
     overflow: hidden;
+
 }
 .quiz__choice label span {
     font-size: 20px;
@@ -215,7 +225,7 @@
     height: 26px;
     border-radius: 50%;
     margin-right: 15px;
-    background: #fff;
+    background-color: #fff;
     box-shadow: inset 0 0 0 4px #4a6068;
     transition: all 0.2s;
     flex-shrink: 0;
@@ -264,98 +274,49 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
 }
-
 /* cbt 유형 */
 .quiz__wrap__cbt {
     padding: 0 20px;
     font-family: 'PyeongChang';
 }
 .cbt__conts {
-    width: calc(100% - 280px);
+    width: calc(100% - 300px);
     background-color: #fff;
 }
 .cbt__header {
-    width: calc(100% - 280px);
+    width: calc(100% - 300px);
     background-color: #c0d6df;
     border: 8px ridge #c0d6df;
     margin-bottom: 20px;
-    padding: 10px 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.cbt__header > div > div {
+    background-color: #4a6068;
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    padding: 3px 20px;
+    border-radius: 20px;
+}
 .cbt__aside {
     position: fixed;
     right: 20px;
-    top: 80px;
-    height: calc(100vh - px);
-    width: 250px;
+    top: 100px;
+}
+.cbt__aside .aaa {
+    height: calc(100vh - 140px);
+    width: 280px;
     background-color: #e0edf1;
-}
-.cbt__info {
-    border: 8px ridge #c0d6df;
-    margin-bottom: 10px;
-
-}
-
-
-.cbt__time {
-    border-radius: 40px;
-    color: #fff;
-    padding: 10px 24px 10px 40px;
-    background-color: #82b2b1;
-    font-family: 'PyeongCang';
-    display: block;
-    width: 100%;
-    margin-bottom: 8px;
-    font-size: 16px;
-    position: relative;
-}
-.cbt__time::before {
-    content: '';
-    position: absolute;
-    left: 40px;
-    top: 11px;
-    width: 22px;
-    height: 22px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' /%3E%3C/svg%3E");
-}
-.cbt__submit {
-    border-radius: 40px;
-    color: #fff;
-    cursor: pointer;
-    border: 0;
-    padding: 10px 27px 10px 44px;
-    font-family: 'PyeongCang';
-    background-color: #56a6c8;
-    display: block;
-    width: 100%;
-    margin-bottom: 5px;
-    font-size: 16px;
-    position: relative;
-    transition: all 0.3s;
-}
-.cbt__submit::before {
-    content: '';
-    position: absolute;
-    left: 45px;
-    top: 9px;
-    width: 22px;
-    height: 22px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10' /%3E%3C/svg%3E%0A");
-}
-.cbt__submit:hover {
-    background-color: #2350cc;
-    color: #fff;
-}
-
-.cbt__omr {
     border: 8px ridge #c0d6df;
     overflow-y: auto;
-    height: 400px;
 }
-
-
+.bbb {
+    display: flex;
+    justify-content: space-between;
+}
 .cbt__quiz {
     display: flex;
     flex-wrap: wrap;
@@ -367,12 +328,12 @@
     margin-bottom: 10px;
     padding: 20px;
 }
-.cbt__quiz .cbt {
+.cbt__quiz .cbt.good {
     position: relative;
 }
 .cbt__quiz .cbt.good::after {
     content: '';
-    background-image: url(../img/O.png);
+    background-image: url(../img/O_01.png);
     background-size: contain;
     background-repeat: no-repeat;
     width: 200px;
@@ -381,9 +342,12 @@
     left: 0;
     top: 0;
 }
+.cbt__quiz .cbt.bad {
+    position: relative;
+}
 .cbt__quiz .cbt.bad::after {
     content: '';
-    background-image: url(../img/X.png);
+    background-image: url(../img/X_01.png);
     background-size: contain;
     background-repeat: no-repeat;
     width: 200px;
@@ -394,20 +358,50 @@
 }
 .cbt__info {
     background-color: #c0d6df;
-}
-.cbt__info > div {
-    text-align: center;
-    border-bottom: 4px ridge #c0d6df;
-}
-.cbt__info > div:first-child {
-    background-color: #97bdcd;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-.cbt__info > div:last-child {
+    border-bottom: 8px ridge #c0d6df;
     padding: 20px;
+    text-align: center;
+}
+.cbt__time {
+    position: relative;
+    background-color: #82b2b1;
+    padding: 10px 8px 10px 40px;
+    margin: 5px 0 10px 0;
+    color: #fff;
+    width: 48%;
+    border-radius: 40px;
+}
+.cbt__time::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 3;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' /%3E%3C/svg%3E%0A");
+}
+.cbt__submit {
+    position: relative;
+    background-color: #56a6c8;
+    padding: 10px 8px 10px 40px;
+    margin: 5px 0 10px 0;
+    color: #fff;
+    width: 48%;
+    border-radius: 40px;
+    transition: all 0.3s;
+}
+.cbt__submit::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10' /%3E%3C/svg%3E%0A");
+}
+.cbt__submit:hover {
+    background-color: #2350cc;
+    color: #fff;
 }
 .cbt__title {
     text-decoration: underline;
@@ -423,7 +417,7 @@
 .cbt__omr .omr {
     margin: 5px 0;
     display: grid;
-    grid-template-columns: 50px 38px 38px 38px 38px; 
+    grid-template-columns: 50px 38px 38px 38px 38px;
     grid-template-rows: 20px;
     align-items: center;
 }
@@ -436,7 +430,7 @@
 .cbt__omr .omr strong {
     display: inline-block;
     text-align: center;
-    padding: 2px;
+    margin-bottom: 2px;
     background-color: #b3c8d1;
     color: #000;
     font-family: 'Helvetica Neue';
@@ -450,17 +444,18 @@
     text-align: center;
     width: 28px;
     height: 8px;
+    position: relative; 
     font-family: 'Helvetica Neue';
     position: relative;
 }
 .cbt__omr .omr label::after {
     background-color: #555;
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 0%;
     height: 100%;
     z-index: 1;
     transition: width 0.1s linear;
@@ -494,15 +489,16 @@
 .cbt__selects label {
     display: flex;
 }
-
 .cbt__selects label span {
     font-size: 1rem;
+    line-height: 1.5;
     padding: 10px 10px 10px 30px;
     cursor: pointer;
     color: #444;
     position: relative;
 }
 .cbt__selects label span::before {
+    content: '1';
     position: absolute;
     left: 0;
     top: 50%;
@@ -512,11 +508,11 @@
     border: 1px solid #444;
     border-radius: 50%;
     text-align: center;
-    font-family: 'PyeongChang';
+    font-family: 'Helvetica Neue';
     font-weight: bold;
     line-height: 1.4;
     font-size: 0.83em;
-    transition: all 0.25s;
+    transition: all 0.3s;
 }
 .cbt__selects label:nth-of-type(1) span::before {
     content: '1';
@@ -536,6 +532,7 @@
 }
 .cbt__selects input:checked + label span::before {
     color: #000;
+    /* background-color: #bbd7dd; */
     box-shadow: inset 0 0 0 10px #bbd7dd;
     border-color: #000;
 }
@@ -544,8 +541,6 @@
     box-shadow: inset 0 0 0 10px red;
     color: #fff;
 }
-
-
 .cbt__desc {
     background-color: #d9eaf0;
     padding: 10px 10px 10px 40px;
@@ -558,96 +553,49 @@
 .cbt__desc::before {
     content: '';
     position: absolute;
-    left: 16px; 
+    left: 12px;
     top: 10px;
     width: 20px;
     height: 20px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46' /%3E%3C/svg%3E%0A");
 }
 .cbt__keyword {
     background-color: #ffe1c4;
-    padding: 10px 20px 10px 40px;
-    margin-bottom: 5px;
+    padding: 10px 10px 10px 40px;
     position: relative;
     display: inline-block;
     border-radius: 40px;
+    
 }
 .cbt__keyword::before {
     content: '';
     position: absolute;
-    left: 16px; 
+    left: 12px;
     top: 10px;
     width: 20px;
     height: 20px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z' /%3E%3C/svg%3E%0A");
 }
-.cbt__start {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10000;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'PyeongChang';
 
-}
-.cbt__start > div {
-    width: 50%;
-    height: 35vh;
-    background-color: #fff;
-    border: 8px ridge #cacaca;
-}
-.cbt__modal1 {
-    padding: 20px;
-    text-align: center;
-}
-.cbt__modal1 h2 {
-    font-size: 30px;
-    margin-bottom: 40px;
-}
-.cbt__modal1 select {
-    border: 1px solid #cacaca;
-    padding: 10px 30px;
-    margin-bottom: 40px;
-    font-family: 'PyeongChang';
-}
-.cbt__modal1 button {
-    width: 100px;
-    height: 70px;
-    font-family: 'PyeongChang';
-    border: 0;
-}
 
 /* dog__wrap */
-.dog .tail, 
-.dog .chin, 
-.dog .tongue::before, 
-.dog .tongue::after, 
-.dog .mouth, 
-.dog .nose, 
-.dog .teardrop, 
-.dog .eyes, 
-.dog .face::before, 
-.dog .face::after, 
-.dog .ears::before, 
-.dog .ears::after, 
+.dog .tail,
+.dog .chin,
+.dog .tongue::before,
+.dog .tongue::after,
+.dog .mouth,
+.dog .nose,
+.dog .teardrop,
+.dog .eyes,
+.dog .face::before,
+.dog .face::after,
+.dog .ears::before,
+.dog .ears::after,
 .dog__wrap {
     transition: 0.2s ease-in;
 }
 .dog__wrap {
     position: relative;
-}
-.dog__wrap .count {
-    position: absolute;
-    left: 50%;
-    top: 10px;
-    transform: translateX(-50%);
-    font-family: 'PyeongChang';
 }
 .dog__wrap .true {
     width: 120px;
@@ -658,7 +606,7 @@
     text-align: center;
     color: #fff;
     position: absolute;
-    left: 70%;
+    right: 70%;
     top: 100px;
     font-family: 'PyeongChang';
     opacity: 0;
@@ -672,7 +620,7 @@
     text-align: center;
     color: #fff;
     position: absolute;
-    right: 70%;
+    left: 70%;
     top: 100px;
     font-family: 'PyeongChang';
     opacity: 0;
@@ -693,13 +641,13 @@
     color: #fff;
 }
 @keyframes wobble {
-    0% {transform: translateX(0) rotate(0deg);}
-    15% {transform: translateX(-25%) rotate(-5deg);}
-    30% {transform: translateX(20%) rotate(3deg);}
-    45% {transform: translateX(-15%) rotate(-3deg);}
-    60% {transform: translateX(10%) rotate(2deg);}
-    75% {transform: translateX(-5%) rotate(-1deg);}
-    100% {transform: translateX(0) rotate(0deg);}
+    0% {transform: translateX(0); rotate: (0deg);}
+    15% {transform: translateX(-25%); rotate: (-5deg);}
+    30% {transform: translateX(20%); rotate: (3deg);}
+    45% {transform: translateX(-15%); rotate: (-3deg);}
+    60% {transform: translateX(10%); rotate: (2deg);}
+    75% {transform: translateX(-5%); rotate: (-1deg);}
+    100% {transform: translateX(0); rotate: (0deg);}
 }
 
 .card-container {
@@ -946,25 +894,27 @@
     height: 250%;
     border-radius: 20px 20px 35px 35px;
 }
+
 @keyframes movetongue {
     100% {
-        height: 27px;
+      height: 27px;
     }
 }
 @keyframes movetail {
     0% {
-        transform: rotate(37deg);
+      transform: rotate(37deg);
     }
     100% {
-        transform: rotate(52deg);
+      transform: rotate(52deg);
     }
 }
 @keyframes cry {
     100% {
-        visibility: visible;
+      visibility: visible;
     }
 }
 
+/* like */
 .like {
     background: #fddadaeb;
 }
@@ -1007,49 +957,51 @@
 .tail {
     animation: movetail 0.1s linear infinite alternate forwards;
 }
+
+/* dislike */
 .dislike {
-  background: #ebebf5;
+    background: #ebebf5;
 }
 .dislike .ears::before {
-  transform: rotate(-50deg) translate(-7px, 2px);
+    transform: rotate(-50deg) translate(-7px, 2px);
 }
 .dislike .ears::after {
-  transform: rotate(50deg) translate(7px, 2px);
+    transform: rotate(50deg) translate(7px, 2px);
 }
 .dislike .face::before {
-  margin-top: 28px;
+    margin-top: 28px;
 }
 .dislike .face::after {
-  height: 55px;
+    height: 55px;
 }
 .dislike .eyes {
-  top: 38%;
+    top: 38%;
 }
 .dislike .eyes::before,
 .dislike .eyes::after {
-  width: 18px;
-  height: 5px;
-  margin: 0px 14.5%;
-  transform: rotate(-37.5deg);
-  border-radius: 20px;
+    width: 18px;
+    height: 5px;
+    margin: 0px 14.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
 }
 .dislike .eyes::after {
-  transform: rotate(37.5deg);
+    transform: rotate(37.5deg);
 }
 .dislike .teardrop {
     animation: cry 0.1s ease-in 0.25s forwards;
 }
 .dislike .nose {
-  top: 44%;
+    top: 44%;
 }
 .dislike .mouth {
-  top: 42%;
+    top: 42%;
 }
 .dislike .chin {
-  top: 52%;
+    top: 52%;
 }
 .dislike .tail {
-  transform: rotate(0);
+    animation: movetail 0.7s linear infinite alternate forwards;
 }
 
 /* 미디어 쿼리 */
@@ -1065,7 +1017,15 @@
 }
 @media (max-width: 800px){
     .cbt__aside {
+        position: relative;
+    }
+    .aaa {
         display: none;
+    }
+    .bbb {
+        position: fixed;
+        left: 0;
+        top: 50px;
     }
     .cbt__header {
         width: 100%;
