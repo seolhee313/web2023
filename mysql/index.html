@@ -291,10 +291,6 @@ Query OK, 0 rows affected (0.01 sec)
 Query OK, 0 rows affected (0.01 sec)
 </code></pre>
 
-                    <h4 id="intro5-5" class="page-header">테이블 복사</h4>
-                    <div class="bs-callout bs-callout-info"></div>
-<pre><code class="language-js">
-</code></pre>
                 </div>
                 <!-- //intro5 -->
 
@@ -375,6 +371,12 @@ INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "웩.", "36356547");
 </code></pre>
                     <h4>memberID가 1, 5, 10, 15번만 경우만 불러오기</h4>
 <pre><code class="language-js">SELECT * FROM member WHERE memberID IN(1,5,10,15);
+</code></pre>
+                    <h4>youName 중에 데이터가 없는 것 불러오기</h4>
+<pre><code class="language-js">SELECT * FROM member WHERE youName IS NULL;
+</code></pre>
+                    <h4>youName 중에 데이터가 없는 것 반대 불러오기</h4>
+<pre><code class="language-js">SELECT * FROM member WHERE youName IS NOT NULL;
 </code></pre>
                     <h4>youName 중에 "연" 텍스트가 포함된 이름 불러오기</h4>
 <pre><code class="language-js">SELECT * FROM member WHERE youName LIKE '%연%';
@@ -468,7 +470,118 @@ SELECT count(*) FROM member;
                 </div>
                 <!-- //intro6 -->
 
+                <div class="bs-docs-section">
+                    <h3 id="intro7" class="page-header">❤️‍🔥 테이블 수정</h3>
+
+                    <h4 id="intro7-1" class="page-header">필드 추가하기</h4>
+                    <div class="bs-callout bs-callout-info">ALTER TABLE [테이블명] ADD [추가할 필드명 AFTER [필드 위치]</div>
+
+                    <h4>멤버 테이블에 핸드폰 번호 필드를 추가</h4>
+<pre><code class="language-js">ALTER TABLE members ADD youPhone varchar(20) NOT NULL;</code></pre>
+                    <h4>멤버 테이블에 핸드폰 번호 필드를 youAge 뒤에 추가</h4>
+<pre><code class="language-js">ALTER TABLE members ADD youphone varchar(20) NOT NULL AFTER youAge;</code></pre>
+
+
+                    <h4 id="intro7-2" class="page-header">필드 수정하기</h4>
+                    <div class="bs-callout bs-callout-info">ALTER TABLE [테이블명] MODIFY [수정할 필드명]</div>
+<pre><code class="language-js">ALTER TABLE members MODIFY youPhone int(20) NOT NULL;</code></pre>
+                    <div class="bs-callout bs-callout-info">int(20)를 varchar(20)로 수정</div>
+<pre><code class="language-js">ALTER TABLE members MODIFY youPhone varchar(20);</code></pre>
+
+
+                    <h4 id="intro7-3" class="page-header">필드 삭제하기</h4>
+                    <div class="bs-callout bs-callout-info">ALTER TABLE [테이블명] DROP [삭제할 필드명]</div>
+<pre><code class="language-js">ALTER TABLE members DROP youPhone;</code></pre>
+                </div>
+                <!-- //intro7 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro8" class="page-header">💕 테이블 합치기(JOIN)</h3>
+
+                    <div class="bs-callout bs-callout-info">SELECT [필드명] FROM [테이블명 앨리어스] JOIN [연결할 테이블명 앨리어스] ON [기준이 되는 조건문]</div>
+
+                    <h4>두개의 테이블(members, review) 합치기</h4>
+<pre><code class="language-js">SELECT m.youEmail, m.youName, r.youText, r.regTime FROM members m JOIN reviews r ON (m.memberID = r.memberID);</code></pre>
+                    
+                    <h4>두개의 테이블(members, review) 합치기 : 필드명 변경하기(AS)</h4>
+<pre><code class="language-js">SELECT m.youEmail, m.youName, r.youText, r.regTime AS reviewRegTime FROM members m JOIN reviews r ON (m.memberID = r.memberID);</code></pre>
+                
+                    <h4>두개의 테이블(members, review) 합치기 : 왼쪽 테이블 기준</h4>
+<pre><code class="language-js">SELECT m.youEmail, m.youName, r.youText, r.regTime FROM members m LEFT JOIN reviews r ON (m.memberID = r.memberID);</code></pre>
+                </div>
+                <!-- //intro8 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro9" class="page-header">💘 집계 함수</h3>
+
+<pre><code class="language-js">CREATE TABLE schoolRecode (
+    studentID int(10) unsigned NOT NULL AUTO_INCREMENT comment "학생번호",
+    class tinytext comment "소속클래스(반)",
+    english tinytext NOT NULL comment "영어점수",
+    math tinytext NOT NULL comment "수학점수",
+    science tinytext NOT NULL comment "과학점수",
+    coding tinytext NOT NULL comment "코딩점수",
+    PRIMARY KEY(studentID)
+) charset=utf8;
+
+INSERT INTO schoolRecode(english, math, science, coding) VALUES(50, 10, 20, 100);
+INSERT INTO schoolRecode(class, english, math, science, coding) VALUES(1, 50, 10, 20, 100);
+INSERT INTO schoolRecode(class, english, math, science, coding) VALUES(2, 40, 30, 22, 90);
+INSERT INTO schoolRecode(class, english, math, science, coding) VALUES(2, 50, 40, 23, 80);
+INSERT INTO schoolRecode(class, english, math, science, coding) VALUES(3, 60, 50, 24, 70);
+INSERT INTO schoolRecode(class, english, math, science, coding) VALUES(4, 70, 60, 25, 60);
+INSERT INTO schoolRecode(class, english, math, science, coding) VALUES(5, 80, 70, 26, 50);
+</code></pre>
+
+                    <h4>레코드 갯수 구하기</h4>
+<pre><code class="language-js">SELECT count(class) FROM schoolRecode;</code></pre>
+                    <h4>레코드 갯수(NULL 값 포함) 구하기</h4>
+<pre><code class="language-js">SELECT count(*) FROM schoolRecode;</code></pre>
+
+                    <h4>레코드 합계 구하기</h4>
+<pre><code class="language-js">SELECT sum(coding) FROM schoolRecode;</code></pre>
+
+                    <h4>코딩 합계 구하기 (학생 아이디가 1~4)</h4>
+<pre><code class="language-js">SELECT sum(coding) FROM schoolRecode WHERE studentID >=1 AND studentID <=4;</code></pre>
+
+                    <h4>가장 높은 코딩 점수 구하기</h4>
+<pre><code class="language-js">SELECT max(coding) FROM schoolRecode;</code></pre>
+
+                    <h4>가장 낮은 코딩 점수 구하기</h4>
+<pre><code class="language-js">SELECT min(coding) FROM schoolRecode;</code></pre>
+
+                    <h4>코딩 점수 평균 구하기</h4>
+<pre><code class="language-js">SELECT avg(coding) FROM schoolRecode;</code></pre>
+
+                    <h4>💝그룹별 집계</h4>
+                    <div class="bs-callout bs-callout-info">SELECT [필드명] FROM [테이블명] GROUP BY [필드명]</div>
+
+                    <h4>반별로 학생들의 영어 점수 평균값 구하기</h4>
+<pre><code class="language-js">SELECT class, avg(english) FROM schoolRecode WHERE class IN(1,2,3,4,5) GROUP BY class;</code></pre>
+                
+                    <h4>반별로 학생들의 수학 점수 합계 구하기</h4>
+<pre><code class="language-js">SELECT class, sum(math) FROM schoolRecode WHERE class IN(1,2,3,4,5) GROUP BY class;</code></pre>
+                
+                    <h4>학생들의 수학 점수 합계 점수가 70점 이상인 반</h4>
+<pre><code class="language-js">SELECT class, sum(math) FROM schoolRecode WHERE class IN(1,2,3,4,5) GROUP BY class HAVING sum(math) >= 70;</code></pre>
+
+                    <h4>❣️출력 결과의 정렬</h4>
+                    <div class="bs-callout bs-callout-info">SELECT [필드명] FROM [테이블명] ORDER BY [필드명] DESC 또는 ASC</div>
+                
+                    <h4>영어 점수를 높은 순에서 낮은 순으로 표시</h4>
+                    <pre><code class="language-js">SELECT studentID, english FROM schoolRecode ORDER BY english DESC;</code></pre>
+                
+                    <h4>영어 점수를 낮은 순에서 높은 순으로 표시</h4>
+                    <pre><code class="language-js">SELECT studentID, english FROM schoolRecode ORDER BY english ASC;</code></pre>
+                
+                    <h4>반별로 수학 점수를 높은 순에서 낮은 순으로 표시</h4>
+                    <pre><code class="language-js">SELECT class, sum(math) FROM schoolRecode WHERE class IN(1,2,3,4,5) GROUP BY class ORDER BY sum(math) DESC;</code></pre>
+                </div>
+                <!-- //intro9 -->
+
+
             </div>
+
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print affix-top" role="complementary">
                     <ul class="nav bs-sidenav">
@@ -489,7 +602,6 @@ SELECT count(*) FROM member;
                                 <li><a href="#intro5-2">테이블 전체보기</a></li>
                                 <li><a href="#intro5-3">테이블 보기</a></li>
                                 <li><a href="#intro5-4">테이블 삭제</a></li>
-                                <li><a href="#intro5-5">테이블 복사</a></li>
                             </ul>
                         </li>
                         <li><a href="#intro6">테이블 데이터</a>
@@ -500,6 +612,15 @@ SELECT count(*) FROM member;
                                 <li><a href="#intro6-4">테이블 삭제하기</a></li>
                             </ul>
                         </li>
+                        <li><a href="#intro7">테이블 수정</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro7-1">필드 추가하기</a></li>
+                                <li><a href="#intro7-2">필드 수정하기</a></li>
+                                <li><a href="#intro7-3">필드 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro8">테이블 합치기</a></li>
+                        <li><a href="#intro9">집계 함수</a></li>
                     </ul>
                 </div>
             </div>

@@ -66,10 +66,11 @@
                         <button class="cbt__submit">제출하기</button>
                     </div>
                     <div>
-                        <div class="cbt__title">수험자 : <em class="cbt__name">천설희</em></div>
+                        <div class="cbt__title">수험자 : <em class="cbt__name">___</em></div>
                         <div class="cbt__score">
-                            <span>전체 문제수 : <em class="cbt__length">60</em>문항</span>
-                            <span>남은 문제수 : <em class="cbt__rest">59</em>문항</span>
+                            <span>전체 문제수 : <em class="cbt__length">60</em> 문항</span>
+                            <span>남은 문제수 : <em class="cbt__rest">59</em> 문항</span>
+                            <span>점수 : <em class="cbt__end__score">?</em> 점</span>
                         </div>
                     </div>
                 </div>
@@ -177,13 +178,17 @@
         const cbtStartBtn = document.querySelector(".cbt__start__btn");
         const cbtStart = document.querySelector(".cbt__start");
         const cbtTime = document.querySelector(".cbt__time");
+        const cbtEndScore = document.querySelector(".cbt__end__score")
+        const cbtName = document.querySelector(".cbt__name");
+        const yourName = document.querySelector(".cbt__view .name");
 
 
         let questionAll = [];                   //모든 퀴즈 정보
         let questionLength = 0;                 //전체 문제수
         let questionRest = questionLength;      //남은 문제수
         let questionTime = "";
-        let questionTimeRemain = "1000";
+        let questionTimeRemain = "3600";
+        let quizScore = 0;  // 현재 점수
 
         //시작하기
         const startQuiz = () => {
@@ -191,6 +196,9 @@
 
             //시간 설정
             questionTime = setInterval(reduceTime, 1000);
+
+            //입력 이름 나오게
+            cbtName.innerHTML = `${yourName.value}`
         }
         
 
@@ -227,6 +235,7 @@
                     if(item.hasOwnProperty("desc")){
                         formattedQuestion.desc = item.desc;
                     }
+
 
                     //console.log(formattedQuestion);
                     return formattedQuestion;
@@ -294,8 +303,7 @@
                 }
             });
 
-            //이미지가 없는거 제거
-            
+            //이미지가 없는거 제거-
             document.querySelectorAll(".cbt__question__img").forEach(img => {
                 let src = img.querySelector("img").src;
 
@@ -303,6 +311,12 @@
                     img.classList.add("hide");
                 }
             });
+
+            //점수 표시
+            document.querySelector(".cbt__submit").addEventListener("click", () => {
+            document.querySelector(".cbt__end__score").innerHTML = Math.ceil((quizScore / questionLength) * 100);
+            });
+
         }
 
         //정답 확인
@@ -318,6 +332,8 @@
                 if(numberAnswer == question.answer){
                     console.log("정답입니다.");
                     cbtSelects[number].parentElement.classList.add("good");
+                    quizScore++;
+                    
                 } else {
                     console.log("오답입니다.")
                     cbtSelects[number].parentElement.classList.add("bad");
@@ -404,16 +420,19 @@
         //시간 표시
         const displayTime = () => {
             if(questionTimeRemain <= 0){
-                return "0분 00초";  //종료 의미, 결과 의미
+                return "0분 00초";  //종료 의미, 결과 의미`
             } else {
                 let minutes = Math.floor(questionTimeRemain / 60);
                 let seconds = questionTimeRemain % 60;
 
-                return minutes + "분 " + seconds + "초";
                 //초의 단위가 한자리 수가 되면 앞에 0을 붙여주기
-
+                if(seconds <= 9){
+                    seconds = "0"+seconds
+                }
+                return minutes + "분 " + seconds + "초";
             }
         }
+
 
 
         //시험 끝
