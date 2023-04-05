@@ -604,8 +604,8 @@
     border-radius: 200px;
     padding: 15px;
     border: 0;
-    border: 1px solid #E0E0FF;
-    background-color: #F0F0FF;
+    border: 1px solid #c3d6fd;
+    background-color: #e4edff;
     font-family: 'PyeongChang';
     font-size: 25px;
     cursor: pointer;
@@ -658,7 +658,7 @@
     height: 10px;
     z-index: -1;
     border-radius: 20px;
-    background-color: #e0e0fff0;
+    background-color: #e4edff;
 }
 
 /* dog__wrap */
