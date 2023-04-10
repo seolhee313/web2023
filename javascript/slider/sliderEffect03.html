@@ -36,10 +36,10 @@
         }
     </style>
 </head>
-<body class="img07 bg03 font07">
+<body class="img07 bg08 font10">
     <header id="header">
         <h1>Javascript Slider Effect03</h1>
-        <p>슬라이드 이펙트 : 위아래로 움직이기</p>
+        <p>슬라이드 이펙트 : 위로 움직이기</p>
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
@@ -99,6 +99,7 @@
             currentIndex = (currentIndex + 1) % sliderCount;    //1 2 3 4 0 1 2 3 4 0
 
             sliderInner.style.transform = "translateY("+ -450 * currentIndex + "px)";
+
 
         }, sliderInterval);
 
