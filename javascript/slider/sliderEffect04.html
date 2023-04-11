@@ -111,30 +111,24 @@
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script>
         // 첫번째 이미지를 마지막에 복사하여 붙여넣기
         sliderInner.appendChild(sliderClone);
-
-        function sliderEffect() {
+        function sliderEffect(){
             currentIndex++;
-
-            // GSAP를 사용하여 애니메이션 적용
             gsap.to(sliderInner, {
                 duration: 0.6,
                 x: -sliderWidth * currentIndex,
                 ease: "power2.out",
-                onComplete: function() {
-                    // 마지막 이미지에 위치 했을 때
-                    if (currentIndex === sliderCount) {
-                        gsap.set(sliderInner, {
-                            x: 0
-                        });
-                        currentIndex = 0;
-                    }
-                },
             });
+            if(currentIndex === sliderCount){
+                setTimeout(() =>{
+                    gsap.set(sliderInner, {x: 0});
+                    currentIndex = 0;
+                },700);
+            }
         }
-
         setInterval(sliderEffect, sliderInterval);
     </script>
     
