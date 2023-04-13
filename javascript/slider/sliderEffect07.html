@@ -150,7 +150,7 @@
             let thumnailNodes = slider.thumnails.querySelectorAll("img");
             thumnailNodes[currentIndex].classList.add("active");
 
-            //썸네일 이미지 클릭하기 for
+            //썸네일 이미지 클릭하기 for문
             // for(let i=0; i<thumnailNodes.length; i++){
             //     thumnailNodes[i].addEventListener("click", function(){
             //         slider.thumnails.querySelector("img.active").classList.remove("active");
@@ -162,7 +162,7 @@
             //     });
             // }
 
-            //썸네일 이미지 클릭하기 forEach
+            //썸네일 이미지 클릭하기 forEach 메서드
             thumnailNodes.forEach((e, i) => {
                 e.addEventListener("click", function() {
                     slider.thumnails.querySelector("img.active").classList.remove("active");
@@ -187,7 +187,6 @@
                 //썸네일
                 slider.thumnails.querySelector("img.active").classList.remove("active");
                 thumnailNodes[currentIndex].classList.add("active");
-
             });
 
             //오른쪽 버튼 클릭하기
@@ -202,7 +201,6 @@
                 //썸네일
                 slider.thumnails.querySelector("img.active").classList.remove("active");
                 thumnailNodes[currentIndex].classList.add("active");
-
             });
 
         
