@@ -119,6 +119,24 @@ body.img09 {
 body.img10 {
     background-image: url(../img/sliderEffect10-min.jpg);
 }
+body.img11 {
+    background-image: url(../img/sliderEffect11-min.jpg);
+}
+body.img12 {
+    background-image: url(../img/sliderEffect12-min.jpg);
+}
+body.img13 {
+    background-image: url(../img/sliderEffect19-min.jpg);
+}
+body.img14 {
+    background-image: url(../img/sliderEffect24-min.jpg);
+}
+body.img15 {
+    background-image: url(../img/sliderEffect29-min.jpg);
+}
+body.img16 {
+    background-image: url(../img/sliderEffect33-min.jpg);
+}
 body::after {
     content: '';
     position: absolute;
