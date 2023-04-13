@@ -85,28 +85,28 @@
         let sliderHeight = slider[0].offsetHeight;                            //이미지 세로 값
         let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
 
-        // // 복사한 첫 번째 이미지 마지막에 붙여넣기
-        // sliderInner.appendChild(sliderClone);
+        // 복사한 첫 번째 이미지 마지막에 붙여넣기
+        sliderInner.appendChild(sliderClone);
 
-        // function sliderEffect(){
-        //     currentIndex++;
+        function sliderEffect(){
+            currentIndex++;
         
-        //     sliderInner.style.transition = "all 0.6s";
-        //     sliderInner.style.transform = "translateY(-"+ sliderHeight * currentIndex +"px)";
+            sliderInner.style.transition = "all 0.6s";
+            sliderInner.style.transform = "translateY(-"+ sliderHeight * currentIndex +"px)";
 
-        //     //마지막 이미지에 위치 했을 때
-        //     if(currentIndex == sliderCount){
-        //         setTimeout(() => {
-        //             sliderInner.style.transition = "0s";
-        //             sliderInner.style.transform = "translateY(0px)";
-        //         }, 700);
+            //마지막 이미지에 위치 했을 때
+            if(currentIndex == sliderCount){
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                    sliderInner.style.transform = "translateY(0px)";
+                }, 700);
 
-        //         currentIndex = 0;
-        //     }
+                currentIndex = 0;
+            }
 
-        // }
+        }
 
-        // setInterval(sliderEffect, sliderInterval);
+        setInterval(sliderEffect, sliderInterval);
     </script>
 
     
@@ -134,7 +134,7 @@
     
 
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script>
         // 첫번째 이미지를 마지막에 복사하여 붙여넣기
@@ -157,6 +157,6 @@
             }
         }
         setInterval(sliderEffect, sliderInterval);
-    </script>
+    </script> -->
 </body> 
 </html>
