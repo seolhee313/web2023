@@ -31,14 +31,11 @@
         <div class="quote"></div> 
         <div class="author"></div>
     </div>
-    <script src="json/dummy01.json"></script>
 
     <script>
-        const quotesURL = "http://dummyjson.com/quotes";
-
         //함수 정의
         function updateQuote() {
-            fetch(quotesURL)
+            fetch("json/dummy01.json")
             .then(res => res.json())
             .then(data => {
                 const result = document.querySelector("#result");
