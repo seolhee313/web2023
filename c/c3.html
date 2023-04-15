@@ -21,6 +21,7 @@
             flex-direction: column;
             justify-content: center;
             font-size: 30px;
+            color: black;
         }
     </style>
 </head>
@@ -33,9 +34,11 @@
     <script src="json/dummy01.json"></script>
 
     <script>
+        const quotesURL = "http://dummyjson.com/quotes";
+
         //함수 정의
         function updateQuote() {
-            fetch("http://dummyjson.com/quotes")
+            fetch(quotesURL)
             .then(res => res.json())
             .then(data => {
                 const result = document.querySelector("#result");
