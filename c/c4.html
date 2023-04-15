@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 생성기</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #1565c0;
+        }
+        button {
+            width: 200px;
+            padding: 20px;
+            font-size: 1.2em;
+            border-radius: 40px;
+            background-color: #bbdefb;
+            border-style: none;
+            margin-bottom: 40px;
+        }
+        button:hover {
+            background-color: #90caf9;
+        }
+        #result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lotto-ball {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            margin: 0 10px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .lotto-ball span.number {
+            font-size: 2em;
+        }
+        .lotto-ball.red {
+            background-color: #db3a34;
+            color: white;
+        }
+        .lotto-ball.blue {
+            background-color: #2196f3;
+            color: white;
+        }
+        .lotto-ball.green {
+            background-color: #52b788;
+            color: white;
+        }
+        .lotto-ball.purple {
+            background-color: #9f86c0;
+            color: white;
+        }
+        .lotto-ball.orange {
+            background-color: #ffa62b;
+            color: white;
+        }
+        .lotto-ball.yellow {
+            background-color: #f4e409;
+            color: white;
+        }
+      </style>
+</head>
+<body>
+    <div id="container">
+        <h1>L O T T O 번호 생성기</h1>   
+        <button>클릭</button> 
+        <div id="result">
+            <span class="lotto-ball"><span class="number"></span></span>
+            <span class="lotto-ball"><span class="number"></span></span>
+            <span class="lotto-ball"><span class="number"></span></span>
+            <span class="lotto-ball"><span class="number"></span></span>
+            <span class="lotto-ball"><span class="number"></span></span>
+            <span class="lotto-ball"><span class="number"></span></span>
+        </div>
+    </div>
+    
+    <script>
+        const result = document.querySelector('#result');
+        const button = document.querySelector('button');
+
+        const luckyNumber = {
+            digitCount: 6,
+            maxNumber: 45,
+        };
+
+        button.addEventListener("click", () => {
+            let { digitCount, maxNumber } = luckyNumber;
+            let myNumber = new Set();
+            let colors = [];
+
+            while (myNumber.size < digitCount) {
+                let num = Math.floor(Math.random() * maxNumber) + 1;
+                myNumber.add(num);
+            }
+
+            for (let i = 0; i < digitCount; i++) {
+                let color;
+                switch(i) {
+                    case 0:
+                        color = 'red';
+                        break;
+                    case 1:
+                        color = 'blue';
+                        break;
+                    case 2:
+                        color = 'green';
+                        break;
+                    case 3:
+                        color = 'purple';
+                        break;
+                    case 4:
+                        color = 'orange';
+                        break;
+                    case 5:
+                        color = 'yellow';
+                        break;
+                }
+                colors.push(color);
+            }
+
+            let numbersHTML = '';
+            [...myNumber].forEach((num, i) => {
+                let ball = result.children[i];
+                let ballNumber = ball.querySelector('.number');
+                ballNumber.innerText = num;
+                ball.classList.add(colors[i]);
+            });
+
+        });
+    </script>
+</body>
+</html>
