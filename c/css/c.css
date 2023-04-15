@@ -1,0 +1,104 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+body.img01 {
+    background-image: url(/c/img/3.jpg);
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: rgba(11, 89, 109, 0.87); */
+    z-index: -1;
+}
+body.bg01::after {
+    background: rgba(99, 129, 163, 0.136);
+
+}
+body.bg02::after {
+    background: rgba(170, 100, 54, 0.925);
+
+}
+body.bg03::after {
+    background: rgba(127, 104, 136, 0.603);
+
+}
+body.bg04::after {
+    background: rgba(128, 94, 94, 0.616);
+
+}
+body.bg05::after {
+    background: rgba(82, 112, 85, 0.616);
+
+}
+body.bg06::after {
+    background: rgba(114, 84, 107, 0.568);
+
+}
+body.bg07::after {
+    background: rgba(109, 112, 83, 0.514);
+
+}
+body.bg08::after {
+    background: rgba(86, 108, 114, 0.479);
+}
+body.bg09::after {
+    background: rgba(126, 113, 90, 0.575);
+
+}
+body.bg10::after {
+    background: rgba(103, 120, 138, 0.507);
+
+}
+
+/* header */
+#header {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#header h1 {
+    margin-bottom: 10px;
+}
+#header a {
+    color: #fff;
+}
+#header p {
+    margin-bottom: 10px;
+}
+#header li {
+    display: inline-block;
+}
+#header li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 2;
+    display: inline-block;
+    color: #fff;
+}
+#header li.active a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* footer */
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+#footer a {
+    color: #fff;
+}

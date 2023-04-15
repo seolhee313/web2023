@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명언 모음</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/c.css">
+    <style>
+        body {
+            background-image: url(img/3.jpg);
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body class="bg01 font11">
+    <div id="result">
+        <div class="quote"></div> 
+        <div class="author"></div>
+    </div>
+    <script src="json/dummy01.json"></script>
+
+    <script>
+        const quotesURL = "http://dummyjson.com/quotes";
+
+        //함수 정의
+        function updateQuote() {
+            fetch(quotesURL)
+            .then(response => response.json())
+            .then(data => {
+                const result = document.querySelector("#result");
+                const random = Math.floor(Math.random() * 30);  // 0 ~ 29 사이의 수
+                result.querySelector(".quote").innerHTML = data.quotes[random].quote;
+                result.querySelector(".author").innerHTML = ` - ${data.quotes[random].author}`;
+            })
+            .catch(error => console.log(error));
+        }
+
+        // 10초마다 함수 실행
+        updateQuote();
+        setInterval(updateQuote, 10000);
+
+    </script>
+</body>
+</html>
