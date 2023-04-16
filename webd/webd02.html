@@ -24,20 +24,23 @@
             margin: 0 auto;
         }
         #header {
+            margin: 50px 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+
         }
         #header h1 img {
             width: 150px;
         }
         #header nav li {
             display: inline-block;
-            letter-spacing: normal;
         }
         #header nav li a {
             display: inline-block;
             padding: 20px;
+            font-weight: bold;
+            font-size: 20px;
         }
         #banner {
             margin-bottom: 20px;
@@ -45,41 +48,65 @@
         #notice {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 30px;
         }
         #notice .not1 {
             width: 49%;
-            border: 1px solid #ccc;
-            padding: 30px;
+            border: 1px solid #f6f6f6;
+            background-color: #f6f6f6;
+            padding: 20px;
             position: relative;
         }
         #notice .not1 h3 {
             margin-bottom: 10px;
         }
         #notice .not1 li {
-            list-style:  none;
-            display: flex;
-            padding: 2px 0;
+            list-style: none;
+            margin-bottom: 20px;
         }
-        #notice .not1 li a {
-            width: 70%;
-        }
-        #notice .not1 li a span {
-            width: 30%;
-            text-align: right;
-        }
-        #notice .not1 .more {
-            position: absolute;
-            right: 60px;
-            top: 35px;
+        #notice .not1 a {
+            font-weight: bold;
+            margin-left: 25px;
         }
         #notice .not1 img {
-            width: 25px;
+            width: 20px;
             position: absolute;
-            top: 33px;
-            right: 29px;
+            left: 20px;
+        }
+        #notice .not1 .img1 {
+            width: 80px;
+            margin-left: 350px ;
         }
         #notice .not2 {
             width: 49%;
+            border: 1px solid #f6f6f6;
+            background-color: #f6f6f6;
+            padding: 20px;
+            position: relative;
+        }
+        #notice .not2 h3 {
+            margin-bottom: 10px;
+        }
+        #notice .not2 li {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        #notice .not2 a {
+            font-weight: bold;
+            margin-left: 25px;
+        }
+        #notice .not2 a span {
+            font-size: 13px;
+            color: #999;
+        }
+        #notice .not2 img {
+            width: 20px;
+            position: absolute;
+            left: 20px;
+        }
+        #notice .not2 .img2 {
+            width: 80px;
+            margin-left: 350px ;
         }
         #card h2 {
             margin: 20px 0 10px;
@@ -89,96 +116,105 @@
             justify-content: space-between;
         }
         .card-inner > div {
-            width: 24%;
+            width: 31%;
         }
         .card-inner > div strong {
-            padding: 10px 0;
+            padding: 15px 0;
             display: inline-block;
-            color: #666;
+        }
+        .card-inner > div p {
+            font-weight: bold;
+            font-size: 19px;
+        }
+        .card-inner > div p span {
+            color: #999;
+            font-size: 16px;
         }
         #footer {
-            border-top: 1px solid #ccc;
-            margin-top: 50px;
-            padding: 50px 0;
+            margin: 50px 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            background: #000;
         }
-        #footer address {
-            font-style: normal;
-        }
-        #footer strong {
-            color: #666;
-            display: block;
-            padding-top: 50px;
+        #footer h1 img {
+            width: 150px;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
         <header id="header">
-            <h1><img src="img/logo.jpg" alt="롯데월드"></h1>
+            <h1><img src="img/coding2/logo.jpg" alt="쿡킷"></h1>
             <nav>
                 <ul>
-                    <li><a href="#">즐길거리</a></li>
-                    <li><a href="#">요금/우대혜택</a></li>
-                    <li><a href="#">참여프로그램</a></li>
-                    <li><a href="#">이용가이드</a></li>
-                    <li><a href="#">소통서비스</a></li>
+                    <li><a href="#">COOKIT 소개</a></li>
+                    <li><a href="#">COOKIT 메뉴</a></li>
+                    <li><a href="#">리뷰</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">MY 쿡킷</a></li>
                 </ul>
             </nav>
         </header>
-        <!-- //header -->
+        <!-- header -->
 
         <main>
             <section id="banner">
-                <img src="img/banner.jpg" alt="미라클있수마수">
+                <img src="img/coding2/banner01.jpg" alt="배너">
             </section>
+            <!-- banner -->
+
             <section id="notice">
                 <div class="not1">
-                    <h3>롯데월드 소식</h3>
+                    <h3>우리집도 COOKIT 배송이 되나요?</h3>
+                    <img src="img/coding2/bg1.jpg" alt="사진1" class="img1">
                     <ul>
-                        <li><a href="#">그럴싸진관 미라클</a><span>2018.11.19</span></li>
-                        <li><a href="#">그럴싸진관 미라클</a><span>2018.11.19</span></li>
-                        <li><a href="#">그럴싸진관 미라클</a><span>2018.11.19</span></li>
-                        <li><a href="#">그럴싸진관 미라클</a><span>2018.11.19</span></li>
+                        <li>배송이 가능한지 알려드려요.</li>
                     </ul>
-                    <a href="#" class="more">더보기</a>
-                    <img src="img/button.jpg" alt="더보기 버튼">
+                    <a href="#">배송지 검색</a>
+                    <img src="img/coding2/icon1.jpg" alt="위치 아이콘">
                 </div>
                 <div class="not2">
-                    <img src="img/banner02.jpg" alt="온종일 혜택 ON">
+                    <h3>7월 30일(화)에 받을 수 있어요.</h3>
+                    <img src="img/coding2/bg2.jpg" alt="사진2" class="img2">
+
+                    <ul>
+                        <li>오전 7시까지 주문하시면 다음날 배송됩니다.</li>
+                    </ul>
+                    <a href="#">63:28:32 <span>남은시간</span></a>
+                    <img src="img/coding2/icon2.jpg" alt="시계 아이콘">
                 </div>
             </section>
+            <!-- notice -->
+
             <section id="card">
-                <h2>특별한 경험</h2>
+                <h2>실시간 베스트 | <span>생생한 리뷰</span></h2>
                 <div class="card-inner">
                     <div>
-                        <img src="img/notice01.jpg" alt="연간회원안내">
-                        <strong>연간회원안내</strong>
+                        <img src="img/coding2/best1.jpg" alt="평양식 어복쟁반">
+                        <strong>평양식 어복쟁반</strong>
+                        <p>33,800원 / <span>3인분</span></p>
                     </div>
                     <div>
-                        <img src="img/notice02.jpg" alt="연간회원안내">
-                        <strong>연간회원안내</strong>
+                        <img src="img/coding2/best2.jpg" alt="새우쭈꾸미삼겹살">
+                        <strong>새우쭈꾸미삼겹살</strong>
+                        <p>29,800원 / <span>3인분</span></p>
                     </div>
                     <div>
-                        <img src="img/notice03.jpg" alt="연간회원안내">
-                        <strong>연간회원안내</strong>
-                    </div>
-                    <div>
-                        <img src="img/notice04.jpg" alt="연간회원안내">
-                        <strong>연간회원안내</strong>
+                        <img src="img/coding2/best3.jpg" alt="방풍나물 아귀찜">
+                        <strong>방풍나물 아귀찜</strong>
+                        <p>32,800원 / <span>3인분</span></p>
                     </div>
                 </div>
             </section>
+            <!-- card -->
         </main>
-        <!-- //main -->
+        <!-- main -->
 
         <footer id="footer">
-            <address>
-                서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자: 박동기<br>
-                사업자등록번호: 219-85-00014 | 통신판매업신고번호: 송파 제 5513호 | 전화: 1661-2000
-            </address>
-            <strong>COPYRIGHT 2022 LOTTEWORLD.ALL.RIGHT RESERVED</strong>
+            <h1><img src="img/coding2/flogo.jpg" alt="푸터 로고"></h1>
         </footer>
-        <!-- //footer -->
+        <!-- footer -->
     </div>
 </body>
 </html>
