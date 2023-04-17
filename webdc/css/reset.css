@@ -14,15 +14,12 @@ img {
 li {
     list-style: none;
 }
-em {
-    font-style: normal;
-}
 .container {
     margin: 0 auto;
     width: 1000px;
 }
 address {
-    font-style: none;
+    font-style: normal;
 }
 h1,h2,h3,h4,h5 {
     font-weight: 800;
