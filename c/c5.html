@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>명언 모음</title>
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/c.css">
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/c.css"> -->
     <style>
         body {
-            background-image: url(img/3.jpg);
+            background-image: url("https://source.unsplash.com/random/?sea");
+            font-family: 'GmarketSans';
             width: 100%;
             height: 100vh;
             overflow: hidden;
@@ -21,7 +23,7 @@
             flex-direction: column;
             justify-content: center;
             font-size: 30px;
-            color: black;
+            color: #fff;
         }
     </style>
 </head>
@@ -39,16 +41,24 @@
             .then(res => res.json())
             .then(data => {
                 const result = document.querySelector("#result");
-                const random = Math.floor(Math.random() * 30);
+                const random = Math.floor(Math.random() * 30);  // 0 ~ 29 사이의 수
                 result.querySelector(".quote").innerHTML = data.quotes[random].quote;
                 result.querySelector(".author").innerHTML = ` - ${data.quotes[random].author}`;
             })
             .catch(error => console.log(error));
+            
         }
 
-        // 10초마다 함수 실행
+        function updateBackground() {
+        const imageUrl = `https://source.unsplash.com/random/?sea&t=${new Date().getTime()}`;
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+        }
+
+        // 10초마다 명언과 배경 이미지를 업데이트
         updateQuote();
+        updateBackground();
         setInterval(updateQuote, 10000);
+        setInterval(updateBackground, 10000);
 
     </script>
 </body>
