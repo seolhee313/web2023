@@ -50,7 +50,7 @@
         }
 
         function updateBackground() {
-            const imageUrl = `https://source.unsplash.com/random/?sea&t=${new Date().getTime()}`;
+            const imageUrl = `https://source.unsplash.com/random/?sea&t${new Date().getTime()}`;
             document.body.style.backgroundImage = `url(${imageUrl})`;
         }
 

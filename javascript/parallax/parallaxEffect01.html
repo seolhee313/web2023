@@ -194,22 +194,28 @@
             // document.querySelector(".info .offset8").innerText = document.getElementById("section8").offsetTop;
             // document.querySelector(".info .offset9").innerText = document.getElementById("section9").offsetTop;
 
-            //for()
-            // for (let i=1; i <=9; i++) {
-            //     document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+            // for()
+            for (let i=1; i <=9; i++) {
+                document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+            }
+
+            // //forEach()
+            // document.querySelectorAll(".info ul li").forEach((el, i)=>{
+            //     document.querySelector(".info .offset"+(i+1)).innerText = document.getElementById("section"+(i+1)).offsetTop
+            // });
+
+            //for in
+            // for(let i in document.querySelectorAll(".info ul li")){
+            //     const el = document.querySelectorAll(".info ul li")[i];
+            //     document.querySelector(".info .offset"+(parseInt(i)+1)).innerText = document.getElementById("section"+(parseInt(i)+1)).offsetTop;
             // }
 
-            //forEach()
-            document.querySelectorAll(".info ul li").forEach((el, i)=>{
-                document.querySelector(".info .offset"+(i+1)).innerText = document.getElementById("section"+(i+1)).offsetTop
-            });
-
+            //for of
+            // for (const [i, el] of document.querySelectorAll(".info ul li span").entries()){
+            //     el.innerHTML = document.getElementById("section"+(parseInt(i)+1)).offsetTop;
+            // }
 
         });
-    
-
-
-        
     </script>
 </body>
 </html>
