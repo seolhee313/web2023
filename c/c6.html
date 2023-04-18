@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .qc-box 스타일 */
+        .qc-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            perspective: 2000px;
+            width: 600px;
+            height: 350px;
+            background-color: #5f6272;
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            transition: 0.4s;
+        }
+        .qc-box:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-bottom: 20px solid #5f6272;
+            border-right: 20px solid #5f6272;
+            box-sizing: border-box;
+            border-radius: 15px;
+        }
+
+        /* .qc-text-box 스타일 */
+        .qc-text-box {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            width: calc(100% + 60px);
+            height: calc(100% - 60px);
+            background-color: #f7f7f7;
+            border-radius: 15px;
+            filter: drop-shadow(4px 5px 7px rgb(0 0 0 / 30%));
+            transition: 0.4s;
+        }
+
+        /* .qc-text-box div 스타일 */
+        .qc-text-box .qc-box-div {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 100%;
+            padding: 30px 60px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* 아이콘 스타일 */
+        .qc-box .fas {
+            font-size: 25px;
+            height: 50px;
+            width: 50px;
+            line-height: 50px !important;
+            background-color: #5f6272;
+            color: #f7f7f7;
+            border-radius: 15px 0 15px 0;
+        }
+        .fa, .fas {
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 900;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+        }
+
+        /* 왼쪽 아이콘 스타일 */
+        .qc-box .qc-text-box .fa1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ffffff;
+        }
+        .fa1 img {
+            width: 45px;
+            padding: 3px;
+        }
+
+        /* 오른쪽 아이콘 스타일 */
+        .qc-box .fa2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+        .fa2 img {
+            width: 45px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qc-ani position-relative" style="width: 700px; margin: 0 auto;">
+        <div class="quotation-container">
+          <!--본문 quotation--><div class="qc-box">
+            <i class="fas fa-quote-right fa2">
+                <img src="img/icons8-견적-오른쪽-64.png" alt="">
+            </i>
+            <div class="qc-text-box">
+              <i class="fas fa-quote-left fa1">
+                <img src="img/icons8-견적-왼쪽-64.png" alt="">
+              </i>
+              <div class="qc-box-div">
+                <span class="qc-title">QUOTE THE DAY</span>
+                <p id="quotation">“ 당신이 6개월 이상 한 번도 보지 않은 코드는 다른 사람이 다시 만드는 게 훨씬 더 나을 수 있다. ”</p>
+                <div style="margin-bottom: 0; margin-left: 20px;">
+                  <span> - </span>
+                  <span id="source" class="quotation-writter position-relative" style="font-style: italic;"> 이글슨 (Eagleson) </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="qc-random-btn-container flex align-center justify-center" style="margin-top: -8%;;margin-bottom: 50px;">
+          <button class="qrb-box bq-randomBtn">
+            <svg class="bq-randomBtn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.5rem" height="1.5rem">
+              <path d="M370.72 133.28C339.458 104.008 298.888 87.962 255.848 88c-77.458.068-144.328 53.178-162.791 126.85-1.344 5.363-6.122 9.15-11.651 9.15H24.103c-7.498 0-13.194-6.807-11.807-14.176C33.933 94.924 134.813 8 256 8c66.448 0 126.791 26.136 171.315 68.685L463.03 40.97C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.749zM32 296h134.059c21.382 0 32.09 25.851 16.971 40.971l-41.75 41.75c31.262 29.273 71.835 45.319 114.876 45.28 77.418-.07 144.315-53.144 162.787-126.849 1.344-5.363 6.122-9.15 11.651-9.15h57.304c7.498 0 13.194 6.807 11.807 14.176C478.067 417.076 377.187 504 256 504c-66.448 0-126.791-26.136-171.315-68.685L48.97 471.03C33.851 486.149 8 475.441 8 454.059V320c0-13.255 10.745-24 24-24z"></path>
+            </svg>
+          </button>
+        </div>
+        <script>
+            let wise = 0
+                const dataQuestion = () => {
+                const random = Math.floor( Math.random()*30)
+                wise = random
+                fetch("json/dummy02.json", { cache: "no-cache" })
+                .then(res => res.json())
+                .then(items => {
+                    document.querySelector("#quotation").innerHTML=items.quotes[wise].quote;
+                    document.querySelector("#source").innerHTML=items.quotes[wise].author;
+                    });
+                };
+                dataQuestion()
+        </script>
+      </div>
+</body>
+</html>
