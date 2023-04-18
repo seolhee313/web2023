@@ -71,7 +71,6 @@
             border-radius: 15px 0 15px 0;
         }
         .fa, .fas {
-            font-family: 'Font Awesome 5 Pro';
             font-weight: 900;
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
@@ -112,11 +111,11 @@
         <div class="quotation-container">
           <!--본문 quotation--><div class="qc-box">
             <i class="fas fa-quote-right fa2">
-                <img src="img/icons8-견적-오른쪽-64.png" alt="">
+                <img src="img/icon8-right.png" alt="">
             </i>
             <div class="qc-text-box">
               <i class="fas fa-quote-left fa1">
-                <img src="img/icons8-견적-왼쪽-64.png" alt="">
+                <img src="img/icon8-left.png" alt="">
               </i>
               <div class="qc-box-div">
                 <span class="qc-title">QUOTE THE DAY</span>
@@ -141,7 +140,7 @@
                 const dataQuestion = () => {
                 const random = Math.floor( Math.random()*30)
                 wise = random
-                fetch("json/dummy02.json", { cache: "no-cache" })
+                fetch("https://seolhee313.github.io/web2023/c/json/dummy02.json", { cache: "no-cache" })
                 .then(res => res.json())
                 .then(items => {
                     document.querySelector("#quotation").innerHTML=items.quotes[wise].quote;
