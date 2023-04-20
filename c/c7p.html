@@ -1,0 +1,414 @@
+
+<script>
+    //패럴 1
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        document.querySelectorAll(".parallax__item").forEach((item, index) => {
+            if(scrollTop >= item.offsetTop - 2){
+                document.querySelectorAll(".parallax__nav li").forEach((li) => {
+                    li.classList.remove("active");
+                });
+                document.querySelector(".parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
+            }
+        });
+
+        document.querySelectorAll(".parallax__nav li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+
+        //info
+        document.querySelector(".scroll span").innerText = parseInt(scrollTop);
+
+
+        // document.querySelector(".info .offset1").innerText = document.getElementById("section1").offsetTop;
+        // document.querySelector(".info .offset2").innerText = document.getElementById("section2").offsetTop;
+        // document.querySelector(".info .offset3").innerText = document.getElementById("section3").offsetTop;
+        // document.querySelector(".info .offset4").innerText = document.getElementById("section4").offsetTop;
+        // document.querySelector(".info .offset5").innerText = document.getElementById("section5").offsetTop;
+        // document.querySelector(".info .offset6").innerText = document.getElementById("section6").offsetTop;
+        // document.querySelector(".info .offset7").innerText = document.getElementById("section7").offsetTop;
+        // document.querySelector(".info .offset8").innerText = document.getElementById("section8").offsetTop;
+        // document.querySelector(".info .offset9").innerText = document.getElementById("section9").offsetTop;
+
+        // for()
+        for (let i=1; i <=9; i++) {
+            document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+        }
+
+        // //forEach()
+        // document.querySelectorAll(".info ul li").forEach((el, i)=>{
+        //     document.querySelector(".info .offset"+(i+1)).innerText = document.getElementById("section"+(i+1)).offsetTop
+        // });
+
+        //for in
+        // for(let i in document.querySelectorAll(".info ul li")){
+        //     const el = document.querySelectorAll(".info ul li")[i];
+        //     document.querySelector(".info .offset"+(parseInt(i)+1)).innerText = document.getElementById("section"+(parseInt(i)+1)).offsetTop;
+        // }
+
+        //for of
+        // for (const [i, el] of document.querySelectorAll(".info ul li span").entries()){
+        //     el.innerHTML = document.getElementById("section"+(parseInt(i)+1)).offsetTop;
+        // }
+
+
+
+    // 패럴2    //사이드 메뉴
+    document.querySelectorAll("#parallax__dot a").forEach(el => {
+        el.addEventListener("click", e => {
+            e.preventDefault();
+
+            document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); //scrollIntoView : 스크롤 이동 속성
+        });
+
+
+        window.addEventListener("scroll",() => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+
+            document.querySelectorAll(".content__item").forEach((e,i) => {
+                if(scrollTop >= e.offsetTop - window.innerHeight/2){ //- window.innerHeight/2 브라우저 화면의 반 한 화면의(vh) 스크롤
+                    document.querySelectorAll("#parallax__dot li").forEach(li => {
+                        li.classList.remove("active");
+                        //해당되는 것들만 선택하여 순서대로 실행
+                        document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
+                    })
+                }
+            });
+        });
+    });
+
+
+        //scroll 3가지 차이점 : 
+        // window.scroll(0,1000);
+        // window.scroll({left: 0, top: 2000});
+        // window.scroll({left: 0, top: 2000, behavior: "smooth"});
+
+        // window.scrollTo(0,1000);
+        // window.scrollTo({left: 0, top: 1000});
+        // window.scrollTo({left: 0, top: 1000, behavior: "smooth"});
+
+        // window.scrollBy(0,1000);
+        // window.scrollBy({left: 0, top: 1000});
+        // window.scrollBy({left: 0, top: 1000, behavior: "smooth"});
+        //   });
+        // });
+    });
+
+
+
+    //패럴3 //숨김메뉴 스크롤 올릴떄만
+    //01
+    // window.addEventListener("scroll", () => {
+    //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    //   if (scrollTop > 0) {
+    //     document.querySelector("#parallax__nav").classList.add("show");
+    //   } else {
+    //     document.querySelector("#parallax__nav").classList.remove("show");
+    //   }
+    //   document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+    // });
+
+    //02
+    //문서 전체 높이 - 브라우저 높이
+    //자바스크립트로 문서 전체 높이 값 구하는 방법 서치해서 알아보기
+    // window.addEventListener("scroll", () => {
+    //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    //   if(scrollTop > 7000) {
+    //     document.querySelector("#parallax__top").classList.add("show");
+    //   }else {
+    //     document.querySelector("#parallax__top").classList.remove("show");
+    //   }
+    //   document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+    // });
+
+
+    //window : 현재 화면
+    //top버튼 마지막 스크롤 값에만 보이게 하기
+    // window.addEventListener("scroll", ()=>{
+    //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    
+    //   if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+    //       document.querySelector("#parallax__top").classList.add("show")
+    //   }else {
+    //       document.querySelector("#parallax__top").classList.remove("show")
+    //   }
+    // });
+
+
+    // 01. top버튼 마지막 스크롤 값에만 보이게 하기
+    // 문서 전체 높이 - 브라우저 높이( = 마지막 섹션에 스크롤이 위치했을 때  top버튼 띄우기)
+    window.addEventListener("scroll", ()=> {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    if(document.documentElement.scrollHeight <= scrollTop + window.innerHeight){
+        document.querySelector("#parallax__top").classList.add("show");
+    }else {
+        document.querySelector("#parallax__top").classList.remove("show");
+    }
+    });
+
+    //02. top버튼 누르면 올라오게 하기
+    document.querySelector("#parallax__top").addEventListener("click", ()=> {
+    window.scrollTo({left: 0, top: 0, behavior:"smooth"}); //scrollTo : 절대 기준의 스크롤 값 설정으로 0px의 최상단을 기준으로 설정하는 것이다. (By는 현재 스크롤 값 위치와 이동하려는 스크롤위차값의 거리만 설정.)
+    });
+
+
+    // 03. 메뉴바 숨기기 : 스크롤 값을 움직일 때 마다 작동되는 이벤트 설정하기
+    // 현재 값이 3000인 스크롤을 내렸을 때 스크롤 값이 3000보다 높아지면 메뉴가 보이지 않아야 하고 다시 스크롤을 올려서 현재 값보다 작아질 때 다시 보여야 한다.
+    // 현재 값은 계속 변동하고 브라우저의 총 스크롤 값도 콘텐츠가 추가될 수록 계속 변한다. 즉 이러한 변화를 고려하여 1초 전이나 30초 전 즉 과거의 스크롤값과 현재의 스크롤값을 비교하는 식을 구해야 한다.
+    let nowScroll = true;   // 트리거 변수 이용 //nowScroll가 true일 때 실행
+    let lastScroll = 0;
+
+    function scrollProgress(){
+    // info에 현재 스크롤 위치 값 구현하기
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    document.querySelector('#parallax__info span').innerText = Math.ceil(scrollTop);
+
+    nowScroll = true;
+
+    // nowScroll = false일 때 hasScroll()함수가 0.3초 마다 실행되도록 설정 : 계속 실행 시 버벅거리기 때문에 스크롤값에 약간의 간격을 두기 위해 setInterval로 시간차를 준 것.
+    setInterval(() => {
+        if(nowScroll){
+            nowScroll = false;
+            hasScroll();
+        }
+    },300); 
+    }
+
+    function hasScroll(){
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    //console.log("현재 값",scrollTop, "이전 값", lastScroll)
+
+    if(scrollTop < lastScroll ){ //현재 스크롤 값과 1초 전의 스크롤 값
+        document.querySelector("#parallax__nav").classList.add("show");
+    }else {
+        document.querySelector("#parallax__nav").classList.remove("show");
+    }
+
+    lastScroll = scrollTop; // 1초 전의 현재 스크롤 값이 마지막 스크롤값이 되어 0.3초마다 스크롤값을 인식하여 값이 변화함.
+    }
+
+    window.addEventListener("scroll", scrollProgress); //함수를 바로 불러와서 추출한다.
+    
+
+
+    //패럴4 //숨김메뉴 나타내기
+    // window.addEventListener("scroll", ()=>{});
+
+    //재귀함수 : 자기 자신을 한 번 더 실행. 즉 무한대로 실행시킨다. 이 때 그냥 실행시킬 경우 웹이 다운될 수 있다.
+    function scroll(){
+    //스크롤 탑 값 구하기
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        //innerHeight값을 빼서 반을 나눠주면 show를 더 빠르게 나오게 함.
+        if(scrollTop > item.offsetTop - window.innerHeight/2){
+        item.classList.add("show");
+        }
+    });
+    //부드러운 움직임을 1초에 60번 실행시킨다. 이렇게 실행시킬 경우 메모리를 적게 차지하여 웹이 다운되지 않는다. 
+    requestAnimationFrame(scroll);
+    }
+    scroll();
+
+
+
+    //패럴5 //이질감 효과
+    //0에서 500만큼 간 거리를 구해야 이미지가 온전히 나옴
+    //함수 설정
+    function scroll(){
+
+    //01 scrollTop값 구하고 값을 선택 요소에 출력
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+    //02 이질감 효과 주기
+    document.querySelectorAll(".content__item").forEach(item => {
+    //선택자
+    //선택한 콘텐츠(넘버, 이미지, 텍스트)들을 타겟(변수)에게 설정한다.
+    const taget1 = item.querySelector(".content__item__img");
+    const taget2 = item.querySelector(".content__item__desc");
+    const taget3 = item.querySelector(".content__item__num");
+
+    //이동시킬 거리 (오차주기)
+    //현재 스크롤 탑 값이 1000일 경우 -item.offsetTop(섹션의 시작 스크롤값 위치)를 하면 0이 나온다. 이때 스크롤을 내리면 scrollTop은 다시 본래의 값으로 돌아오며 내렸을 때의 값에서 다시 item.offsetTop을 뺐을 때 나오는 값에 0.1을 곱할 경우 나오는 값이 변수에게 대입되는 것이다.
+    //scrollTop과 item.offsetTop값은 같기 때문에 0이 나오는 것.
+    //즉 scrollTop이 content__item(섹션)의 시작 위치 값에 도달했을 때 값을 0으로 만든 뒤 다시 scrollTop이 이동할 때 나오는 값에 원하는 오차값을 곱하여 반환되는 값을 구한다. 그 값이 y축의 이동 거리가 된다.
+    //다음 content__item(섹션)에 도달할 경우 값은 다시 0이 된다.
+    let offset1 = (scrollTop - item.offsetTop) * 0.1;
+    let offset2 = (scrollTop - item.offsetTop) * 0.15;
+    let offset3 = (scrollTop - item.offsetTop) * 0.2;
+
+
+    
+    //03 GSAP
+    // 스크립트로 스타일을 설정할 경우 : css스타일 중 transform을 통해 이미지와 텍스트의 각 고정위치에서 움직이려는 거리를 설정한다. 각각이 콘텐츠들의 이동 거리가 다르므로 스크롤이 움직일 때 이질감을 준다.
+    // taget1.style.transform = `translateY(${offset}px)`;
+    // taget2.style.transform = `translateX(${offset}px)`;
+
+    //gsap으로 스타일 주기 : 더 많은 애니메이션 속성 설정이 가능하며 움직임이 부드럽다. (한 번에 스타일을 선언할 수 있어 편리) : 주의할 점은 꼭 gsap의 CDN을 가져와야 한다는 것.
+    //스타일을 줄 요소, {duration : 지속시간, translateX or Y(gsap에서는 x, y): 선택한 축 방향으로 이동할 값, ease: 전환 효과 (움직임 설정 : 시작과 끝의 속도 조절 등)}
+    gsap.to(taget1, {duration: .3, y: offset1, ease: "power4.out"});
+    gsap.to(taget2, {duration: .3, y: offset2});
+    gsap.to(taget3, {duration: .3, y: offset2, ease: "expo.out"});
+    });
+
+    //04 1초에 60번 실행
+    //함수가 무한하게 반복되어도 한 번 움직일 때 60번만 실행이라는 제한이 걸려있기 때문에 서버가 다운이 되지 않는다.
+    requestAnimationFrame(scroll); 
+    }
+    scroll(); //실행문
+
+
+    
+
+    //패럴6 //숨김 텍스트효과
+    //글씨 쪼개기 - 한 섹션의 텍스트만 쪼개기
+    // let text = document.querySelector("#section1 .content__item__desc"); //첫번째 텍스트
+    // let splitText = text.innerText;
+    // //문자열 객체 참고
+    // let splitWrap = splitText.split('').join('</span><span>');
+    // text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+
+
+    //글씨 쪼개기 (여러개 : forEach문 이용 쿼리 All)
+    // let text = document.querySelectorAll("#contents .content__item__desc");
+    // text.forEach(el => {
+    //   let splitText = el.innerText;
+    //   let splitWrap = splitText.split('').join('</span><span>');
+    //   el.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+    // });
+
+
+    //01
+    //글씨 쪼개기 다중 : 쪼개고 싶은 요소에 클래스를 추가 시켜 그 클래스를 모두 가져온다.
+    //그 뒤 문자열 메서드 split을 통해 텍스트를 하나씩 쪼개 주고 join()을 이용하여 각각 span태그를 감싸준다.(이때 닫는 태그와 여는 태그가 반대로 되므로 join순서를 반대로 써준다.)
+    //쪼갰을 때 접근성이 좋지 않기 때문에 문자열 메서드인 join()으로 넣어준 span태그 안에 aria-hidden='true' 속성을 넣어 숨겨준다.(스크린 리더기에만 안읽힘.)
+    document.querySelectorAll(".split").forEach(text => {
+        let splitText = text.innerText;
+        let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+        //가장 앞 부분과 뒷부분에는 join이 먹히지 않으므로 따로 변수 안에 텍스트를 추가시킨다.
+        splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+        //위의 바뀐 변수 값을 다시 저장시킨다.
+        text.innerHTML = splitWrap;
+        //위에 숨긴 텍스트를 리더기에 읽히기 하기 위해 aria-label 속성을 붙여준다.
+        text.setAttribute("aria-label", splitText);
+        // console.log(splitText);
+    });
+
+
+    //02
+    //스크롤 값 구하고 스크롤 움직일 때 애니메이션 구현하기.
+    function scroll() {
+        let scrollTop = window.scrollY;
+        document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+
+        //CSS 스타일 설정을 위한 클래스 추가 스크립트. (노가다 ver. : CSS로 일일히 각 한 텍스트 당 딜레이 설정을 준 뒤 클래스만 추가.)
+        // document.querySelectorAll(".content__item").forEach(item => {
+        //   if(scrollTop >= item.offsetTop){
+        //     item.querySelector(".split").classList.add("show");
+        //   }
+        // })
+        
+        //03 : CSS스타일 주기
+        // document.querySelectorAll(".content__item").forEach(item => {
+        //   //만약 스크롤값이 각 섹션의 오프셋 값과 같다면.
+        //   if( scrollTop >= item.offsetTop){
+        //     //span태그를 모두 선택하여 인덱스 값까지 불러온 뒤 (span = element)
+        //     item.querySelectorAll(".split span").forEach((element, index) => {
+        //       //클래스 리스너를 통해 span 요소에게 클래스 show를 넣어 텍스트가 보이도록 합니다.
+        //       element.classList.add("show");
+
+        //       //또한 CSS속성 중 딜레이를 추가하여 한 글자 당 50ms씩 움직이도록 한다.
+        //       element.style.transitionDelay = `${index * 50}ms`;
+        //     });
+        //   }
+        // });
+        //힌트는 인덱스 인덱스를 이용해서
+        //첫 번째 span --> 0.01
+        //두 번째 span --> 0.02
+        //세 번째 span --> 0.03
+        //네 번째 span --> 0.04
+        //다섯 번째 span --> 0.05
+        //여섯 번째 span --> 0.06
+        //일곱 번째 span --> 0.07
+
+        //03 : css 스타일 주기 - setimeout
+        document.querySelectorAll(".content__item").forEach(item => {
+                if(scrollTop >= item.offsetTop){
+                    item.querySelectorAll(".split span").forEach((span, index) => {
+                        //선생님 방법
+                        setTimeout(()=>{
+                            span.classList.add("show");
+                        }, 50 * index);
+                    });
+                }
+            });
+
+        requestAnimationFrame(scroll); //계속 반복될 수 있도록 재귀함수 사용.(1초에 60번 실행.)
+
+    }
+    scroll(); //실행
+
+    //첫 번째 span ---> 0.01
+    //두 번째 span ---> 0.02
+    //세 번째 span ---> 0.03
+    //이 값은 index로 설정 가능.
+
+
+
+    //패럴7 //리빌효과
+    //span을 텍스트에 다 넣어주기.숙제(div해도 무방) .미션 / html로 일일히 작성하기엔 너무 비효율적.
+    //reveal 클래스 자식에 글씨만 있다면 가상으로 span태그를 만들어서 넣어주기 (페럴렉스 6번 참고)
+    document.querySelectorAll(".content__item__desc.reveal").forEach(text => {
+        let splitText = text.innerHTML;
+        splitText = "<span>" + splitText + "</span>";
+        text.innerHTML = splitText;
+    });
+
+
+    function scroll(){
+        // 스크롤 탑값
+        let scrollTop = window.scrollY;
+
+        const reveal = document.querySelectorAll(".reveal");
+
+        reveal.forEach(el => {
+        //reveal이 붙어있는 item(el)의 offsetTop값을 구해야 한다.(어떤 섹션의 reveal인지 모르기 때문!)
+        //부모요소도 구해야함 : 이미지 요소의 높이값을 구하기 때문에 
+        let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
+
+        //정확히 이미지 offsetTop값에 들어가야 이미지가 나타나기 때문에 가독성을 위하여 브라우저 높이의 반을 빼준다.
+        //그러면 좀 더 빨리 이미지가 나타나게 된다.
+        // if(scrollTop > revealOffset - window.innerHeight/2){
+        //   el.classList.add("show");
+        // }
+        if(scrollTop > revealOffset - window.innerHeight){
+            if(revealDelay == undefined){
+            el.classList.add("show");
+            }else{
+            setTimeout(() => {
+                el.classList.add("show");
+            }, revealDelay)
+            }
+        }
+
+
+        });
+
+        document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+
+        requestAnimationFrame(scroll);
+    }
+    scroll();
+</script>

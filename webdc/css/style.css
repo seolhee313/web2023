@@ -22,8 +22,7 @@
     align-items: flex-end;
 }
 /* banner */
-#banner {
-}
+#banner {}
 .slider__wrap {
     display: flex;
     flex-wrap: wrap;

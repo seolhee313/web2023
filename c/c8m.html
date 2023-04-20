@@ -1,0 +1,163 @@
+<script>
+
+    //마우스4   //이미지효과
+    //선택자
+    const cursor = document.querySelector(".mouse__cursor"); //커서
+    const cursorRect = cursor.getBoundingClientRect();       //커서위치값
+
+    //마우스를 움직일 때 이벤트 설정
+    document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+        // 커서
+        //커서의 가로 길이를 반으로 나눈 이유는 바로 정해준 커서의 영역이 가운데로 맞춰지도록 하기 위해서 이다. 
+        //커서의 영역을 만들게 될 경우 현재 커서의 포지션이 left와 top값을 기준으로 설정되어 있기 때문에 사각형의 왼쪽 모서리를 기준으로 영역이 생긴다. 즉 왼쪽모서리 아래쪽으로 영역이 생기기 때문에 거리감이 생기겍 된다 특히 원형으로 영역을 잡을 경우 사각형이 깍여져서 만들어지기 때문에 더욱 거리감이 생기게된다. 
+        //때문에 사각형(커서 영역)을 ÷2 해주어서 커서를 가운데로 지정해주는 것!
+        //e.pageX - cursorRect.width/2 : 요소의 x축 - 요소의 영역 가로 길이의 반
+        gsap.to(cursor, {
+            duration: .5,
+            left: e.pageX - cursorRect.width/2,
+            top: e.pageY - cursorRect.height/2,
+        });
+
+        //마우스 좌표 값
+        //요소의 x축과 y축 좌표값을 변수에 대입한다.
+        let mousePageX = e.pageX;
+        let mousePageY = e.pageY;
+
+        //전체가로
+        //innerWidth || outerWidth || screen.Width
+        // window.innerWidth //1440 : 브라우저 기준 크기
+        // window.outerWidth  //1920 : 브라우저 기준 크기 (스크롤바 포함)
+        // window.screen.Width  //1920 : 디바이스 기준(모니터 등등의 화면 크기로 계산)
+        // console.log(window.innerWidth);
+
+        //마우스 좌표값 가운데로 초기화
+        //전체길이/2(전체길이 ÷ 2) - 마우스 좌표값 == 0 : 500*500일 경우 전체 길이에서 반을 빼주면 가운데로 맞춰지게 된다.
+        //전체 영역을 가운데로 초기화 == window.innerWidth/Height/2 -> 그 뒤 각 마우스의 좌표값을 빼주면 좌표값 기준도 가운데로 초기화 된다. 즉 이 식의 최종 값이 바로 아래의 이미지의 이동 거리 값이 된다. (커서가 중앙에 위치 == 0(가운데로 초기화) | 커서가 왼쪽에 위치 == 양수 | 커서가 오른쪽에 위치 - 값(음수))
+        //크기 속성을 사용할 땐 앞에 윈도우는 생략해도 괜찮다.
+        let centerPageX = window.innerWidth/2 - mousePageX;
+        let centerPageY = window.innerHeight/2 - mousePageY;
+
+        //이미지 움직이기
+        const imgMove = document.querySelector(".mouse__wrap figure img");
+        //기존 js 방식
+        // imgMove.style.transform = "translate(" + centerPageX/20 + "px, " + centerPageY/20 + "px)";
+
+        //GSAP
+        //좌표를 20으로 나눈 이유 : 오차 값으로 이미지가 이동 할 경우 너무 많이 이동하기 때문에 20을 나눠주어 이미지의 이동거리를 축소시켜 준 것.
+        gsap.to(imgMove, {
+            duration: 0.3,
+            x: centerPageX/20,
+            y: centerPageY/20
+        });
+
+        //마우스 좌표값 출력
+        //textContent를 통해 선택자에게 각 좌표값를 대입시킨다.
+        document.querySelector(".mousePageX").textContent = mousePageX;
+        document.querySelector(".mousePageY").textContent = mousePageY;
+        document.querySelector(".centerPageX").textContent = centerPageX;
+        document.querySelector(".centerPageY").textContent = centerPageY;
+    });
+
+
+
+
+    //마우스5   //기울기 효과/글씨반전효과
+    const mouseMove = (e) => { // == function mouseMove(){}; 와 같다. 즉 마우스를 움직일 때 발생하는 이벤트를 함수로 설정한 뒤 실행문에서 이벤트 리스너와 함께 함수를 실행시킨 것!
+
+    //마우스 좌표값 - 브라우저 기준
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //마우스 좌표 기준점을 가운데로 변경 - 마우스 좌표값 : 화면 중앙 기준
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY = window.innerHeight/2 - mousePageY;
+
+    //마우스 좌표값이 최소값은 -100 최대값은 100이 되도록 설정 : 좌표가 너무 크게 움직일 경우 이미지 움직임도 커지기 때문에 구해주는 것.
+    //Math.max == 메서드 안의 값 중 최대값을 반환 / Math.min == 메서드 안의 값 중 최소값을 반환
+    //Math.min이 먼저 구해지고 Math.max가 구해진다. 즉 min에서 100보다 커지지 못하도록 최소 100을 고정했으므로 좌표값이 100을 넘어가더라도 100으로 고정이 되어 최대값이 100으로 설정된다. 그 뒤 max에서 좌표값이 -100보다 작아질 경우 최대값은 -100으로 고정되기 때문에 최솟값은 -100이 설정된다. 
+    let maxPageX =  Math.max(-100, Math.min(100,centerPageX));
+    let maxPageY = Math.max(-100, Math.min(100,centerPageY));
+
+    //각도 줄이는 설정 : 위의 값에서 더 각도를 줄이기 위함.
+    let anglePageX = maxPageX * 0.3;
+    let anglePageY = maxPageY * 0.3;
+
+    //부드럽게 설정 : 
+    let softPageX = 0 , softPageY = 0;
+    softPageX += (anglePageX - softPageX) * 0.4;
+    softPageY += (anglePageY - softPageY) * 0.4; //오차범위
+
+    //이미지 움직이기
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX("+ -softPageY +"deg) rotateY("+ -softPageX +"deg)";
+
+    //커서
+    gsap.to(".mouse__cursor" , {duration : 0.3 , left: mousePageX -50, top : mousePageY -50 });
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+    document.querySelector(".maxPageX").textContent = maxPageX;
+    document.querySelector(".maxPageY").textContent = maxPageY;
+    document.querySelector(".anglePageX").textContent = Math.round(anglePageX);
+    document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+    };
+
+    window.addEventListener("mousemove", mouseMove);
+
+
+    
+    //마우스6   //텍스트효과
+    //선택자
+    const cursor = document.querySelector(".mouse__cursor");//마우스 커서
+
+    //01 : 마우스가 움직일 때 설정 (매개변수로 설정)
+    const mouseMove = (e) => {
+        //요소 크기에서 브라우저 페이지 반 값 빼주고 현재위치값 빼주면 가운데 정렬
+        let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
+        let positionFast = (e.pageX - (window.innerWidth/2)) * 0.3;
+
+        gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
+        gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
+        gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
+
+        }
+        //실행문에 이밴트리스너를 사용하여 마우스가 움직일 때 매개변수로 값을 받아서 실행시킨다.
+        window.addEventListener("mousemove", mouseMove);
+
+
+        //02 : 마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업... 글씨 반전 효과 추가
+        // 방법 01 : 선택자로 텍스트들의 부모를 선택한 뒤 CSS의 트렌스폼 스케일 설정을 해줍니다.
+        // document.querySelector(".mouse__text").addEventListener("mouseover", () => {
+        // cursor.style.transform = "scale(5)"
+        // });
+
+        // document.querySelector(".mouse__text").addEventListener("mouseout", () => {
+        // cursor.style.transform = "scale(1)"
+        // });
+
+        //방법 02 : 반복문을 통해 설정합니다. : 이벤트 리스너는 All가 적용되지 않으므로 반복문을 통해 설정할 수 있습니다!
+        const leftLine = document.querySelectorAll(".mouse__text .spanSlow"); //라인 선택자.
+        const rightLine = document.querySelectorAll(".mouse__text .spanFast"); 
+
+        leftLine.forEach((el)=>{
+            el.addEventListener("mouseover", () => {
+                cursor.style.transform = "scale(5)"
+            });
+            el.addEventListener("mouseout", () => {
+                cursor.style.transform = "scale(1)"
+            });
+        });
+
+        rightLine.forEach((el)=>{
+            el.addEventListener("mouseover", () => {
+                cursor.style.transform = "scale(5)"
+            });
+
+            el.addEventListener("mouseout", () => {
+                cursor.style.transform = "scale(1)"
+            });
+        });
+</script>

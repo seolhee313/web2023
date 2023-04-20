@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 </title>
+    <link href="https://webfontworld.github.io/recia/ReciaSerifDisplay.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "ReciaSerifDisplay";
+        }
+        body {
+            height: 20000px;
+            background-color: #E0E4DD;
+        }
+        .scrollTop {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            line-height: 40px;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .s1-text1 {
+            font-size: 30vw;
+            line-height: 1;
+            padding-top: 8vw;
+        }
+        .s1-text2 {
+            font-size: 0vw;
+            line-height: 1;
+            padding-top: 8vw;
+        }
+        .s1-img1 {
+            width: 200vw;
+            height: 100vh;
+        }
+        .s1-img1 > div {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .s1-img1 > div > div {
+            width: 19vh;
+            height: 19vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 5px solid #000;
+            filter: saturate(100%);
+        }
+        .s1-img1-1 > div:first-child {background-image: url(https://siyoenkim.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-1 > div:last-child {background-image: url(https://seolhee313.github.io/web2023/assets/ico/icon.jpg);}
+        
+        .s1-img1-2 > div:first-child {background-image: url(https://kebab000.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-2 > div:last-child {background-image: url(https://dkseho9121.github.io/web2023/assets/ico/icon01.jpg);}
+        
+        .s1-img1-3 > div:first-child {background-image: url(https://jinyongjang.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-3 > div:last-child {background-image: url(https://chohena.github.io/web2023/assets/ico/icon01.jpg);}
+        
+        .s1-img1-4 > div:first-child {background-image: url(https://kimdohyun2002.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-4 > div:last-child {background-image: url(https://jhwangwoo.github.io/web2023/assets/ico/icon.jpg);}
+        
+        .s1-img1-5 > div:first-child {background-image: url(https://yeodaseul4355.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-5 > div:last-child {background-image: url(https://hyejeong3283.github.io/web2023/assets/ico/icon%2001.jpg);}
+
+        .s2-img1 {
+            width: 200vw;
+            height: 100vh;
+        }
+        .s2-img1 > div {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .s2-img1 > div > div {
+            width: 19vh;
+            height: 19vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 5px solid #000;
+            filter: saturate(100%);
+        }
+
+        .s2-img1-1 > div:first-child {background-image: url(https://dkdlelw.github.io/web2023/assets/ico/icon.jpg);}
+        .s2-img1-1 > div:last-child {background-image: url(https://lee3ll.github.io/web2023/assets/ico/icon01.jpg);}
+        
+        .s2-img1-2 > div:first-child {background-image: url(https://jo0132.github.io/web2023/assets/ico/icon.jpg);}
+        .s2-img1-2 > div:last-child {background-image: url(https://dlgnsrb227.github.io/web2023/assets/ico/icon.jpg);}
+        
+        .s2-img1-3 > div:first-child {background-image: url(https://dongjin6539.github.io/web2023/assets/ico/icon.jpg);}
+        .s2-img1-3 > div:last-child {background-image: url(https://hyeonbeen97.github.io/web2023/assets/ico/icon.jpg);}
+        
+        .s2-img1-4 > div:first-child {background-image: url(https://younajeong.github.io/web2023/assets/ico/icon.jpg);}
+        .s2-img1-4 > div:last-child {background-image: url(https://ehcjswo.github.io/web2023/assets/ico/icon.jpg);}
+        
+        .s2-img1-5 > div:first-child {background-image: url(https://fitalux.github.io/web2023/assets/ico/icon01.jpg);}
+        .s2-img1-5 > div:last-child {background-image: url(https://xlsak5.github.io/testAnGyonam/assets/ico/icon.jpg);}
+
+        .s3-img1 {
+            width: 200vw;
+            height: 100vh;
+        }
+        .s3-img1 > div {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .s3-img1 > div > div {
+            width: 19vh;
+            height: 19vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 5px solid #000;
+            filter: saturate(100%);
+        }
+
+        .s3-img1-1 > div:first-child {background-image: url(https://hyunmijin.github.io/web2023/assets/ico/icon.jpg);}
+        .s3-img1-1 > div:last-child {background-image: url(https://daanbi1345.github.io/web2023/assets/ico/icon11.jpg);}
+        
+        .s3-img1-2 > div:first-child {background-image: url(https://ture403.github.io/web2023/assets/ico/icon.jpg);}
+        .s3-img1-2 > div:last-child {background-image: url(https://leeyanggoo.github.io/web2023/assets/ico/icon1.jpg);}
+        
+        .s3-img1-3 > div:first-child {background-image: url(https://aimeekwon.github.io/web2023/assets/ico/icon.jpg);}
+        .s3-img1-3 > div:last-child {background-image: url(https://getgrovy.github.io/web2023/assets/ico/icon01.jpg);}
+        
+        .s3-img1-4 > div:first-child {background-image: url(http://leeyouna21.github.io/web2023/assets/ico/icon01.jpg);}
+        .s3-img1-4 > div:last-child {background-image: url(http://webstoryboy.github.io/web2023/assets/ico/icon8.jpg);}
+    </style>
+</head>
+<body>
+    <div class="scrollTop"></div>
+
+    <section id="section1">
+        <div class="s1-text1 fixed"
+            data-0="font-size: 0vw; opacity: 1"
+            data-1000="font-size: 20vw; opacity: 1"
+            data-2000="font-size: 20vw; opacity: 1"
+            data-3000="font-size: 0vw; opacity: 0"
+        >cheon</div>
+        <div class="s1-text2 fixed"
+            data-2500="font-size: 0vw; transform: translate(-50%, -50%) rotate(0deg); opacity: 1"
+            data-3500="font-size: 20vw; transform: translate(-50%, -50%) rotate(720deg); opacity: 1"
+            data-6000="font-size: 20vw; transform: translate(-50%, -50%) rotate(720deg); opacity: 0"
+        >seolhee</div>
+        <div class="s1-img1 fixed"
+            data-3000="width: 200vw;"
+            data-4000="width: 20vw;"
+        >
+            <div class="s1-img1-1"
+                data-3000="transform: rotate(0deg)"
+                data-4000="transform: rotate(360deg)"
+            >
+                <div
+                    data-3500="transform: scale(2)"
+                    data-4500="transform: scale(1)"
+                    data-9800="transform: scale(0)"
+                >
+                </div>
+                <div
+                    data-3500="transform: scale(2)"
+                    data-4500="transform: scale(1)"
+                    data-9800="transform: scale(0)"
+                ></div>
+            </div>
+            <div class="s1-img1-2"
+                data-3000="transform: rotate(0deg)"
+                data-4000="transform: rotate(360deg)"
+            >
+                <div
+                    data-3700="transform: scale(2)"
+                    data-4700="transform: scale(1)"
+                    data-9600="transform: scale(0)"
+                ></div>
+                <div
+                    data-3700="transform: scale(2)"
+                    data-4700="transform: scale(1)"
+                    data-9600="transform: scale(0)"
+                ></div>
+            </div>
+            <div class="s1-img1-3"
+                data-3000="transform: rotate(0deg)"
+                data-4000="transform: rotate(360deg)"
+            >
+                <div
+                    data-3900="transform: scale(2)"
+                    data-4900="transform: scale(1)"
+                    data-9400="transform: scale(0)"
+                ></div>
+                <div
+                    data-3900="transform: scale(2)"
+                    data-4900="transform: scale(1)"
+                    data-9400="transform: scale(0)"
+                ></div>
+            </div>
+            <div class="s1-img1-4"
+                data-3000="transform: rotate(0deg)"
+                data-4000="transform: rotate(360deg)"
+            >
+                <div
+                    data-4100="transform: scale(2)"
+                    data-5100="transform: scale(1)"
+                    data-9200="transform: scale(0)"
+                ></div>
+                <div
+                    data-4100="transform: scale(2)"
+                    data-5100="transform: scale(1)"
+                    data-9200="transform: scale(0)"
+
+                ></div>
+            </div>
+            <div class="s1-img1-5"
+                data-3000="transform: rotate(0deg)"
+                data-4000="transform: rotate(360deg)"
+            >
+                <div
+                    data-4300="transform: scale(2)"
+                    data-5300="transform: scale(1)"
+                    data-9000="transform: scale(0)"
+                ></div>
+                <div
+                    data-4300="transform: scale(2)"
+                    data-5300="transform: scale(1)"
+                    data-9000="transform: scale(0)"
+                ></div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="section2">
+        <div class="s2-img1 fixed"
+            data-3000="width: 100vw; opacity: 1"
+            data-8000="width: 20vw;"
+            data-11000="width: 200vw;"
+        >
+            <div class="s2-img1-1"
+                data-5500="transform: scale(2);"
+                data-6000="transform: scale(1.5)"
+                data-6500="transform: scale(1)"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s2-img1-2"
+                data-6000="transform: scale(2)"
+                data-6500="transform: scale(1.5)"
+                data-7000="transform: scale(1)"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s2-img1-3"
+                data-6500="transform: scale(2)"
+                data-7000="transform: scale(1.5)"
+                data-7500="transform: scale(1)"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s2-img1-4"
+                data-7000="transform: scale(2)"
+                data-7500="transform: scale(1.5)"
+                data-8000="transform: scale(1)"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s2-img1-5"
+                data-7500="transform: scale(2)"
+                data-8000="transform: scale(1.5)"
+                data-8500="transform: scale(1)"
+            >
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="s1-img1 fixed"
+            data-9500="width: 20vw;"
+            data-13000="width: 200vw;"
+        >
+            <div class="s3-img1-1"
+                data-9500="transform: rotate(0deg)"
+                data-9700="transform: rotate(360deg)"
+            >
+                <div
+                    data-9000="transform: scale(0)"
+                    data-10000="transform: scale(1)"
+                    data-11000="transform: scale(2)"
+                >
+                </div>
+                <div
+                    data-9000="transform: scale(0)"
+                    data-10000="transform: scale(1)"
+                    data-11000="transform: scale(2)"
+
+                ></div>
+            </div>
+            <div class="s3-img1-2"
+                data-9500="transform: rotate(0deg)"
+                data-9700="transform: rotate(360deg)"
+            >
+                <div
+                    data-8800="transform: scale(0)"
+                    data-9800="transform: scale(1)"
+                    data-10800="transform: scale(2)"
+                ></div>
+                <div
+                    data-8800="transform: scale(0)"
+                    data-9800="transform: scale(1)"
+                    data-10800="transform: scale(2)"
+                ></div>
+            </div>
+            <div class="s3-img1-3"
+                data-9500="transform: rotate(0deg)"
+                data-9700="transform: rotate(360deg)"
+            >
+                <div
+                    data-8600="transform: scale(0)"
+                    data-9600="transform: scale(1)"
+                    data-10600="transform: scale(2)"
+                ></div>
+                <div
+                    data-8600="transform: scale(0)"
+                    data-9600="transform: scale(1)"
+                    data-10600="transform: scale(2)"
+                ></div>
+            </div>
+            <div class="s3-img1-4"
+                data-9500="transform: rotate(0deg)"
+                data-9700="transform: rotate(360deg)"
+            >
+                <div
+                    data-8400="transform: scale(0)"
+                    data-9400="transform: scale(1)"
+                    data-10400="transform: scale(2)"
+                ></div>
+                <div
+                    data-8400="transform: scale(0)"
+                    data-9400="transform: scale(1)"
+                    data-10400="transform: scale(2)"
+                ></div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+
+        let s = skrollr.init();
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY;
+            
+            document.querySelector(".scrollTop").innerText = parseInt(scrollTop);
+        })
+    </script>
+</body>
+</html>
