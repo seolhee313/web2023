@@ -1,0 +1,89 @@
+.intro__inner h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 37px;
+}
+.intro__text2 {
+  font-size: 18px;
+  text-align: center;
+}
+.board__inner .b1 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+  margin-top: 130px;
+  align-items: center;
+}
+.board__inner table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+.board__inner table tr:nth-child(1) {
+  background-color: #d9d9d9;
+}
+.board__inner table tr td {
+  text-align: center;
+  padding: 1vw;
+  border-bottom: 2px solid #000;
+}
+.board__inner .nav {
+  margin: 5vw;
+  text-align: center;
+}
+.board__inner .nav button {
+  display: inline-block;
+  margin-left: -5px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.nav button:nth-child(3) {
+  background-color: #000;
+  color: #fff;
+}
+.desc span {
+  color: rgb(249, 80, 80);
+}
+.info {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.info input {
+  padding: 10px 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.info .sel1 {
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.info .btn1 {
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.info a {
+  display: inline-block;
+  background-color: #000;
+  padding: 8px 22px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.info table {
+  border-bottom: 1px solid #000;
+}
+.footer__inner {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}

@@ -534,15 +534,15 @@
         //         }
         //     }
         // }
+
         {
-    let i=0, c=0;
-
-    while(i<10){
-        i++;
-        c *= i;
+    let result = 0;
+    for(let i=1; i<999; i++){
+        if(i%3==0 && i%2 !=0){
+            result = i;
+        }
     }
-
-    console.log(c);
+    console.log(result);
 }
     </script>
 </body>
