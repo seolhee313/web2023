@@ -42,6 +42,7 @@
     </main>
 
     <footer id="footer">
+        <div class="music">🎵 현재 뮤직 듣기가 중지되었습니다. 🎵</div>
         <div class="info">현재 윈도우를 사용하고 있으며, 화면 크기는 1920 X 760입니다.</div>
     </footer>
 
@@ -50,6 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script>
         //icon1
+        //드래그
         $(".icon1").draggable({
             containment: ".icon__box", scroll: false,
             //드래그시 마우스 이미지(색) 바꾸기
@@ -62,8 +64,19 @@
                 $("header").css("background-color", "#f99191b6");
             },
         });
+        //클릭
+        $(".icon1").click(function() {
+        let music = $(".music");
+            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            } else {
+                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+            }
+        });
+       
 
         //icon2
+        //드래그
         $(".icon2").draggable({
             //드래그시 마우스 이미지(색) 바꾸기
             start: function() {
@@ -75,8 +88,18 @@
                 $("header").css("background-color", "#919df9b0");
             },
         });
+        //클릭
+        $(".icon2").click(function() {
+            let music = $(".music");
+            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            } else {
+                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+            }
+        });
 
         //icon3
+        //드래그
         $(".icon3").draggable({
              //드래그시 마우스 이미지(색) 바꾸기
             start: function() {
@@ -88,8 +111,18 @@
                 $("header").css("background-color", "#c3ff98b9");
             },
         });
+        //클릭
+        $(".icon3").click(function() {
+            let music = $(".music");
+            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            } else {
+                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+            }
+        });
 
         //icon4
+        //드래그
         $(".icon4").draggable({
             containment: ".icon__box", scroll: false,
             //드래그시 마우스 이미지(색) 바꾸기
@@ -100,6 +133,15 @@
             //드래그 할 때 헤더 색 바꾸기
             drag: function() {
                 $("header").css("background-color", "#fbf58bb6");
+            }
+        });
+        //클릭
+        $(".icon4").click(function() {
+            let music = $(".music");
+            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            } else {
+                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
             }
         });
 
@@ -149,9 +191,19 @@
             if (os.indexOf("window") >= 0) {
                 agent.innerText = "현재 windows를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
                 document.querySelector(".info").classList.add("window");
+            } else if (os.indexOf("macintosh") >= 0) {
+                agent.innerText = "현재 mac을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("mac");
+            } else if (os.indexOf("iphone") >= 0) {
+                agent.innerText = "현재 IPhone을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("iphone");
+            } else if (os.indexOf("android") >= 0) {
+                agent.innerText = "현재 Android를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("android");
             }
         }
 
+        
 
         // $(".icon1").click(function() {
         //     $("header").css("background-color", "#f99191b6");

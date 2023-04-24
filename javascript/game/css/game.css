@@ -55,7 +55,17 @@ body {
     padding: 9px 2px 7px;
     border-radius: 4px;
 }
+
 /* footer */
+.music {
+    position: fixed;
+    left: 50%;
+    bottom: 35px;
+    font-size: 14px;
+    color: #fff;
+    transform: translateX(-50%);
+    text-align: center;
+}
 .info {
     position: fixed;
     left: 50%;
