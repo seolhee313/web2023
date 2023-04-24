@@ -60,7 +60,7 @@ body {
 .music {
     position: fixed;
     left: 50%;
-    bottom: 35px;
+    bottom: 45px;
     font-size: 14px;
     color: #fff;
     transform: translateX(-50%);
