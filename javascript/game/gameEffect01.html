@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/bg.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/music.css">
 </head>
 <body>
     <div class="cursor">
@@ -39,6 +40,53 @@
                 <span>뮤직 듣기</span>
             </div>
         </div>
+
+
+        <!-- //뮤직플레이어 -->
+        <div class="music__wrap">
+            <div class="music__inner">
+                <div class="music__header">
+                    <span class="left"></span>
+                    <h2>MUSIC PlAYER</h2>
+                    <span class="right"></span>
+                </div>
+                <div class="music__contents">
+                    <div class="music__view">
+                        <div class="image">
+                            <img src="img/music_view01.png" alt="음악">
+                        </div>
+                    </div>
+                    <div class="music__control">
+                        <div class="title">
+                            <h3>노래 제목</h3>
+                            <p>노래 작가 이름</p>
+                        </div>
+                        <div class="progress">
+                            <div class="bar">
+                                <audio src="audio/Calm Cam - TrackTribe.mp3"></audio>
+                            </div>
+                            <div class="timer">
+                                <span class="current">0:00</span>
+                                <span class="duration">3:55</span>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <span>전체 반복</span>
+                            <span>이전곡 재생</span>
+                            <span>재생</span>
+                            <span>다음곡 재생</span>
+                            <span>재생 목록</span>
+                            <!-- <span>한곡 반복</span>
+                            <span>랜덤 반복</span>
+                            <span>정지 반복</span> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="music__footer"></div>
+            </div>
+        </div>
+        <!-- //뮤직 플레이어 -->
     </main>
 
     <footer id="footer">
@@ -49,6 +97,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="js/music.js"></script>
     <script>
         //icon1
         //드래그
@@ -157,7 +206,6 @@
             printTime();    //오른쪽 상단 시간
             printAgent();    //하단 중앙
         }
-
         
         //시간 출력
         function printTime() {
@@ -166,7 +214,8 @@
             let hour = now.getHours();
             let minute = now.getMinutes();
             let second = now.getSeconds();
-            if (hour > 12) hour = hour - 12;
+            if (hour > 12) hour = hour;
+            // if (hour > 12) hour = hour - 12; //시간 -12
             if (hour < 10) hour = `0${hour}`;
             if (minute < 10) minute = `0${minute}`;
             if (second < 10) second = `0${second}`;
@@ -202,21 +251,6 @@
                 document.querySelector("body").classList.add("android");
             }
         }
-
-        
-
-        // $(".icon1").click(function() {
-        //     $("header").css("background-color", "#f99191b6");
-        // });
-        // $(".icon2").click(function() {
-        //     $("header").css("background-color", "#919df9b0");
-        // });
-        // $(".icon3").click(function() {
-        //     $("header").css("background-color", "#c3ff98b9");
-        // });
-        // $(".icon4").click(function() {
-        //     $("header").css("background-color", "#fbf58bb6");
-        // });
     </script>
 </body>
 </html>
