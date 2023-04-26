@@ -5,10 +5,10 @@ const allMusic = [
         img : "music_view01",
         audio: "drunk text - Henry Moodie"
     },{
-        name : "2. iceland",
-        artist : "PL",
+        name : "2. you",
+        artist : "LANY",
         img : "music_view02",
-        audio: "iceland-PL"
+        audio: "you-LANY"
     },{
         name : "3. 심야영화",
         artist : "하현상",
@@ -59,7 +59,7 @@ const musicView = musicWrap.querySelector(".music__view .image img");
 const musicAudio = musicWrap.querySelector("#main-audio");
 const musicPlay = musicWrap.querySelector("#control-play");
 
-let musicIndex = 6;     //현재 음악 인덱스
+let musicIndex = 2     //현재 음악 인덱스
 
 //음악 재생
 const loadMusic = (num) => {
