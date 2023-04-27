@@ -121,6 +121,7 @@ html::before {
             transparent min(45vh, 45vw)),
         linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
     }
+    
     body {
         background-image: url(https://i.pinimg.com/originals/e7/fc/a4/e7fca41687df365b3f4906a5942bb468.gif);
         background-repeat: no-repeat;
