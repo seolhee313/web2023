@@ -10,20 +10,20 @@ const allMusic = [
         img : "music_view02",
         audio: "you-LANY"
     },{
-        name : "3. 심야영화",
-        artist : "하현상",
+        name : "3. Still Sunset",
+        artist : "NELL",
         img : "music_view03",
-        audio: "late_Night_Movie-Ha_HyunSang"
+        audio: "NELL_-_Still_Sunset"
     },{
         name : "4. love someone",
         artist : "Lukas Graham",
         img : "music_view04",
         audio: "love someone-Lukas Graham"
     },{
-        name : "5. Nerdy Love",
-        artist : "pH-1",
+        name : "5. Photograph",
+        artist : "Ed Sheeran",
         img : "music_view05",
-        audio: "Nerdy_Love-pH-1"
+        audio: "OST_Ed_Sheeran_-_Photograph"
     },{
         name : "6. Never Not",
         artist : "Lauv",
@@ -36,7 +36,7 @@ const allMusic = [
         audio: "summer-The Volunteers"
     },{
         name : "8. Wonder",
-        artist : "Shawn_Mendes",
+        artist : "Shawn Mendes",
         img : "music_view08",
         audio: "Wonder-Shawn_Mendes"
     },{
