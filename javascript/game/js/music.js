@@ -171,7 +171,6 @@ musicNextBtn.addEventListener("click", () => {
 
 
 
-
 window.addEventListener("load", () => {
     loadMusic(musicIndex);
     console.log(musicIndex);
