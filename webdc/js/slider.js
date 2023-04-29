@@ -19,7 +19,7 @@ setInterval(() => {
 }, sliderInterval);
 
 
-//트랜지션 설정 상 아래서 위  //.slider__img 안에 display: flex;, flex-wrap: wrap; 주석처리해야함.
+// 트랜지션 설정 상 아래서 위  //.slider__img 안에 display: flex;, flex-wrap: wrap; 주석처리해야함.
 // sliderInner.style.transition = "all 0.6s";
 
 // setInterval(() => {

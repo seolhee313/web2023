@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웹디자인 기능사 실기 B유형 4번 레이아웃</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
+            font-family: 'GmarketSans';
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+            font-size: 16px;
         }
         #wrap {
             width: 100%;
@@ -18,30 +26,27 @@
             width: 1200px;
             height: inherit;
             margin: 0 auto;
-            background-color: #7c7c7c46;
+            background-color: #e2f1fd;
         }
         #header {
             width: 100%;
             height: 100px;
-            background-color: #B0B0B0;
+            background-color: #e9e9e9;
         }
         #header .container {
             display: flex;
         }
         #header h1 {
             width: 20%;
-            background-color: rgb(197, 241, 255);
+            background-color: #eae4e9;
         }
         #header nav {
-            width: 100%;
-            background-color: rgb(203, 255, 129);
+            width: 80%;
+            background-color: #fff1e6;
         }
-        #slider {
-            width: 100%;
+        #slider .container{
             height: 300px;
-        }
-        #slider .container {
-            display: flex;
+            background-color: #e2f1fd;
         }
         #contents {
             width: 100%;
@@ -51,21 +56,21 @@
             display: flex;
         }
         #contents .content1 {
-            width: 33.333%;
-            background-color: #f1b2b2;
+            width: 33.3333%;
+            background-color: #fde2e4;
         }
         #contents .content2 {
-            width: 33.333%;
-            background-color: #f0f4a2;
+            width: 33.3333%;
+            background-color: #e2ece9;
         }
         #contents .content3 {
-            width: 33.333%;
-            background-color: #fbcb90;
+            width: 33.3333%;
+            background-color: #bee1e6;
         }
         #footer {
             width: 100%;
             height: 100px;
-            background-color: #B0B0B0;
+            background-color: #e9e9e9;
         }
         #footer .container {
             display: flex;
@@ -73,19 +78,19 @@
         #footer .footer1 {
             width: 80%;
         }
-        #footer .footer1-1 {
+        .footer1 .footer1-1 {
             width: 100%;
             height: 50px;
-            background-color: #fdf6b6;
+            background-color: #f0efeb;
         }
-        #footer .footer1-2 {
+        .footer1 .footer1-2 {
             width: 100%;
             height: 50px;
-            background-color: #fdc1ff;
+            background-color: #dfe7fd;
         }
         #footer .footer2 {
             width: 20%;
-            background-color: #756;
+            background-color: #cddafd;
         }
     </style>
 </head>
@@ -93,27 +98,27 @@
     <div id="wrap">
         <div id="header">
             <div class="container">
-                <h1></h1>
-                <nav></nav>
+                <h1>로고</h1>
+                <nav>메뉴</nav>
             </div>
         </div>
         <div id="slider">
-            <div class="container"></div>
+            <div class="container">이미지 슬라이드</div>
         </div>
         <div id="contents">
             <div class="container">
-                <div class="content1"></div>
-                <div class="content2"></div>
-                <div class="content3"></div>
+                <div class="content1">공지사항</div>
+                <div class="content2">배너</div>
+                <div class="content3">바로가기</div>
             </div>
         </div>
         <div id="footer">
             <div class="container">
                 <div class="footer1">
-                    <div class="footer1-1"></div>
-                    <div class="footer1-2"></div>
+                    <div class="footer1-1">하단메뉴</div>
+                    <div class="footer1-2">COPYRIGHT</div>
                 </div>
-                <div class="footer2"></div>
+                <div class="footer2">패밀리 사이트</div>
             </div>
         </div>
     </div>

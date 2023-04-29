@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인 기능사 실기 A유형 1번 레이아웃</title>
+    <title>웹디자인 기능사 실기 슬라이드 좌</title>
 
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
 
@@ -36,9 +36,30 @@
             height: 300px;
             background-color: #fde2e4;
         }
+        .slider__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            overflow: hidden;
+        }
+        .slider__inner {
+            position: relative;
+            width: 1200px;
+            height: 300px;
+        }
+        .slider__img {
+            display: flex;
+            flex-wrap: wrap;
+            width: 4800px;
+            height: 300px;
+        }
+        .slider img {
+            width: 1200px;
+            height: 300px;
+        }
         #article {
             width: 100%;
-            height: 200px;
+            height: 300px;
             display: flex;
         }
         .a1 {
@@ -78,7 +99,18 @@
             <header class="header">로고</header>
             <nav class="nav">메뉴</nav>
         </header>
-        <section id="section">이미지 슬라이드</section>
+        <section id="section">
+            <div class="slider__wrap">
+                <div class="slider__inner">
+                    <div class="slider__img">
+                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <article id="article">
             <article class="a1">공지사항</article>
             <article class="a2">배너</article>
@@ -90,5 +122,27 @@
             <footer class="f3">SNS</footer>
         </footer> 
     </div>
+    
+    <script>
+        //선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");         //보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner");  //움직이는 영역
+        const slider = sliderWrap.querySelectorAll(".slider");              //개별 이미지
+
+        let currentIndex = 0;               //현재 보이는 이미지
+        let sliderCount = slider.length;    //이미지 갯수
+        let sliderInterval = 2000;          //이미지 변경 간격 시간
+
+        // 트랜지션 설정 좌
+        sliderInner.style.transition = "all 0.6s";
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderCount;
+
+            sliderInner.style.transform = "translateX("+ -1200 * currentIndex + "px)";
+
+        }, sliderInterval);
+    </script>
 </body>
 </html>

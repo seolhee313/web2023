@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사 실기 C유형 3번 레이아웃</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        #wrap {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex; 
+        }
+        #aside {
+            width: 20%;
+            background-color: #fff;
+        }
+        #aside .logo {
+            width: 100%;
+            height: 200px;
+            background-color: #e2eafc;
+        }
+        #aside .menu {
+            width: 100%;
+            height: 450px;
+            background-color: #d7e3fc;
+        }
+        #article {
+            width: 80%;
+            height: 650px;
+            background-color: #ccdbfd;
+        }
+        #article .slider {
+            width: 100%;
+            height: 350px;
+            background-color: #c1d3fe;
+        }
+        #article .contents {
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+        #article .contents .cont1 {
+            width: 33.3333%;
+            background-color: #b6ccfe;
+        }
+        #article .contents .cont2 {
+            width: 33.3333%;
+            background-color: #abc4ff;
+        }
+        #article .contents .cont3 {
+            width: 33.3333%;
+            background-color: #9dbafd;
+        }
+        #article .footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap; 
+            flex-direction: column;
+        }
+        #article .footer .foot1{
+            width: 20%;
+            height: 100px;
+            background-color: rgb(127, 150, 202);
+        }
+        #article .footer .foot2{
+            width: 80%;
+            height: 50px;
+            background-color: rgb(118, 143, 204);
+        }
+        #article .footer .foot3{
+            width: 80%;
+            height: 50px;
+            background-color: rgb(106, 134, 204);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <div class="logo">로고</div>
+            <div class="menu">메뉴</div>
+        </aside>
+        <section id="article">
+            <div class="slider">이미지 슬라이드</div>
+            <div class="contents">
+                <div class="cont1">공지사항</div>
+                <div class="cont2">배너</div>
+                <div class="cont3">바로가기</div>
+            </div>
+            <div class="footer">
+                <div class="foot1">로고</div>
+                <div class="foot2">하단메뉴</div>
+                <div class="foot3">COPYRIGHT</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
