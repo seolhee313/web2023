@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인 기능사 실기 슬라이드 위에서 아래로</title>
+    <title>웹디자인 기능사 실기 슬라이드 아래에서 위로</title>
 
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
 
@@ -50,7 +50,6 @@
             width: 1200px;
             height: 300px;
             display: flex;
-            transform: translateY(-300%);
         }
         #article {
             width: 100%;
@@ -98,10 +97,10 @@
             <div class="slider__wrap">
                 <div class="slider__inner">
                     <div class="slider__img">
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/1.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/2.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/3.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/7.jpg" alt="런칭기념 이벤트"></div>
                     </div>
                 </div>
             </div>
@@ -135,7 +134,7 @@
         setInterval(() => {
             currentIndex = (currentIndex + 1) % sliderCount;
 
-            sliderInner.style.transform = "translateY("+ 300 * currentIndex + "px)";
+            sliderInner.style.transform = "translateY("+ -300 * currentIndex + "px)";
 
         }, sliderInterval);
     </script>

@@ -170,11 +170,11 @@
 }
 .music__list ul::-webkit-scrollbar-thumb {
     height: 30%;
-    background: #217AF4;
+    background: #1f5bb0;
     border-radius: 10px;
 }
-.music__list::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.66);
+.music__list ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.096);
 }
 .music__list ul li {
     height: 50px;
@@ -182,7 +182,7 @@
     margin-right: 5px;
     display: flex;
     align-items: center;
-    background-color: rgba(255,224,224,0.119);
+    background-color: rgba(255, 224, 224, 0.074);
     padding: 5px;
     box-sizing: content-box;
     border-radius: 5px;

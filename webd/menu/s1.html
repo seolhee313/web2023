@@ -37,10 +37,10 @@
             background-color: #fde2e4;
         }
         .slider__wrap {
-            display: flex;
-            flex-wrap: wrap;
             width: 100%;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .slider__inner {
             position: relative;
@@ -48,14 +48,20 @@
             height: 300px;
         }
         .slider__img {
-            display: flex;
-            flex-wrap: wrap;
-            width: 4800px;
+            position: relative;
+            width: 1200px;
             height: 300px;
+            overflow: hidden;
         }
         .slider img {
             width: 1200px;
             height: 300px;
+        }
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.3s;
         }
         #article {
             width: 100%;
@@ -103,10 +109,9 @@
             <div class="slider__wrap">
                 <div class="slider__inner">
                     <div class="slider__img">
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
-                        <div class="slider"><img src="../img/banner01.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/1.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/2.jpg" alt="런칭기념 이벤트"></div>
+                        <div class="slider"><img src="../img/3.jpg" alt="런칭기념 이벤트"></div>
                     </div>
                 </div>
             </div>
@@ -126,22 +131,19 @@
     <script>
         //선택자
         const sliderWrap = document.querySelector(".slider__wrap");
-        const sliderImg = sliderWrap.querySelector(".slider__img");         //보여지는 영역
-        const sliderInner = sliderWrap.querySelector(".slider__inner");  //움직이는 영역
-        const slider = sliderWrap.querySelectorAll(".slider");              //개별 이미지
+        const sliderImg = sliderWrap.querySelector(".slider__img");        
+        const slider = sliderWrap.querySelectorAll(".slider");              
 
-        let currentIndex = 0;               //현재 보이는 이미지
-        let sliderCount = slider.length;    //이미지 갯수
-        let sliderInterval = 2000;          //이미지 변경 간격 시간
-
-        // 트랜지션 설정 좌
-        sliderInner.style.transition = "all 0.6s";
-
+        let currentIndex = 0;             
+        let sliderCount = slider.length;   
+        let sliderInterval = 2500;         
+    </script>
+     <script>
         setInterval(() => {
-            currentIndex = (currentIndex + 1) % sliderCount;
-
-            sliderInner.style.transform = "translateX("+ -1200 * currentIndex + "px)";
-
+            let nextIndex = (currentIndex + 1) % sliderCount;
+            slider[currentIndex].style.opacity = "0";
+            slider[nextIndex].style.opacity = "1";
+            currentIndex = nextIndex;
         }, sliderInterval);
     </script>
 </body>
