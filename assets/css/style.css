@@ -334,13 +334,25 @@
 	overflow: hidden;
 	cursor: pointer;
 	height: 100%;
+	transition: all 0.3s;
+	opacity: 0.5;
+}
+
+.image-wrap:hover {
+	transform: translateY(-10px);
+	opacity: 1;
 }
 
 .image-wrap img {
 	width: 55%;
-    padding-top: 70px;
-    display: block;
-    margin: 0 auto;
+	padding-top: 63px;
+	display: block;
+	margin: 0 auto;
+	transition: all 0.3s;
+}
+
+.image-wrap:hover img {
+	filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
 }
 
 .image-wrap .hover-wrap {
@@ -348,7 +360,7 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-	
+
 	opacity: 0;
 	filter: alpha(opacity=0);
 	
@@ -1880,7 +1892,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #ff3401a9;
+	/* background: #ff3401a9; */
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -1891,14 +1903,10 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-img-dog.black {
-
 	background: #000;
-
 }
-
-.image-wrap .hover-wrap .overlay-text-thumb-dog {
+/* .image-wrap .hover-wrap .overlay-text-thumb-dog {
 	position: absolute;
 	width: 100%;
 	height: 32px;
@@ -1913,7 +1921,6 @@
 	filter: alpha(opacity=100);
     text-align: center;
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb1-dog {
 	position: absolute;
 	padding-right: 23px;
@@ -1930,7 +1937,6 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb2-dog {
 	position: absolute;
 	text-align: center;
@@ -1946,14 +1952,15 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 	text-transform: uppercase;
-}
+} */
+
 
 /* 여우 */
 .image-wrap .hover-wrap .overlay-img-fox {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #ff9901d2;
+	/* background: #ff9901d2; */
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -1964,14 +1971,10 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-img-fox.black {
-
 	background: #000;
-
 }
-
-.image-wrap .hover-wrap .overlay-text-thumb-fox {
+/* .image-wrap .hover-wrap .overlay-text-thumb-fox {
 	position: absolute;
 	width: 100%;
 	height: 32px;
@@ -1986,7 +1989,6 @@
 	filter: alpha(opacity=100);
     text-align: center;
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb1-fox {
 	position: absolute;
 	padding-right: 23px;
@@ -2003,7 +2005,6 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb2-fox {
 	position: absolute;
 	text-align: center;
@@ -2019,14 +2020,15 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 	text-transform: uppercase;
-}
+} */
+
 
 /* 고양이 */
 .image-wrap .hover-wrap .overlay-img-cat02 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #e4e003b7;
+	/* background: #e4e003b7; */
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -2037,14 +2039,10 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-img-cat02.black {
-
 	background: #000;
-
 }
-
-.image-wrap .hover-wrap .overlay-text-thumb-cat02 {
+/* .image-wrap .hover-wrap .overlay-text-thumb-cat02 {
 	position: absolute;
 	width: 100%;
 	height: 32px;
@@ -2059,7 +2057,6 @@
 	filter: alpha(opacity=100);
     text-align: center;
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb1-cat02 {
 	position: absolute;
 	padding-right: 23px;
@@ -2072,17 +2069,17 @@
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 200px;
-
 	opacity: 1;
 	filter: alpha(opacity=100);
-}
+} */
+
 
 /* 양 */
 .image-wrap .hover-wrap .overlay-img-sheep {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: rgba(2, 185, 115, 0.603);
+	/* background: rgba(2, 185, 115, 0.603); */
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -2093,14 +2090,10 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-img-sheep.black {
-
 	background: #000;
-
 }
-
-.image-wrap .hover-wrap .overlay-text-thumb-sheep {
+/* .image-wrap .hover-wrap .overlay-text-thumb-sheep {
 	position: absolute;
 	width: 100%;
 	height: 32px;
@@ -2115,7 +2108,6 @@
 	filter: alpha(opacity=100);
     text-align: center;
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb1-sheep {
 	position: absolute;
 	padding-right: 23px;
@@ -2128,17 +2120,17 @@
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 200px;
-
 	opacity: 1;
 	filter: alpha(opacity=100);
-}
+} */
+
 
 /* 늑대 */
 .image-wrap .hover-wrap .overlay-img-wolf {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #2258cac0;
+	/* background: #2258cac0; */
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -2149,14 +2141,10 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-
 .image-wrap .hover-wrap .overlay-img-wolf.black {
-
 	background: #000;
-
 }
-
-.image-wrap .hover-wrap .overlay-text-thumb-wolf {
+/* .image-wrap .hover-wrap .overlay-text-thumb-wolf {
 	position: absolute;
 	width: 100%;
 	height: 32px;
@@ -2171,7 +2159,6 @@
 	filter: alpha(opacity=100);
     text-align: center;
 }
-
 .image-wrap .hover-wrap .overlay-text-thumb1-wolf {
 	position: absolute;
 	padding-right: 23px;
@@ -2184,9 +2171,229 @@
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 200px;
-
 	opacity: 1;
 	filter: alpha(opacity=100);
+} */
+
+
+/* 곰 */
+.image-wrap .hover-wrap .overlay-img-bear {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-bear.black {
+	background: #000;
+}
+
+/* 펭귄 */
+.image-wrap .hover-wrap .overlay-img-penguin {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-penguin.black {
+	background: #000;
+}
+
+/* 다람쥐 */
+.image-wrap .hover-wrap .overlay-img-squirrel {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-squirrel.black {
+	background: #000;
+}
+
+/* 수달 */
+.image-wrap .hover-wrap .overlay-img-otter {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-otter.black {
+	background: #000;
+}
+
+/* 호랑이 */
+.image-wrap .hover-wrap .overlay-img-tiger {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-tiger.black {
+	background: #000;
+}
+
+/* 팬더 */
+.image-wrap .hover-wrap .overlay-img-panda {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-panda.black {
+	background: #000;
+}
+
+/* 오리 */
+.image-wrap .hover-wrap .overlay-img-duck {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-duck.black {
+	background: #000;
+}
+
+/* 오리 */
+.image-wrap .hover-wrap .overlay-img-hedgehog {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-hedgehog.black {
+	background: #000;
+}
+
+/* 소 */
+.image-wrap .hover-wrap .overlay-img-cow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-cow.black {
+	background: #000;
+}
+
+/* 쥐 */
+.image-wrap .hover-wrap .overlay-img-mouse {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-mouse.black {
+	background: #000;
+}
+
+/* 고양이3 */
+.image-wrap .hover-wrap .overlay-img-cat03 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #2258cac0; */
+	color: #FFFFFF;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: 32px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top:130px; 
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-img-cat03.black {
+	background: #000;
 }
 
 
@@ -2410,9 +2617,64 @@
 .sheepImg span {color: #999; font-size: 12px; text-transform: uppercase;}
 
 .wolfImg {text-align: center; }
-.wolfImg h5 {color: #023fc2; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.wolfImg h5 {color: #01945b; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
 .wolfImg p {color: #565656; font-size: 18px; }
 .wolfImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.bearImg {text-align: center;}
+.bearImg h5 {color: #01945b; font-size: 23px; padding-top: 42px; text-transform: uppercase;}
+.bearImg p {color: #565656; font-size: 18px; }
+.bearImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.penguinImg {text-align: center; }
+.penguinImg h5 {color: #01945b; font-size: 23px; padding-top: 23px; text-transform: uppercase;}
+.penguinImg p {color: #565656; font-size: 18px; }
+.penguinImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.squirrelImg {text-align: center; }
+.squirrelImg h5 {color: #01945b; font-size: 23px; padding-top: 38px; text-transform: uppercase;}
+.squirrelImg p {color: #565656; font-size: 18px; }
+.squirrelImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.otterImg {text-align: center; }
+.otterImg h5 {color: #030194; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.otterImg p {color: #565656; font-size: 18px; }
+.otterImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.tigerImg {text-align: center; }
+.tigerImg h5 {color: #df8b1c; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.tigerImg p {color: #565656; font-size: 18px; }
+.tigerImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.pandaImg {text-align: center; }
+.pandaImg h5 {color: #df8b1c; font-size: 23px; padding-top: 24px; text-transform: uppercase;}
+.pandaImg p {color: #565656; font-size: 18px; }
+.pandaImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.duckImg {text-align: center; }
+.duckImg h5 {color: #df8b1c; font-size: 23px; padding-top: 18px; text-transform: uppercase;}
+.duckImg p {color: #565656; font-size: 18px; }
+.duckImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.hedgehogImg {text-align: center; }
+.hedgehogImg h5 {color: #df8b1c; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.hedgehogImg p {color: #565656; font-size: 18px; }
+.hedgehogImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.cowImg {text-align: center; }
+.cowImg h5 {color: #df8b1c; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.cowImg p {color: #565656; font-size: 18px; }
+.cowImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.mouseImg {text-align: center; }
+.mouseImg h5 {color: #df8b1c; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.mouseImg p {color: #565656; font-size: 18px; }
+.mouseImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+
+.cat03Img {text-align: center; }
+.cat03Img h5 {color: #e741e2; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.cat03Img p {color: #565656; font-size: 18px; }
+.cat03Img span {color: #999; font-size: 12px; text-transform: uppercase;}
 
 /* control */
 .control {}
