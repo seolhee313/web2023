@@ -10,7 +10,7 @@ Only to restart the animation loop every 30 seconds: not needed, but useful
 */
 const wrapper = document.querySelector('.mac-wrapper');
 setInterval(() => {
-    console.log('restart');
+    // console.log('restart');
     wrapper.classList.remove('start');
     setTimeout(() => {
         wrapper.classList.add('start');
