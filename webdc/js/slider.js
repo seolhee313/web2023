@@ -29,4 +29,16 @@ setInterval(() => {
 
 // }, sliderInterval);
 
+
+// 위에서 아래 .slider__img에 transform: translateY(-300%); 추가해야함
+// sliderInner.style.transition = "all 0.6s";
+
+// setInterval(() => {
+//     currentIndex = (currentIndex + 1) % sliderCount;
+
+//     sliderInner.style.transform = "translateY("+ 400 * currentIndex + "px)";
+
+// }, sliderInterval);
+
+
  
