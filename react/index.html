@@ -145,6 +145,8 @@ root.render(&lt;h1>HELLO WORLD&lt;/h1>);
 
 //hello world
 </code></pre><br>
+                <!-- //intro3-1 -->
+
                     <h4 id="intro3-2" class="page-header">2. JSX</h4>
                     <p>JSX는 React에서 사용되는 JavaScript의 확장 문법입니다. JSX를 사용하면 HTML과 유사한 문법으로 React 컴포넌트를 작성할 수 있습니다. JSX는 React에서 가상 DOM을 생성하는 데 사용되며, 더 간결하고 직관적인 코드를 작성할 수 있도록 도와줍니다.</p>
 <pre><code class="language-js">import React from "react";
@@ -177,6 +179,8 @@ root.render(hello);
 
 //hello, seolhee
 </code></pre><br>
+                <!-- //intro3-2 -->
+
                     <h4 id="intro3-3" class="page-header">3. 렌더링</h4>
                     <p>React 렌더링은 사용자 인터페이스(UI)를 작은 단위인 컴포넌트로 구성하여, 데이터가 변경될 때마다 해당 부분만 새로 그려주는 방식으로 동작합니다. Virtual DOM은 변경된 부분만 실제 DOM에 반영함으로써, 불필요한 렌더링을 최소화하고 UI의 속도와 성능을 향상시킵니다. 이를 통해 React는 대규모 애플리케이션에서도 높은 성능을 유지하면서, 생산성도 높일 수 있는 인기 있는 프론트엔드 라이브러리입니다.</p><br>
                     <p>리액트</p>
@@ -208,8 +212,136 @@ function clock(){
 };
 clock();
 </code></pre>
+                <!-- //intro3-3 -->
+
+                    <h4 id="intro3-4" class="page-header">4. 컴퍼넌트</h4>
+                    <p>리액트 컴포넌트(React component)는 UI를 구성하는 독립적인 모듈이며, 리액트 애플리케이션을 구성하는 기본적인 빌딩 블록입니다. 컴포넌트는 프로퍼티(props)와 상태(state)를 가질 수 있으며, 이를 활용하여 동적인 UI를 구성할 수 있습니다.</p>
+                    <p>01.</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(){
+    return &lt;h1>hello, seolhee&lt;/h1>
+}
+const element = &lt;Hello />;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+
+//hello, seolhee
+</code></pre><br>
+                    <p>02.</p>  
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Welcome(props){
+    return &lt;h1>hello, {props.name}</h1>
+}
+
+function App(){
+    return (
+        &lt;div&gt;
+            &lt;Welcome name="cheon" /&gt;
+            &lt;Welcome name="seol"/&gt;
+            &lt;Welcome name="hee"/&gt;
+        &lt;/div&gt;
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;App />);
+
+
+//hello, cheon
+//hello, seol
+//hello, hee
+</code></pre><br>
+                    <p>03.</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function formatDate(date){
+    return date.toLocaleDateString();
+}
+
+function Comment(props){
+    return (
+    &lt;div&gt;
+        &lt;div&gt;{formatDate(props.date)}&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+    )
+}
+
+const comment = {
+    date: new Date(),
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Comment date={comment.date} />);
+
+//2023. 5. 10.
+//2
+//3
+//4
+</code></pre><br>
+                    <p>04.</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(props){
+    return (
+    &lt;div&gt;
+        &lt;div&gt;{props.name}&lt;/div&gt;
+        &lt;div&gt;{props.text}&lt;/div&gt;
+        &lt;div&gt;{props.author}&lt;/div&gt;
+        &lt;div&gt;{props.author1}&lt;/div&gt;
+    &lt;/div&gt;
+    )
+}
+
+const name = {
+    name : "cheonseolhee",
+    text : "hello",
+    author : {
+    name: "너무",
+    name1 : "어려워여",
+    }
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Hello name={name.name} text={name.text} author={name.author.name} author1={name.author.name1} />);
+
+
+//cheonseolhee
+//hello
+//너무
+//어려워여
+</code></pre><br>
+                <!-- //intro3-4 -->
+
+                    <h4 id="intro3-5" class="page-header">5. props</h4>
+                    <p>props는 읽기 전용이며, 자식 컴포넌트 내에서 수정할 수 없습니다.
+
+                        props는 부모 컴포넌트에서 자식 컴포넌트로 전달되는 데이터로, 일반적으로 문자열, 숫자, 객체, 배열 등의 자료형을 가질 수 있습니다. 부모 컴포넌트에서 자식 컴포넌트로 props를 전달할 때는 JSX 문법을 사용하여 전달합니다.</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(props){
+    return &lt;h1>hello, {props.name}&lt;/h1>
+}
+const element = &lt;Hello name="seolhee" />;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+</code></pre>
+
+                <!-- //intro3-5 -->
+
                 </div>
-                <!-- //intro3 -->
 
             </div>
 
@@ -223,6 +355,8 @@ clock();
                                 <li><a href="#intro3-1">출력하기</a></li>
                                 <li><a href="#intro3-2">JSX</a></li>
                                 <li><a href="#intro3-3">렌더링</a></li>
+                                <li><a href="#intro3-4">컴퍼넌트</a></li>
+                                <li><a href="#intro3-5">props</a></li>
                             </ul>
                         </li>
 
