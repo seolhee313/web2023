@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/reset.css">
 
     <style>
-        .split span {
+        /* .split span {
             display: inline-block;
             min-width: 1vw;
             opacity: 0;
@@ -20,8 +20,9 @@
         .split.show span {
             opacity: 1;
             transform: translateY(0);
-        }
-        .split span:nth-child(1) {transition-delay: 100ms;}
+        } */
+
+        /* .split span:nth-child(1) {transition-delay: 100ms;}
         .split span:nth-child(2) {transition-delay: 150ms;}
         .split span:nth-child(3) {transition-delay: 200ms;}
         .split span:nth-child(4) {transition-delay: 250ms;}
@@ -56,7 +57,270 @@
         .split span:nth-child(33) {transition-delay: 1700ms;}
         .split span:nth-child(34) {transition-delay: 1750ms;}
         .split span:nth-child(35) {transition-delay: 1800ms;}
-        .split span:nth-child(36) {transition-delay: 1850ms;}
+        .split span:nth-child(36) {transition-delay: 1850ms;} */
+
+
+        /* 기본효과 */
+        /* .style1.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .style1.split span.show {
+            opacity: 1;
+        } */
+
+        /* 효과 2밑에서 올라오기 */
+        /* .style2.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+            transform: translateY(100px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .style2.split span.show {
+            opacity: 1;
+            transform: translateY(0);
+        } */
+
+        /* 효과3 */
+        /* .style3.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+            transform: translateY(100px) translateX(-100px) rotate(360deg);
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .style3.split span.show {
+            opacity: 1;
+            transform: translateY(0) translateX(0) rotate(0);
+        } */
+
+        /* 효과4 */
+        /* .style4.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+
+        .style4.split span.show {
+            opacity: 1;
+            animation: jackInTheBox 0.5s 1;
+        } */
+
+        /* 효과5 */
+        /* .style5.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+
+        .style5.split span.show {
+            opacity: 1;
+            animation: hinge 0.5s 1;
+        } */
+
+        /* 효과6 */
+        /* .style6.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+
+        .style6.split span.show {
+            opacity: 1;
+            animation: wobble 0.5s 1;
+        } */
+
+        /* 효과7 */
+        /* .style7.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+
+        .style7.split span.show {
+            opacity: 1;
+            animation: slideInLeft 0.5s 1;
+        } */
+
+        /* 효과8 */
+        /* .style8.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+
+        .style8.split span.show {
+            opacity: 1;
+            animation: bounceIn 0.5s 1;
+        } */
+
+
+
+
+        @keyframes jackInTheBox {
+            0% {
+                opacity: 0;
+                transform: scale(.1) rotate(30deg);
+                transform-origin: center bottom
+            }
+
+            50% {
+                transform: rotate(-10deg)
+            }
+
+            70% {
+                transform: rotate(3deg)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+
+        @keyframes hinge {
+            0% {
+                transform-origin: top left;
+                animation-timing-function: ease-in-out
+            }
+
+            20%,
+            60% {
+                transform: rotate(80deg);
+                transform-origin: top left;
+                animation-timing-function: ease-in-out
+            }
+
+            40%,
+            80% {
+                transform: rotate(60deg);
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+                opacity: 1
+            }
+
+            to {
+                transform: translate3d(0, 700px, 0);
+                opacity: 0
+            }
+        }
+
+        @keyframes wobble {
+            0% {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+            }
+
+            15% {
+                -webkit-transform: translate3d(-25%, 0, 0) rotate(-5deg);
+                transform: translate3d(-25%, 0, 0) rotate(-5deg)
+            }
+
+            30% {
+                -webkit-transform: translate3d(20%, 0, 0) rotate(3deg);
+                transform: translate3d(20%, 0, 0) rotate(3deg)
+            }
+
+            45% {
+                -webkit-transform: translate3d(-15%, 0, 0) rotate(-3deg);
+                transform: translate3d(-15%, 0, 0) rotate(-3deg)
+            }
+
+            60% {
+                -webkit-transform: translate3d(10%, 0, 0) rotate(2deg);
+                transform: translate3d(10%, 0, 0) rotate(2deg)
+            }
+
+            75% {
+                -webkit-transform: translate3d(-5%, 0, 0) rotate(-1deg);
+                transform: translate3d(-5%, 0, 0) rotate(-1deg)
+            }
+
+            to {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible
+            }
+
+            to {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+            }
+        }
+
+        @keyframes bounceIn {
+
+            0%,
+            20%,
+            40%,
+            60%,
+            80%,
+            to {
+                -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+                animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+            }
+
+            0% {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3)
+            }
+
+            20% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1)
+            }
+
+            40% {
+                -webkit-transform: scale3d(.9, .9, .9);
+                transform: scale3d(.9, .9, .9)
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03)
+            }
+
+            80% {
+                -webkit-transform: scale3d(.97, .97, .97);
+                transform: scale3d(.97, .97, .97)
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+            }
+        }
+
+        /* gsap */
+        .split {
+            transform-style: preserve-3d;
+        }
+
+        .split span {
+            display: inline-block;
+            min-width: 1vw;
+            opacity: 0;
+            transform: translate3d(100px, 0px, 30px) scale(2) rotate(200deg);
+        }
+        
+
     </style>
 </head>
 <body class="img12 bg01 font02"> 
@@ -71,6 +335,9 @@
             <li><a href="parallaxEffect05.html">5</a></li>
             <li class="active"><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallaxEffect08.html">8</a></li>
+            <li><a href="parallaxEffect09.html">9</a></li>
+            <li><a href="parallaxEffect10.html">10</a></li>
         </ul>
     </header> 
     <!-- //header -->
@@ -83,7 +350,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">행동이 모든 것을 결정한다. 운명은 행동에서 비롯된다.</p>
+                <p class="parallax__item__desc split style1">행동이 모든 것을 결정한다. 운명은 행동에서 비롯된다.</p>
             </section>
             <!-- //section1 -->
 
@@ -93,7 +360,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">작은 성공이 큰 성공으로 이어진다.</p>
+                <p class="parallax__item__desc split style2">작은 성공이 큰 성공으로 이어진다.</p>
             </section>
             <!-- //section2 -->
 
@@ -103,7 +370,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">인생은 결코 공평하지 않다. 그러나 그것을 이길 수 있다.</p>
+                <p class="parallax__item__desc split style3">인생은 결코 공평하지 않다. 그러나 그것을 이길 수 있다.</p>
             </section>
             <!-- //section3 -->
 
@@ -113,7 +380,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">성취하지 못한 것은 아직 해보지 않은 것뿐입니다.</p>
+                <p class="parallax__item__desc split style4">성취하지 못한 것은 아직 해보지 않은 것뿐입니다.</p>
             </section>
             <!-- //section4 -->
 
@@ -123,7 +390,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">가장 높은 산은 한 발짝부터 시작된다.</p>
+                <p class="parallax__item__desc split style5">가장 높은 산은 한 발짝부터 시작된다.</p>
             </section>
             <!-- //section5 -->
 
@@ -133,7 +400,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">목표를 향한 첫 걸음은 용기이다.</p>
+                <p class="parallax__item__desc split style6">목표를 향한 첫 걸음은 용기이다.</p>
             </section>
             <!-- //section6 -->
 
@@ -143,7 +410,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">우리의 인생은 우리의 생각과 믿음이 결정한다.</p>
+                <p class="parallax__item__desc split style7">우리의 인생은 우리의 생각과 믿음이 결정한다.</p>
             </section>
             <!-- //section7 -->
 
@@ -153,7 +420,7 @@
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
-                <p class="parallax__item__desc split">언제나 새로운 것을 배울 수 있고, 새로운 것을 경험할 수 있다.</p>
+                <p class="parallax__item__desc split style8">언제나 새로운 것을 배울 수 있고, 새로운 것을 경험할 수 있다.</p>
             </section>
             <!-- //section8 -->
 
@@ -195,10 +462,43 @@
         function scroll(){
             let scrollTop = window.pageYOffset || window.scrollY;
 
-            //CSS 클래스 추가
-            document.querySelectorAll(".parallax__item").forEach(item => {
-                if(scrollTop > item.offsetTop){
-                    item.querySelector(".split").classList.add("show");
+            // //01. CSS 클래스 추가 (노가다)
+            // document.querySelectorAll(".parallax__item").forEach(item => {
+            //     if(scrollTop > item.offsetTop){
+            //         item.querySelector(".split").classList.add("show");
+            //     }
+            // });
+
+
+            // // 02. span에 show 추가
+            // document.querySelectorAll(".parallax__item").forEach(item => {
+            //     if(scrollTop >= item.offsetTop){
+            //         item.querySelectorAll(".split span").forEach((span, index) => {
+            //             setTimeout(() => {
+            //                 span.classList.add("show");
+            //             }, 50 * index);
+            //         });
+            //     }
+            // });
+
+
+            // //03. gsap
+            const items = document.querySelectorAll(".parallax__item");
+
+            items.forEach((item, index) => {
+                const spans = item.querySelectorAll(".split span");
+
+                if(scrollTop >= item.offsetTop){
+                    gsap.to(spans, {
+                        duration: 0.1,
+                        opacity: 1,
+                        x: 0,
+                        y: 0,
+                        z: 0,
+                        scale: 1,
+                        rotation: 0,
+                        stagger: 0.05
+                    });
                 }
             });
 
