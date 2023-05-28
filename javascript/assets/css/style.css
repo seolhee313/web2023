@@ -230,3 +230,35 @@ body {
     color: #fff;
     font-weight: bold;
 }
+
+/* floating */
+.floating.bot {
+    bottom: 28px;
+    height: max-content;
+}
+.floating {
+    position: fixed;
+    right: 28px;
+    z-index: 51;
+}
+.floating.bot button.top-btn {
+    margin-top: 8px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.floating.bot button {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    border: 1px solid #e5ecf8;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    background-color: #fff;
+}
+.floating.bot img {
+    width: 24px;
+    height: 24px;
+    margin-top: 6px;
+}

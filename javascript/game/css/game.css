@@ -35,11 +35,11 @@ body {
 }
 .icon__box {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 600px;
-    padding: 50px;
+    height: 100vh;
+    padding: 60px 10px 10px 20px;
 }
 .icon__box > div {
     width: 50px;

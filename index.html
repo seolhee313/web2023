@@ -107,6 +107,38 @@
       margin-right: 20px;
       margin-top: 40px;
     }
+
+    /* floating */
+    .floating.bot {
+        bottom: 28px;
+        height: max-content;
+    }
+    .floating {
+        position: fixed;
+        right: 28px;
+        z-index: 51;
+    }
+    .floating.bot button.top-btn {
+        margin-top: 8px;
+        font-size: 24px;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+    }
+    .floating.bot button {
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+        border: 1px solid #e5ecf8;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .floating.bot img {
+        width: 24px;
+        /* height: 24px; */
+        /* margin-top: 6px; */
+    }
   </style>
 </head>
 
@@ -485,8 +517,6 @@
             <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".javascript">JAVASCRIPT</a></li>
             <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".html">HTML</a></li>
             <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".site">SITE</a></li>
-            <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".mysql">MySQL</a></li>
-            <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".react">REACT</a></li>
           </ul>
         </div>
       </div>
@@ -663,7 +693,7 @@
           <!-- //box -->
 
           <!-- box -->
-          <section class="color-shape mysql">
+          <section class="color-shape site">
             <a href="mysql/index.html" target="_blank">
               <div class="image-wrap">
                 <div class="hover-wrap">
@@ -831,7 +861,7 @@
           <!-- //box -->
 
           <!-- box -->
-          <section class="color-shape react">
+          <section class="color-shape site">
             <a href="react/index.html" target="_blank">
               <div class="image-wrap">
                 <div class="hover-wrap">
@@ -845,6 +875,27 @@
                   <h5>REACT</h5>
                   <p>REACT</p>
                   <span>REACT</span>
+                </div>
+              </div>
+            </a>
+          </section>
+          <!-- //box -->
+
+          <!-- box -->
+          <section class="color-shape site">
+            <a href="react/webpack.html" target="_blank">
+              <div class="image-wrap">
+                <div class="hover-wrap">
+                  <span class="overlay-img-giraffe">WEBPACK</span>
+                  <span class="overlay-text-thumb-giraffe">WEBPACK</span>
+                  <span class="overlay-text-thumb1-giraffe">WEBPACK</span>
+                  <span class="overlay-text-thumb2-giraffe">WEBPACK</span>
+                </div>
+                <img src="assets/img/svg-giraffe.svg" alt="react">
+                <div class="img-text giraffeImg">
+                  <h5>WEBPACK</h5>
+                  <p>WEBPACK</p>
+                  <span>WEBPACK</span>
                 </div>
               </div>
             </a>
@@ -876,6 +927,14 @@
     </div>
   </div>
   <!-- //footer -->
+  <div>
+    <div class="floating bot">
+        <button class="top-btn" type="button" name="상단으로 바로가기">
+            <span class="icon-arrow_up"><img src="assets/img/mainArrow01.svg" alt="화살표"></span>
+        </button>
+    </div>
+</div>
+  
 
 
   <!-- script -->
@@ -884,6 +943,7 @@
   <script src="assets/js/bootstrap-transition.js"></script>
   <script src="assets/js/jquery.isotope.min.js"></script>
   <script src="assets/js/notebook.js"></script>
+  <script src="javascript/assets/js/btn.js"></script>
   <script>
     //운영체제 정보 알아내기
     let os = navigator.userAgent.toLowerCase();

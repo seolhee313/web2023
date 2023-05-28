@@ -328,7 +328,8 @@ img {
 /* footer */
 #footer {
     width: 100%;
-    display: flex;background-color: #fff9ee;
+    display: flex;
+    background-color: #fff9ee;
 }
 #footer .footer1 {
     width:200px;

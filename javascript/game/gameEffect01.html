@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/tetris.css">
 </head>
 <body>
     <div class="cursor">
@@ -25,11 +26,11 @@
         <div class="icon__box">
             <div class="icon1">
                 <img src="img/game_icon01.png" alt="뮤직">
-                <span>뮤직 듣기</span>
+                <span>MUSIC</span>
             </div>
             <div class="icon2">
                 <img src="img/game_icon02.png" alt="뮤직">
-                <span>뮤직 듣기</span>
+                <span>TETRIS</span>
             </div>
             <div class="icon3">
                 <img src="img/game_icon03.png" alt="뮤직">
@@ -47,7 +48,7 @@
             <div class="music__inner">
                 <div class="music__header">
                     <span class="left"></span>
-                    <h2>MUSIC PlAYER</h2>
+                    <h2>Music Player</h2>
                     <span class="right"></span>
                 </div>
                 <div class="music__contents">
@@ -114,6 +115,23 @@
             </div>
         </div>
         <!-- //뮤직 플레이어 -->
+
+         <!-- 테트리스 -->
+         <div class="tetris__wrap">
+            <div class="tetris__start"></div>
+            <div class="tetris__text"></div>
+            <div class="tetris__score"></div>
+            <div class="tetris__play">
+                <div class="header">
+                    <p>score</p>
+                    <p class="score" id="scoreDisplay">0</p>
+                </div>
+                <div class="view">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+        <!-- 테트리스 -->
     </main>
 
     <footer id="footer">
@@ -125,6 +143,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="js/music.js"></script>
+    <script src="js/tetris.js"></script>
     <script>
         //icon1
         //드래그
@@ -149,6 +168,7 @@
                 music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
             }
         });
+        
        
 
         //icon2
@@ -164,15 +184,15 @@
                 $("header").css("background-color", "#919df9b0");
             },
         });
-        //클릭
-        $(".icon2").click(function() {
-            let music = $(".music");
-            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-            } else {
-                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-            }
-        });
+        // //클릭
+        // $(".icon2").click(function() {
+        //     let music = $(".music");
+        //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+        //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+        //     } else {
+        //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+        //     }
+        // });
 
         //icon3
         //드래그
@@ -187,15 +207,15 @@
                 $("header").css("background-color", "#c3ff98b9");
             },
         });
-        //클릭
-        $(".icon3").click(function() {
-            let music = $(".music");
-            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-            } else {
-                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-            }
-        });
+        // //클릭
+        // $(".icon3").click(function() {
+        //     let music = $(".music");
+        //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+        //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+        //     } else {
+        //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+        //     }
+        // });
 
         //icon4
         //드래그
@@ -211,14 +231,74 @@
                 $("header").css("background-color", "#fbf58bb6");
             }
         });
-        //클릭
-        $(".icon4").click(function() {
-            let music = $(".music");
-            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-            } else {
-                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-            }
+        // //클릭
+        // $(".icon4").click(function() {
+        //     let music = $(".music");
+        //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+        //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+        //     } else {
+        //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+        //     }
+        // });
+
+        $(".music__wrap").draggable({
+            scroll: false
+        });
+
+        $(".icon1").on("click", function(){
+            $("#header").animate({backgroundColor: "#f99191b6"});
+            $(".cursor img").attr("src", "img/game_mouse01.png");
+            $(".music__wrap").toggle(); // 디스플레이 속성 토글
+            $(".tetris__wrap").css("display", "none");
+            $(".body").css("background-image", "url('img/gamebg01.jpg')");
+            $(".icon1 span").animate({backgroundColor: "#f99191b6"});
+
+            // 다른 아이콘의 배경색 효과를 제거
+            $(".icon2 span").stop().css("background-color", "");
+            $(".icon3 span").stop().css("background-color", "");
+            $(".icon4 span").stop().css("background-color", "");
+        });
+
+        $(".icon2").on("click", function(){
+            $("#header").animate({backgroundColor: "#919df9b0"});
+            $(".cursor img").attr("src", "img/game_mouse02.png");
+            $(".music__wrap").css("display", "none");
+            $(".tetris__wrap").toggle(); // 디스플레이 속성 토글
+            $(".body").css("background-image", "url('img/gamebg02.jpg')");
+            $(".icon2 span").animate({backgroundColor: "#919df9b0"});
+
+            // 다른 아이콘의 배경색 효과를 제거
+            $(".icon1 span").stop().css("background-color", "");
+            $(".icon3 span").stop().css("background-color", "");
+            $(".icon4 span").stop().css("background-color", "");
+        });
+
+        $(".icon3").on("click", function(){
+            $("#header").animate({backgroundColor: "#c3ff98b9"});
+            $(".cursor img").attr("src", "img/game_mouse03.png");
+            $(".music__wrap").css("display", "none");
+            $(".tetris__wrap").css("display", "none");
+            $(".body").css("background-image", "url('img/gamebg03.jpg')");
+            $(".icon3 span").animate({backgroundColor: "#c3ff98b9"});
+
+            // 다른 아이콘의 배경색 효과를 제거
+            $(".icon1 span").stop().css("background-color", "");
+            $(".icon2 span").stop().css("background-color", "");
+            $(".icon4 span").stop().css("background-color", "");
+        });
+
+        $(".icon4").on("click", function(){
+            $("#header").animate({backgroundColor: "#fbf58bb6"});
+            $(".cursor img").attr("src", "img/game_mouse04.png");
+            $(".music__wrap").css("display", "none");
+            $(".tetris__wrap").css("display", "none");
+            $(".body").css("background-image", "url('img/gamebg01.jpg')");
+            $(".icon4 span").animate({backgroundColor: "#fbf58bb6"});
+
+            // 다른 아이콘의 배경색 효과를 제거
+            $(".icon1 span").stop().css("background-color", "");
+            $(".icon2 span").stop().css("background-color", "");
+            $(".icon3 span").stop().css("background-color", "");
         });
 
         window.onload = function(){
