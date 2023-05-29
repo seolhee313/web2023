@@ -1,363 +1,499 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME Effect</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GAME Effect</title>
 
-    <link rel="stylesheet" href="css/bg.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/music.css">
-    <link rel="stylesheet" href="css/tetris.css">
-</head>
-<body>
-    <div class="cursor">
-        <img src="img/game_mouse02.png" alt>
-    </div>
-
-    <header id="header">
-        <h1>SEOLHEE GAME WORLD</h1>
-        <div class="time">2023년 4월 24일 09시 30분 15초</div>
-    </header>
-
-    <main>
-        <div class="icon__box">
-            <div class="icon1">
-                <img src="img/game_icon01.png" alt="뮤직">
-                <span>MUSIC</span>
-            </div>
-            <div class="icon2">
-                <img src="img/game_icon02.png" alt="뮤직">
-                <span>TETRIS</span>
-            </div>
-            <div class="icon3">
-                <img src="img/game_icon03.png" alt="뮤직">
-                <span>뮤직 듣기</span>
-            </div>
-            <div class="icon4">
-                <img src="img/game_icon04.png" alt="뮤직">
-                <span>뮤직 듣기</span>
-            </div>
+        <link rel="stylesheet" href="css/bg.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/game.css" />
+        <link rel="stylesheet" href="css/music.css" />
+        <link rel="stylesheet" href="css/tetris.css" />
+    </head>
+    <body>
+        <div class="cursor">
+            <img src="img/game_mouse02.png" alt />
         </div>
 
+        <header id="header">
+            <h1>SEOLHEE GAME WORLD</h1>
+            <div class="time">2023년 4월 24일 09시 30분 15초</div>
+        </header>
 
-        <!-- //뮤직플레이어 -->
-        <div class="music__wrap">
-            <div class="music__inner">
-                <div class="music__header">
-                    <span class="left"></span>
-                    <h2>Music Player</h2>
-                    <span class="right"></span>
+        <main>
+            <div class="icon__box">
+                <div class="icon1">
+                    <img src="img/game_icon01.png" alt="뮤직" />
+                    <span>MUSIC</span>
                 </div>
-                <div class="music__contents">
-                    <div class="music__view">
-                        <div class="image">
-                            <img src="img/music_view01.png" alt="음악">
-                        </div>
-                    </div>
-                    <div class="music__control">
-                        <div class="title">
-                            <h3>Drunk Text</h3>
-                            <p>Henry Moodie</p>
-                        </div>
-                        <div class="progress">
-                            <div class="bar">
-                                <audio id="main-audio" src="audio/music_audio01.mp3"></audio>
+                <div class="icon2">
+                    <img src="img/game_icon02.png" alt="뮤직" />
+                    <span>TETRIS</span>
+                </div>
+                <div class="icon3">
+                    <img src="img/game_icon03.png" alt="뮤직" />
+                    <span>뮤직 듣기</span>
+                </div>
+                <div class="icon4">
+                    <img src="img/game_icon04.png" alt="뮤직" />
+                    <span>뮤직 듣기</span>
+                </div>
+            </div>
+
+            <!-- //뮤직플레이어 -->
+            <div class="music__wrap">
+                <div class="music__inner">
+                    <div class="music__header">
+                        <div>
+                            <div class="volumeBox">
+                                <div>○</div>
+                                <i
+                                    title="음소거"
+                                    class="mute"
+                                    id="control-mute"
+                                ></i>
+                                <i
+                                    title="볼륨 감소"
+                                    class="volumeDown"
+                                    id="control-volumeDown"
+                                >
+                                    -
+                                </i>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="10"
+                                    id="control-volume"
+                                    class="volume__bar"
+                                />
+                                <i
+                                    title="볼륨 증가"
+                                    class="volumeUp"
+                                    id="control-volumeUp"
+                                >
+                                    +
+                                </i>
+                                <div class="music__close">X</div>
                             </div>
-                            <div class="timer">
-                                <span class="current">0:00</span>
-                                <span class="duration">3:55</span>
+                        </div>
+                        <span class="left"></span>
+                        <h2>MUSIC PlAYER</h2>
+                        <span class="right"></span>
+                    </div>
+                    <div class="music__contents">
+                        <div class="music__view">
+                            <div class="image">
+                                <img src="images/music_view01.png" alt="음악" />
                             </div>
                         </div>
-                        <div class="control">
-                            <span>
-                                <i class="repeat" id="control-repeat" title="전체 반복"></i>
-                                <!-- <i class="repeat_one" id="control-repeat" title="한곡 반복"></i> -->
-                                <!-- <i class="shuffle" id="control-repeat" title="랜덤 반복"></i> -->
-                                
+                        <div class="music__control">
+                            <div class="title">
+                                <h3>Drunk Text</h3>
+                                <p>Henry Moodie</p>
+                            </div>
+                            <div class="progress">
+                                <div class="bar">
+                                    <audio
+                                        id="main-audio"
+                                        src="audio/music_audio01.mp3"
+                                    ></audio>
+                                </div>
+                                <div class="timer">
+                                    <span class="current">0:00</span>
+                                    <span class="duration">3:55</span>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <span>
+                                    <i
+                                        class="repeat"
+                                        id="control-repeat"
+                                        title="전체 반복"
+                                    ></i>
+                                    <!-- <i class="repeat_one" id="control-repeat" title="한곡 반복"></i> -->
+                                    <!-- <i class="shuffle" id="control-repeat" title="랜덤 반복"></i> -->
+                                </span>
+                                <span>
+                                    <i
+                                        class="prev"
+                                        id="control-prev"
+                                        title="이전곡 재생"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i
+                                        class="play"
+                                        id="control-play"
+                                        title="재생"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i
+                                        class="next"
+                                        id="control-next"
+                                        title="다음곡 재생"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i
+                                        class="list"
+                                        id="control-list"
+                                        title="재생 목록"
+                                    ></i>
+                                </span>
+                                <!-- <span class="repeat_one">한곡 반복</span>
+                        <span class="shuffle">랜덤 반복</span>
+                        <span class="stop">정지 반복</span> -->
+                            </div>
+                        </div>
+                        <div class="music__list">
+                            <h3>뮤직 리스트 <a href="#" class="close"></a></h3>
+                            <ul>
+                                <!-- <li>
+                            <span class="img">
+                                <img src="img/music_view01.png" alt="">
                             </span>
-                            <span>
-                                <i class="prev" id="control-prev" title="이전곡 재생"></i>
+                            <span class="title">
+                                <strong>Drunk Text</strong>
+                                <em>Henry Moodie</em>
                             </span>
-                            <span>
-                                <i class="play" id="control-play" title="재생"></i>
-                            </span>
-                            <span>
-                                <i class="next" id="control-next" title="다음곡 재생"></i>
-                            </span>
-                            <span>
-                                <i class="list" id="control-list" title="재생 목록"></i>
-                            </span>
-                            <!-- <span class="repeat_one">한곡 반복</span>
-                            <span class="shuffle">랜덤 반복</span>
-                            <span class="stop">정지 반복</span> -->
+                            <span class="time">3:20</span>
+                        </li> -->
+                            </ul>
                         </div>
                     </div>
-                    <div class="music__list">
-                        <h3>뮤직 리스트 <a href="#" class="close"></a></h3>
-                        <ul>
-                            <!-- <li>
-                                <span class="img">
-                                    <img src="img/music_view01.png" alt="">
-                                </span>
-                                <span class="title">
-                                    <strong>Drunk Text</strong>
-                                    <em>Henry Moodie</em>
-                                </span>
-                                <span class="time">3:20</span>
-                            </li> -->
-                            
-                        </ul>
+                </div>
+            </div>
+            <!-- //뮤직 플레이어 -->
+
+            <!-- 테트리스 -->
+            <div class="tetris__wrap">
+                <div class="tetris__inner">
+                    <div class="tetris__header">
+                        <h2>TETRIS GAME</h2>
                     </div>
+                    <div class="tetris__start show">
+                        <div class="desc">
+                            <div class="tetris__desc__title">SCORE</div>
+                            <div class="tetris__desc__desc">
+                                버틴시간(초) x 1점<br />
+                                +<br />
+                                삭제한 줄 갯수 x 5점
+                            </div>
+                            <div class="tetris__desc__title">게임 방법</div>
+                            <div class="tetris__desc__desc">
+                                ← → ↓ : 이동<br />
+                                ↑ : 블록 바꾸기<br />
+                                space : 빠르게 내리기
+                            </div>
+                        </div>
+                        <div class="start__btn">게임 시작</div>
+                    </div>
+
+                    <div class="tetris__restart">
+                        <div class="desc">게임 종료</div>
+                        <div class="tetris__total">
+                            <div class="time"><span>0</span> 초</div>
+                            <div class="line"><span>0</span> 줄</div>
+                        </div>
+                        <div class="tetris__score"><span>0</span> 점</div>
+                        <div class="restart__btn">다시 시작</div>
+                    </div>
+
+                    <div class="tetris__play">
+                        <div class="playground">
+                            <ul></ul>
+                        </div>
+                    </div>
+                    <div class="tetris__info">
+                        <div class="tit">TIME</div>
+                        <div class="time"><span>0</span> 초</div>
+                        <div class="tit">LINE</div>
+                        <div class="line"><span>0</span> 줄</div>
+                    </div>
+
+                    <div class="tetris__play">
+                        <div class="playground"></div>
+                    </div>
+                    <div class="tetris__close__btn">X</div>
                 </div>
             </div>
-        </div>
-        <!-- //뮤직 플레이어 -->
+            <!-- 테트리스 -->
+        </main>
 
-         <!-- 테트리스 -->
-         <div class="tetris__wrap">
-            <div class="tetris__start"></div>
-            <div class="tetris__text"></div>
-            <div class="tetris__score"></div>
-            <div class="tetris__play">
-                <div class="header">
-                    <p>score</p>
-                    <p class="score" id="scoreDisplay">0</p>
-                </div>
-                <div class="view">
-                    <ul></ul>
-                </div>
+        <footer id="footer">
+            <div class="music">🎵 현재 뮤직 듣기가 중지되었습니다. 🎵</div>
+            <div class="info">
+                현재 윈도우를 사용하고 있으며, 화면 크기는 1920 X 760입니다.
             </div>
-        </div>
-        <!-- 테트리스 -->
-    </main>
+        </footer>
 
-    <footer id="footer">
-        <div class="music">🎵 현재 뮤직 듣기가 중지되었습니다. 🎵</div>
-        <div class="info">현재 윈도우를 사용하고 있으며, 화면 크기는 1920 X 760입니다.</div>
-    </footer>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="js/music.js"></script>
-    <script src="js/tetris.js"></script>
-    <script>
-        //icon1
-        //드래그
-        $(".icon1").draggable({
-            containment: ".icon__box", scroll: false,
-            //드래그시 마우스 이미지(색) 바꾸기
-            start: function() {
-                $(".cursor img").attr("src", "img/game_mouse01.png");
-            },
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="js/music.js"></script>
+        <script src="js/tetris.js"></script>
+        <script>
+            $(function () {
+                $(".icon0").draggable();
+                $(".icon1").draggable();
+                $(".icon2").draggable();
+                $(".icon3").draggable();
+                $(".icon4").draggable();
+                $(".icon5").draggable();
+                $(".music__wrap").draggable();
+                $(".search__wrap").draggable();
+                $(".memory__wrap").draggable();
+                $(".tetris__wrap").draggable();
+            });
+            //icon1
+            //드래그
+            $(".icon1").draggable({
+                containment: ".icon__box",
+                scroll: false,
+                //드래그시 마우스 이미지(색) 바꾸기
+                start: function () {
+                    $(".cursor img").attr("src", "img/game_mouse01.png");
+                },
 
-            //드래그 할 때 헤더 색 바꾸기
-            drag: function() {
-                $("header").css("background-color", "#f99191b6");
-            },
-        });
-        //클릭
-        $(".icon1").click(function() {
-        let music = $(".music");
-            if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-                music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-            } else {
-                music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-            }
-        });
-        
-       
-
-        //icon2
-        //드래그
-        $(".icon2").draggable({
-            //드래그시 마우스 이미지(색) 바꾸기
-            start: function() {
-                $(".cursor img").attr("src", "img/game_mouse02.png");
-            },
-
-            //드래그 할 때 헤더 색 바꾸기
-            drag: function() {
-                $("header").css("background-color", "#919df9b0");
-            },
-        });
-        // //클릭
-        // $(".icon2").click(function() {
-        //     let music = $(".music");
-        //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-        //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-        //     } else {
-        //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-        //     }
-        // });
-
-        //icon3
-        //드래그
-        $(".icon3").draggable({
-             //드래그시 마우스 이미지(색) 바꾸기
-            start: function() {
-                $(".cursor img").attr("src", "img/game_mouse03.png");
-            },
-
-            //드래그 할 때 헤더 색 바꾸기
-            drag: function() {
-                $("header").css("background-color", "#c3ff98b9");
-            },
-        });
-        // //클릭
-        // $(".icon3").click(function() {
-        //     let music = $(".music");
-        //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-        //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-        //     } else {
-        //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-        //     }
-        // });
-
-        //icon4
-        //드래그
-        $(".icon4").draggable({
-            containment: ".icon__box", scroll: false,
-            //드래그시 마우스 이미지(색) 바꾸기
-            start: function() {
-                $(".cursor img").attr("src", "img/game_mouse04.png");
-            },
-
-            //드래그 할 때 헤더 색 바꾸기
-            drag: function() {
-                $("header").css("background-color", "#fbf58bb6");
-            }
-        });
-        // //클릭
-        // $(".icon4").click(function() {
-        //     let music = $(".music");
-        //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
-        //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
-        //     } else {
-        //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
-        //     }
-        // });
-
-        $(".music__wrap").draggable({
-            scroll: false
-        });
-
-        $(".icon1").on("click", function(){
-            $("#header").animate({backgroundColor: "#f99191b6"});
-            $(".cursor img").attr("src", "img/game_mouse01.png");
-            $(".music__wrap").toggle(); // 디스플레이 속성 토글
-            $(".tetris__wrap").css("display", "none");
-            $(".body").css("background-image", "url('img/gamebg01.jpg')");
-            $(".icon1 span").animate({backgroundColor: "#f99191b6"});
-
-            // 다른 아이콘의 배경색 효과를 제거
-            $(".icon2 span").stop().css("background-color", "");
-            $(".icon3 span").stop().css("background-color", "");
-            $(".icon4 span").stop().css("background-color", "");
-        });
-
-        $(".icon2").on("click", function(){
-            $("#header").animate({backgroundColor: "#919df9b0"});
-            $(".cursor img").attr("src", "img/game_mouse02.png");
-            $(".music__wrap").css("display", "none");
-            $(".tetris__wrap").toggle(); // 디스플레이 속성 토글
-            $(".body").css("background-image", "url('img/gamebg02.jpg')");
-            $(".icon2 span").animate({backgroundColor: "#919df9b0"});
-
-            // 다른 아이콘의 배경색 효과를 제거
-            $(".icon1 span").stop().css("background-color", "");
-            $(".icon3 span").stop().css("background-color", "");
-            $(".icon4 span").stop().css("background-color", "");
-        });
-
-        $(".icon3").on("click", function(){
-            $("#header").animate({backgroundColor: "#c3ff98b9"});
-            $(".cursor img").attr("src", "img/game_mouse03.png");
-            $(".music__wrap").css("display", "none");
-            $(".tetris__wrap").css("display", "none");
-            $(".body").css("background-image", "url('img/gamebg03.jpg')");
-            $(".icon3 span").animate({backgroundColor: "#c3ff98b9"});
-
-            // 다른 아이콘의 배경색 효과를 제거
-            $(".icon1 span").stop().css("background-color", "");
-            $(".icon2 span").stop().css("background-color", "");
-            $(".icon4 span").stop().css("background-color", "");
-        });
-
-        $(".icon4").on("click", function(){
-            $("#header").animate({backgroundColor: "#fbf58bb6"});
-            $(".cursor img").attr("src", "img/game_mouse04.png");
-            $(".music__wrap").css("display", "none");
-            $(".tetris__wrap").css("display", "none");
-            $(".body").css("background-image", "url('img/gamebg01.jpg')");
-            $(".icon4 span").animate({backgroundColor: "#fbf58bb6"});
-
-            // 다른 아이콘의 배경색 효과를 제거
-            $(".icon1 span").stop().css("background-color", "");
-            $(".icon2 span").stop().css("background-color", "");
-            $(".icon3 span").stop().css("background-color", "");
-        });
-
-        window.onload = function(){
-            window.addEventListener("mousemove", e => {
-                gsap.to(".cursor", {
-                    duration: 0,
-                    left: e.pageX -5,
-                    top: e.pageY -10
-                })
+                //드래그 할 때 헤더 색 바꾸기
+                drag: function () {
+                    $("header").css("background-color", "#f99191b6");
+                },
+            });
+            //클릭
+            $(".icon1").click(function () {
+                let music = $(".music");
+                if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+                    music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+                } else {
+                    music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+                }
             });
 
-            printTime();    //오른쪽 상단 시간
-            printAgent();    //하단 중앙
-        }
-        
-        //시간 출력
-        function printTime() {
-            const clock = document.querySelector(".time");
-            const now = new Date();
-            let hour = now.getHours();
-            let minute = now.getMinutes();
-            let second = now.getSeconds();
-            if (hour > 12) hour = hour;
-            // if (hour > 12) hour = hour - 12; //시간 -12
-            if (hour < 10) hour = `0${hour}`;
-            if (minute < 10) minute = `0${minute}`;
-            if (second < 10) second = `0${second}`;
-            const nowTime =
-                now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " +
-                now.getDate() +
-                "일 " +
-                hour +
-                ":" +
-                minute +
-                ":" +
-                second;
-            clock.innerText = nowTime;
-            setTimeout("printTime()", 1000);
-        }
+            //icon2
+            //드래그
+            $(".icon2").draggable({
+                //드래그시 마우스 이미지(색) 바꾸기
+                start: function () {
+                    $(".cursor img").attr("src", "img/game_mouse02.png");
+                },
 
-        //os 화면 출력
-        function printAgent() {
-            const agent = document.querySelector(".info");
-            const os = navigator.userAgent.toLocaleLowerCase();
-            
-            if (os.indexOf("window") >= 0) {
-                agent.innerText = "현재 windows를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector(".info").classList.add("window");
-            } else if (os.indexOf("macintosh") >= 0) {
-                agent.innerText = "현재 mac을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("mac");
-            } else if (os.indexOf("iphone") >= 0) {
-                agent.innerText = "현재 IPhone을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("iphone");
-            } else if (os.indexOf("android") >= 0) {
-                agent.innerText = "현재 Android를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("android");
+                //드래그 할 때 헤더 색 바꾸기
+                drag: function () {
+                    $("header").css("background-color", "#919df9b0");
+                },
+            });
+            // //클릭
+            // $(".icon2").click(function() {
+            //     let music = $(".music");
+            //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+            //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            //     } else {
+            //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+            //     }
+            // });
+
+            //icon3
+            //드래그
+            $(".icon3").draggable({
+                //드래그시 마우스 이미지(색) 바꾸기
+                start: function () {
+                    $(".cursor img").attr("src", "img/game_mouse03.png");
+                },
+
+                //드래그 할 때 헤더 색 바꾸기
+                drag: function () {
+                    $("header").css("background-color", "#c3ff98b9");
+                },
+            });
+            // //클릭
+            // $(".icon3").click(function() {
+            //     let music = $(".music");
+            //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+            //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            //     } else {
+            //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+            //     }
+            // });
+
+            //icon4
+            //드래그
+            $(".icon4").draggable({
+                containment: ".icon__box",
+                scroll: false,
+                //드래그시 마우스 이미지(색) 바꾸기
+                start: function () {
+                    $(".cursor img").attr("src", "img/game_mouse04.png");
+                },
+
+                //드래그 할 때 헤더 색 바꾸기
+                drag: function () {
+                    $("header").css("background-color", "#fbf58bb6");
+                },
+            });
+            // //클릭
+            // $(".icon4").click(function() {
+            //     let music = $(".music");
+            //     if (music.text() == "🎵 현재 뮤직 듣기가 중지되었습니다. 🎵") {
+            //         music.text("🎵 현재 뮤직 듣기가 실행되었습니다. 🎵");
+            //     } else {
+            //         music.text("🎵 현재 뮤직 듣기가 중지되었습니다. 🎵");
+            //     }
+            // });
+
+            $(".music__wrap").draggable({
+                scroll: false,
+            });
+
+            $(".icon1").on("click", function () {
+                $("#header").animate({ backgroundColor: "#f99191b6" });
+                $(".cursor img").attr("src", "img/game_mouse01.png");
+                $(".music__wrap").toggle(); // 디스플레이 속성 토글
+                $(".tetris__wrap").css("display", "none");
+                $(".body").css("background-image", "url('img/gamebg01.jpg')");
+                $(".icon1 span").animate({ backgroundColor: "#f99191b6" });
+
+                // 다른 아이콘의 배경색 효과를 제거
+                $(".icon2 span").stop().css("background-color", "");
+                $(".icon3 span").stop().css("background-color", "");
+                $(".icon4 span").stop().css("background-color", "");
+            });
+
+            $(".icon2").on("click", function () {
+                $("#header").animate({ backgroundColor: "#919df9b0" });
+                $(".cursor img").attr("src", "img/game_mouse02.png");
+                $(".music__wrap").css("display", "none");
+                $(".tetris__wrap").toggle(); // 디스플레이 속성 토글
+                $(".body").css("background-image", "url('img/gamebg02.jpg')");
+                $(".icon2 span").animate({ backgroundColor: "#919df9b0" });
+
+                // 다른 아이콘의 배경색 효과를 제거
+                $(".icon1 span").stop().css("background-color", "");
+                $(".icon3 span").stop().css("background-color", "");
+                $(".icon4 span").stop().css("background-color", "");
+            });
+
+            $(".icon3").on("click", function () {
+                $("#header").animate({ backgroundColor: "#c3ff98b9" });
+                $(".cursor img").attr("src", "img/game_mouse03.png");
+                $(".music__wrap").css("display", "none");
+                $(".tetris__wrap").css("display", "none");
+                $(".body").css("background-image", "url('img/gamebg03.jpg')");
+                $(".icon3 span").animate({ backgroundColor: "#c3ff98b9" });
+
+                // 다른 아이콘의 배경색 효과를 제거
+                $(".icon1 span").stop().css("background-color", "");
+                $(".icon2 span").stop().css("background-color", "");
+                $(".icon4 span").stop().css("background-color", "");
+            });
+
+            $(".icon4").on("click", function () {
+                $("#header").animate({ backgroundColor: "#fbf58bb6" });
+                $(".cursor img").attr("src", "img/game_mouse04.png");
+                $(".music__wrap").css("display", "none");
+                $(".tetris__wrap").css("display", "none");
+                $(".body").css("background-image", "url('img/gamebg01.jpg')");
+                $(".icon4 span").animate({ backgroundColor: "#fbf58bb6" });
+
+                // 다른 아이콘의 배경색 효과를 제거
+                $(".icon1 span").stop().css("background-color", "");
+                $(".icon2 span").stop().css("background-color", "");
+                $(".icon3 span").stop().css("background-color", "");
+            });
+
+            // 테트리스 게임 열기/닫기
+            document.querySelector(".icon2").addEventListener("click", () => {
+                document.querySelector(".tetris__wrap").classList.toggle("show");
+                tetrisMusic.pause();
+                document.querySelector(".music__wrap").classList.remove("show");
+                pauseMusic();
+                btnStop.style.display = "none";
+                btnPlay.style.display = "block";
+            });
+
+            window.onload = function () {
+                window.addEventListener("mousemove", (e) => {
+                    gsap.to(".cursor", {
+                        duration: 0,
+                        left: e.pageX - 5,
+                        top: e.pageY - 10,
+                    });
+                });
+
+                printTime(); //오른쪽 상단 시간
+                printAgent(); //하단 중앙
+            };
+
+            //시간 출력
+            function printTime() {
+                const clock = document.querySelector(".time");
+                const now = new Date();
+                let hour = now.getHours();
+                let minute = now.getMinutes();
+                let second = now.getSeconds();
+                if (hour > 12) hour = hour;
+                // if (hour > 12) hour = hour - 12; //시간 -12
+                if (hour < 10) hour = `0${hour}`;
+                if (minute < 10) minute = `0${minute}`;
+                if (second < 10) second = `0${second}`;
+                const nowTime =
+                    now.getFullYear() +
+                    "년 " +
+                    (now.getMonth() + 1) +
+                    "월 " +
+                    now.getDate() +
+                    "일 " +
+                    hour +
+                    ":" +
+                    minute +
+                    ":" +
+                    second;
+                clock.innerText = nowTime;
+                setTimeout("printTime()", 1000);
             }
-        }
-    </script>
-</body>
+
+            //os 화면 출력
+            function printAgent() {
+                const agent = document.querySelector(".info");
+                const os = navigator.userAgent.toLocaleLowerCase();
+
+                if (os.indexOf("window") >= 0) {
+                    agent.innerText =
+                        "현재 windows를 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector(".info").classList.add("window");
+                } else if (os.indexOf("macintosh") >= 0) {
+                    agent.innerText =
+                        "현재 mac을 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("mac");
+                } else if (os.indexOf("iphone") >= 0) {
+                    agent.innerText =
+                        "현재 IPhone을 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("iphone");
+                } else if (os.indexOf("android") >= 0) {
+                    agent.innerText =
+                        "현재 Android를 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("android");
+                }
+            }
+        </script>
+    </body>
 </html>
