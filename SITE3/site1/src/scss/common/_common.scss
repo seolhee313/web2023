@@ -7,8 +7,27 @@
 }
 
 //section
+.section.center {
+    > h3 {
+        text-align: center;
+    }
+    > p {
+        text-align: center;
+    }
+}
+
 .section {
     padding: 120px 0;
+
+    > h3 {
+        font-size: 50px;
+    }
+
+    > p {
+        font-size: 22px;
+        font-weight: 300;
+        margin-bottom: 60px;
+    }
 }
 
 // background
