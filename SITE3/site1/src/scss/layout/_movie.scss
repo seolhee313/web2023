@@ -3,10 +3,8 @@
     overflow: hidden;
 }
 .movie__inner {
-    height: 600px;
-
+    height: 720px;
     .movie__text {
-
         h3 {
             font-size: 50px;
             margin-bottom: 40px;
@@ -14,26 +12,22 @@
         p {
             font-size: 22px;
             font-weight: 300;
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
         a {
             @include border(50px);
-            // margin-bottom: 100px;
         }
     }
     .movie__item {
         @include flex-between;
         margin-top: 70px;
-        width: auto;
         position: absolute;
-    
         > div {
-            width: 260px;
-            margin-right: 20px;
-            
+            width: 268px;
             img {
                 width: 100%;
-                @include border(10px);
+                padding: 0 20px 0 0;
+                @include border(20px);
             }
         }
     }
