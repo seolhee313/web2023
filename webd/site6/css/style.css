@@ -155,6 +155,7 @@ body {
 }
 .side_link {
     text-align: center;
+    margin-top: 10px;
 }
 
 /* 슬라이드 */
@@ -207,21 +208,21 @@ body {
     height: 100px;
     background-color: rgb(210, 255, 216);
     text-align: center;
-    padding: 30px;
+    /* padding: 30px; */
 }
 #slider .link .link2 {
     width: 100%;
     height: 100px;
     background-color: rgb(210, 255, 216);
     text-align: center;
-    padding: 30px;
+    /* padding: 30px; */
 }
 #slider .link .link3 {
     width: 100%;
     height: 100px;
     background-color: rgb(210, 255, 216);
     text-align: center;
-    padding: 30px;
+    /* padding: 30px; */
 }
 #main .banner {
     width: 100%;
