@@ -7,7 +7,7 @@ $(".nav > ul > li").mouseout(function(){
 });
 
 $(function(){
-    let currentIndex = 0;   //현재 이미지 설정
+    let currentIndex = 0;
     $(".sliderWrap").append($(".slider").first().clone(true));  //첫번째 이미지를 복사해서 마지막에 추가
 
     setInterval(function(){     //3초에 한번씩 실행   
