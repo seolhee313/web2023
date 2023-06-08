@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './components/latout/Header.jsx';
-import Footer from './components/latout/Footer.jsx';
-import Main from './components/latout/Main.jsx';
+import Header from './components/layout/Header.jsx';
+import Footer from './components/layout/Footer.jsx';
+import Main from './components/layout/Main.jsx';
 
 import SliderSection from './components/section/SliderSection.jsx';
 import IntroSection from './components/section/IntroSection.jsx';

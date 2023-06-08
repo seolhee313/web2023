@@ -22,15 +22,15 @@
                 align-items: center;
                 justify-content: center;
             }
-            #section1 {background-color: #111}
-            #section2 {background-color: #222}
-            #section3 {background-color: #111}
-            #section4 {background-color: #222}
-            #section5 {background-color: #111}
-            #section6 {background-color: #222}
-            #section7 {background-color: #111}
-            #section8 {background-color: #222}
-            #section9 {background-color: #111}
+            #section1 {background-color: #111;}
+            #section2 {background-color: #222;}
+            #section3 {background-color: #111;}
+            #section4 {background-color: #222;}
+            #section5 {background-color: #111;}
+            #section6 {background-color: #222;}
+            #section7 {background-color: #111;}
+            #section8 {background-color: #222; height: 70vh;}
+            #section9 {background-color: #111; height: 80vh;}
 
             .parallaxs__item__num {
                 position: absolute;
@@ -150,7 +150,8 @@
 
                 <section id="section5" class="parallaxs__item">
                     <span class="parallaxs__item__num">05</span>
-                    <div class="parallaxs__item__img"></div>
+                    <span class="parallaxs__item__text">section5</span>
+                    <!-- <div class="parallaxs__item__img"></div> -->
                 </section>
                 <!-- //section5 -->
 
@@ -168,13 +169,15 @@
 
                 <section id="section8" class="parallaxs__item">
                     <span class="parallaxs__item__num">08</span>
-                    <div class="parallaxs__item__img"></div>
+                    <span class="parallaxs__item__text">감사합니다.</span>
+                    <!-- <div class="parallaxs__item__img"></div> -->
                 </section>
                 <!-- //section8 -->
 
                 <section id="section9" class="parallaxs__item">
                     <span class="parallaxs__item__num">09</span>
-                    <div class="parallaxs__item__img"></div>
+                    <span class="parallaxs__item__text">끝.</span>
+                    <!-- <div class="parallaxs__item__img"></div> -->
                 </section>
                 <!-- //section9 -->
             </div>
@@ -248,8 +251,24 @@
             const ani4 = gsap.timeline();
             ani4.fromTo("#section4 .parallaxs__item__img.i1",
                 {y: -200, autoAlpha: 0},
-                {y: 0, autoAlpha: 1},
+                {y: 0, autoAlpha: 1}
             )
+            .fromTo("#section4 .parallaxs__item__img.i2",
+                {x: 200, autoAlpha: 0},
+                {x: 0, autoAlpha: 1}
+            )
+            .fromTo("#section4 .parallaxs__item__img.i3",
+                {rotation: -180, autoAlpha: 0},
+                {rotation: 0, autoAlpha: 1}
+            )
+            .fromTo("#section4 .parallaxs__item__img.i4",
+                {scale: 0, autoAlpha: 0},
+                {scale: 1, autoAlpha: 1}
+            )
+            .fromTo("#section4 .parallaxs__item__img.i5",
+                {y: 200, autoAlpha: 0},
+                {y: 0, autoAlpha: 1}
+            );
 
             ScrollTrigger.create({
                 animation: ani4,
@@ -262,6 +281,77 @@
                 markers: true
             });
 
+            const ani5 = gsap.timeline();
+            ani5.to("#section5 .parallaxs__item__text", {
+                duration: 1.5,
+                scale: 1.5,
+                rotation: 360,
+                opacity: 1,
+                ease: "power4.out"
+            });
+
+            ScrollTrigger.create({
+                animation: ani5,
+                trigger: "#section5",
+                start: "top top",
+                end: "+=2000",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                markers: true
+            });
+
+            const ani6 = gsap.timeline();
+            ani6.to("#section6 .parallaxs__item__img", {
+                x: "200%",
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                    const ani7 = gsap.timeline();
+                    ani7.from("#section7 .parallaxs__item__img", {
+                        x: "200%",
+                        opacity: 0,
+                        duration: 2,
+                    });
+                }
+            });
+
+            ScrollTrigger.create({
+                animation: ani6,
+                trigger: "#section6",
+                start: "top top",
+                end: "+=2000",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                markers: true
+            });
+
+            const ani8 = gsap.timeline();
+            ani8.to("#section8 .parallaxs__item__text", {
+                y: "-300%",
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                    const ani9 = gsap.timeline();
+                    ani9.from("#section9 .parallaxs__item__text", {
+                        y: "-100vh",
+                        opacity: 0,
+                        duration: 1,
+                    });
+                }
+            });
+
+            ScrollTrigger.create({
+                animation: ani8,
+                trigger: "#section8",
+                start: "top top",
+                end: "+=2000",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                markers: true
+            });
         </script>
     </body>
 </html>
