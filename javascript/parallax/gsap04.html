@@ -22,16 +22,15 @@
                 align-items: center;
                 justify-content: center;
             }
-            #section1 {background-color: #111; height: 100vh;}
-            #section2 {background-color: #222; height: 50vh;}
-            #section3 {background-color: #111; height: 50vh;}
-            #section4 {background-color: #222; height: 60vh;}
-            #section5 {background-color: #111; height: 70vh;}
-            #section6 {background-color: #222; height: 80vh;}
-            #section7 {background-color: #111; height: 50vh;}
-            #section8 {background-color: #222; height: 100vh;}
-            #section9 {background-color: #111; height: 80vh;}
-
+            #section1 {background-color: #111;}
+            #section2 {background-color: #222;}
+            #section3 {background-color: #111;}
+            #section4 {background-color: #222;}
+            #section5 {background-color: #111;}
+            #section6 {background-color: #222;}
+            #section7 {background-color: #111;}
+            #section8 {background-color: #222;}
+            #section9 {background-color: #111;}
             .parallaxs__item__num {
                 position: absolute;
                 right: 20px;
@@ -45,14 +44,21 @@
                 font-weight: 100;
             }
             .parallaxs__item__img {
-                width: 200px;
-                height: 200px;
+                width: 100%;
+                height: 100vh;
                 background-size: cover;
-                border-radius: 20px;
-                transition:  border-radiu 0.3s;
+                position: relative;
+                z-index: 10;
             }
-            .parallaxs__item__img.active {
-                border-radius: 50%;
+            .parallaxs__item__img::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 1;
             }
             .parallaxs__item:nth-child(1) .parallaxs__item__img {
                 background-image: url(img/sliderEffect01-min.jpg);
