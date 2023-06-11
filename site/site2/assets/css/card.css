@@ -1,0 +1,16 @@
+/* card */
+#card {
+    padding: 80px;
+}
+.card__inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.card__box {
+    display: flex;
+    padding: 0 70px;
+}
+.cardItem {
+    width: 324px;
+    margin: 0 15px;
+}

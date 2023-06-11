@@ -1,0 +1,132 @@
+/* link */
+#link {
+    width: 100%;
+    height: 200px;
+}
+.link__box {
+    width: 1200px;
+    margin: 0 auto;
+}
+.itemWrap {
+    display: flex;
+    margin-top: 100px;
+}
+.item {
+    width: 33.333%;
+    padding-left: 70px;
+    position: relative;
+}
+.item span {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 42px;
+    letter-spacing: -4px;
+}
+.item:first-child span {
+    color: #ff143c;
+}
+.item:nth-child(2) span {
+    color: #1382ff;
+}
+.item a {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+.ico-delivery {
+    display: block;
+    position: relative;
+    background-size: cover;
+}
+.ico-delivery::before {
+    display: block;
+    position: absolute;
+    width: 52px;
+    height: 38px;
+    content: '';
+    left: 0;
+    top: -40px;
+    background: url(../images/dominos.png) no-repeat -195px -275px;
+}
+.ico-takeout {
+    display: block;
+    position: relative;
+    background-size: cover;
+}
+.ico-takeout::before {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -40px;
+    width: 40px;
+    height: 39px;
+    background: url(../images/dominos.png) no-repeat -262px -275px;
+}
+.ico-quick3 {
+    display: block;
+    position: relative;
+    background-size: cover;
+}
+.ico-quick3::before {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -45px;
+    width: 26px;
+    height: 42px;
+    background: url(../images/ico-quick3.png) no-repeat 0 0;
+}
+.item p {
+    margin-top: 17px;
+    padding-left: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #888;
+    font-weight: 500;
+}
+.item a .arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-left: 9px;
+    background: #ff143c;
+    border-radius: 100%;
+    border: 0;
+}
+.item:nth-child(2) a .arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-left: 9px;
+    background: #1382ff;
+    border-radius: 100%;
+    border: 0;
+}
+.item:last-child a .arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-left: 9px;
+    background: #000;
+    border-radius: 100%;
+    border: 0;
+}
+.item a .arrow::after {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-style: solid;
+    border-color: transparent #fff #fff transparent;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 11px;
+    left: -4px;
+    right: 0;
+    margin: 0 auto;
+}

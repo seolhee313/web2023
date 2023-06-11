@@ -1,0 +1,50 @@
+/* event */
+#event {
+    padding: 110px 0;
+}
+.event_inner {
+    display: block;
+    text-align: left;
+    display: flex;
+}
+.event__login {
+    display: inline-block;
+    width: 390px;
+    vertical-align: top; 
+}
+.titleWrap {
+    display: block;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+.titleWrap .title strong {
+    color: #238ece;
+}
+.btnWrap {
+    text-align: left;
+    margin-top: 30px;
+}
+.btn {
+    width: 103px;
+    height: 43px;
+    line-height: 43px;
+    font-size: 16px;
+    background: #222222;
+    border: 1px solid #222;
+    font-size: 16px;
+    color: #fff;
+    line-height: 32px;
+    border-radius: 25px;
+    padding: 10px 28px;
+}
+.event__box {
+    display: inline-block;
+    width: 726px;
+    vertical-align: top;
+    display: flex;
+}
+.event__box > div {
+    width: 210px;
+    margin-right: 6px;
+}
