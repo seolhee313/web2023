@@ -48,12 +48,23 @@ $(function() {
         }
     });
 
-    $('.snb-more').click(function() {
+    $('.snb-more').click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
         $('.snb-wrap').toggleClass('active');
     });
 
-    $('.snb-more').click(function(e) {
-        e.preventDefault(); // 기본 클릭 동작을 막기 위해 사용합니다.
-        $(this).toggleClass('active');
+    $(window).scroll(function() {
+        var scrollTop = $(window).scrollTop();
+        var headerMenu = $('.header__menu');
+        var subMenu = $('.snb-wrap');
+        
+        if (scrollTop > 0) {
+            headerMenu.addClass('fixed');
+            subMenu.addClass('fixed');
+        } else {
+            headerMenu.removeClass('fixed');
+            subMenu.removeClass('fixed');
+        }
     });
 });

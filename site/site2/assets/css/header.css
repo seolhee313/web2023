@@ -1,14 +1,26 @@
 /* header */
-#header__wrap {
-    margin-top: 29px;
-    text-align: center;
+#wrap {
+    position: relative;
 }
-.header__inner {}
+#header__wrap {
+    text-align: center;
+    z-index: 50;
+    background: #fff;
+}
+.header__inner {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    z-index: 3;
+}
 .header__top {
-    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 3;
+    height: 85px;
+    background: #fff;
 }
 .header__logo {
     width: 150px;
@@ -41,7 +53,6 @@
     align-items: center;
 }
 .header__member a {
-    /* margin-right: 15px; */
     display: inline-block;
     padding: 10px;
     font-size: 14px;
@@ -54,10 +65,10 @@
     margin-top: 14px;
 }
 .select-type {
-    width: 72px;
-    height: 27px;
+    width: 75px;
+    height: 33px;
     border: 1px solid #ddd;
-    border-radius: 13.5px;
+    border-radius: 16px;
     font-size: 12px;
     padding: 0 13px;
     line-height: 27px;
@@ -66,8 +77,30 @@
 .header__menu {
     position: relative;
     display: flex;
-    margin-top: 20px;
+    align-items: center;
+    z-index: 3;
+    background: #fff;
+    height: 60px;
+    justify-content: center;
+    margin-right: 28px;
 }
+.header__menu.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+}
+.header__menu.fixed ul {
+    padding: 15px 10px;
+}
+.header__menu.fixed a {
+    display: block;
+}
+
 .header__menu ul {
     display: flex;
 }
@@ -106,7 +139,6 @@
 .snb-more::before {
     position: absolute;
     content: "";
-    /* display: inline-block; */
     width: 10px;
     height: 10px;
     border-style: solid;
@@ -123,7 +155,7 @@
     vertical-align: 4px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    top: 3px;
+    top: 6px;
     right: -20px;
 }
 .snb-more.active:before {
@@ -144,21 +176,20 @@
 
 .snb-wrap {
     position: absolute;
-    top: 17%;
+    top: 100%;
     left: 0;
     right: 0;
     z-index: 2;
     padding: 29px 0 40px;
-    border-top: 1px solid #ddd;
     background: #fff;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
     -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
-    display: none;
 }
+
 .snb-wrap.active {
-    display: block;
+    transform: translateY(0);
 }
 .inner-box {
     display: flex;
@@ -181,13 +212,13 @@
 .snb-wrap a {
     display: block;
     padding: 8px 0;
-    font-size: 15px;
+    font-size: 18px;
     color: #111;
 }
 .snb-wrap li a {
     display: inline-block;
     position: relative;
-    font-size: 13px;
+    font-size: 15px;
     color: #555;
 }
 .snb-wrap ul {
