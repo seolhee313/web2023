@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+ul, li, ol {
+    list-style: none;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+#wrap {
+    width: 100%;
+    height: 750px;
+}
+#main {
+    width: 100%;
+    height: 650px;
+    display: flex;
+}
+#main #header {
+    width: 200px;
+}
+#main #header .logo {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    line-height: 3;
+    font-size: 50px;
+}
+#main #header .logo a {
+    color: #ffbf8fa3;
+}
+#main #header .logo a:hover {
+    color: #ffbf8fa3;
+}
+#main #header .nav {
+    width: 100%;
+    height: 500px;
+    background-color: #dbc6b6a3;
+}
+#main #header .nav > ul > li {
+    width: 100%;
+    margin: 0 10px;
+}
+#main #header .nav > ul > li > a {
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+}
+#main #header .nav > ul > li a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+    background-color: #c08f69a3;
+}
+#main #header .nav > ul > li > ul {
+    display: none;
+}
+#main #header .nav > ul > li > ul > li {
+    width: 90%;
+    background-color: #c9a78ea3;
+}
+#main #header .nav > ul > li > ul > li > a {
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    width: 89%;
+}
+#main #header .nav > ul > li > ul > li a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+    background-color: #8b5123a3;
+}
+#main #section {
+    width: calc(100% - 200px);
+    height: 650px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#main #section .section {
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+#main #section .section .sliders {
+    width: calc(100% - 230px);
+    height: 100%;
+    overflow: hidden;
+}
+#main #section .section .sliders .slider__wrap {
+    width: 100%;
+    height: 100%;
+    transform: translateY(-1200px);
+}
+#main #section .section .sliders .slider__wrap .slider {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+#main #section .section .sliders .slider__wrap .slider.s1 {
+    background-image: url(../images/slider01.png);
+}
+#main #section .section .sliders .slider__wrap .slider.s2 {
+    background-image: url(../images/slider02.png);
+}
+#main #section .section .sliders .slider__wrap .slider.s3 {
+    background-image: url(../images/slider03.png);
+}
+#main #section .section .banner {
+    width: 230px;
+    height: 400px;
+    background-image: url(../images/banner.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main #section .section .banner h3 a {
+    color: #fff;
+    background-color: #ffeede;
+    padding: 20px;
+    border-radius: 10px;
+}
+#main #section .section .banner h3 a:hover {
+    background-color: #ffeede;
+}
+#main #section .article {
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+#main #section .article .contents {
+    width: 50%;
+    height: 250px;
+    background-color: #fccea4;
+}
+#main #section .article .contents h3 {
+    margin: 30px 20px 5px 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+}
+#main #section .article .contents h3 a {
+    color: #fff;
+}
+#main #section .article .contents h3 a:hover {
+    color: #fccea4;
+}
+#main #section .article .contents li {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#main #section .article .contents li a {
+    display: block;
+    width: 80%;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#main #section .article .contents li a:hover {
+    color: #8b5828;
+}
+#main #section .article .contents li span {
+    width: 20%;
+    text-align: right;
+    color: #fff;
+}
+#main #section .article .gallery {
+    width: 50%;
+    height: 250px;
+    background-color: #fdc692;
+}
+#main #section .article .gallery h3 {
+    margin: 30px 20px 5px 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+}
+#main #section .article .gallery h3 a {
+    color: #fff;
+}
+#main #section .article .gallery h3 a:hover {
+    color: #8b5828;
+}
+#main #section .article .gallery ul {
+    display: flex;
+    justify-content: space-between;
+}
+#main #section .article .gallery li {
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#main #section .article .gallery li:nth-child(1) {
+    background-image: url(../images/gallery01.png);
+}
+#main #section .article .gallery li:nth-child(2) {
+    background-image: url(../images/gallery02.png);
+}
+#main #section .article .gallery li:nth-child(3) {
+    background-image: url(../images/gallery03.png);
+}
+#main #section .article .gallery li a {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+#main #section .article .gallery li a:hover {
+    background-color: rgba(0, 0, 0, 0.151);
+}
+.popup-view {
+    width: 20%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ccb274;
+    border: 4px solid #916500;
+    padding: 20px;
+    display: none;
+    text-align: center;
+    word-break: keep-all;
+}
+.popup-view h4 {
+    margin-bottom: 20px;
+    text-align: left;
+    color: #fff;
+}
+.popup-view p {
+    margin-bottom: 50px;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+}
+.popup-view p a {
+    color: #fff;
+    font-size: 20px;
+}
+.popup-view p a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.popup-view button {
+    display: inline-block;
+    background-color: #dab664;
+    border: 4px solid #775400;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: #ffe7ae;
+}
+#footer .footer1 {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer .footer1 h4 {
+    font-size: 30px;
+}
+#footer .footer2 {
+    width: calc(100% - 400px);
+    padding: 20px 40px;
+}
+#footer .footer3 {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer .footer3 select {
+    width: 90%;
+    height: 30px;
+}

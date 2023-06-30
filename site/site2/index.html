@@ -1,321 +1,439 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도미노 피자</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>도미노 피자</title>
 
-    <!-- SEO -->
-    <meta name="author" content="천설희">
-    <meta name="description" content="도미노피자 사이트입니다.">
-    <meta name="keyword" content="천설희, 피자, 도미노피자, 사이트, 사이트 만들기">
-    <meta name="robots" content="all">
+        <!-- SEO -->
+        <meta name="author" content="천설희" />
+        <meta name="description" content="도미노피자 사이트입니다." />
+        <meta
+            name="keyword"
+            content="천설희, 피자, 도미노피자, 사이트, 사이트 만들기"
+        />
+        <meta name="robots" content="all" />
 
-     <!-- 파비콘 -->
-     <link rel="shortcut icon" type="image/x-icon" href="assets/ico/dominoFavicon.png"/>
-     <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/dominoFavicon.png"/>
-     <link rel="apple-touch-icon" href="assets/ico/dominoFavicon.png"/>
- 
-     <!-- CSS -->
-     <link rel="stylesheet" href="assets/css/fonts.css"/>
-     <link rel="stylesheet" href="assets/css/reset.css"/>
-     <link rel="stylesheet" href="assets/css/common.css"/>
-     <link rel="stylesheet" href="assets/css/swiper.css"/>
-     <link rel="stylesheet" href="assets/css/style.css"/>
+        <!-- 파비콘 -->
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="assets/ico/dominoFavicon.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="assets/ico/dominoFavicon.png"
+        />
+        <link rel="apple-touch-icon" href="assets/ico/dominoFavicon.png" />
 
-</head>
-<body>
-    <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역 바로가기</a>
-        <a href="#">링크 영역 바로가기</a>
-        <a href="#">이벤트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
-    </div>
-    <!-- //skip -->
-    <div id="wrap">
-        <header id="header__wrap" class="Roboto">
-            <div class="header__inner">
-                <div class="header__top container">
-                    <h1 class="header__logo"><img src="assets/images/dominologo.svg" alt="도미노 피자"></h1>
-                    <div class="header__search">
-                        <h3>주변 매장의 프로모션을 확인해보세요!</h3>
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/fonts.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/common.css" />
+        <link rel="stylesheet" href="assets/css/swiper.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <div id="skip">
+            <a href="#">헤더 영역 바로가기</a>
+            <a href="#">슬라이드 영역 바로가기</a>
+            <a href="#">링크 영역 바로가기</a>
+            <a href="#">이벤트 영역 바로가기</a>
+            <a href="#">카드 영역 바로가기</a>
+            <a href="#">푸터 영역 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <div id="wrap">
+            <header id="header__wrap" class="Roboto">
+                <div class="header__inner">
+                    <div class="header__top container">
+                        <h1 class="header__logo">
+                            <img
+                                src="assets/images/dominologo.svg"
+                                alt="도미노 피자"
+                            />
+                        </h1>
+                        <div class="header__search">
+                            <h3>주변 매장의 프로모션을 확인해보세요!</h3>
+                        </div>
+                        <div class="header__member">
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            <a href="#" class="lang">
+                                <div class="select1 language">
+                                    <select class="select-type">
+                                        <option value="/main?locale=ko">
+                                            KOR
+                                        </option>
+                                        <option value="/main?locale=en">
+                                            ENG
+                                        </option>
+                                    </select>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="header__member">
-                        <a href="#">로그인</a>
-                        <a href="#">회원가입</a>
-                        <a href="#" class="lang">
-                            <div class="select1 language">
-                                <select class="select-type">
+
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="#">메뉴</a></li>
+                            <li><a href="#">e-쿠폰</a></li>
+                            <li><a href="#">상품권 선물</a></li>
+                            <li><a href="#">이벤트·제휴</a></li>
+                            <li><a href="#">매장검색</a></li>
+                            <li><a href="#">가맹점 모집</a></li>
+                        </ul>
+                        <a href="#" class="snb-more">더보기</a>
+                    </nav>
+                    <div class="snb-wrap">
+                        <div class="inner-box">
+                            <div class="mnu-wrap">
+                                <div class="mnu-box">
+                                    <a href="#">도미노 서비스</a>
+                                    <ul>
+                                        <li><a href="#">매니아 혜택</a></li>
+                                        <li><a href="#">도미노 모멘트</a></li>
+                                        <li><a href="#">퀵오더</a></li>
+                                        <li><a href="#">단체주문 서비스</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mnu-box">
+                                    <a href="#">고객센터</a>
+                                    <ul>
+                                        <li><a href="#">자주하는 질문</a></li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                onclick="qnaFormConfirm();"
+                                                ><span class="qnaForm-title"
+                                                    >문의하기/칭찬</span
+                                                ></a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mnu-box">
+                                    <a href="#">회사소개</a>
+                                    <ul>
+                                        <li><a href="#">한국도미노피자</a></li>
+                                        <li><a href="#">광고갤러리</a></li>
+                                        <li><a href="#">사회공헌활동</a></li>
+                                        <li><a href="#">가맹점 모집</a></li>
+                                        <li><a href="#">인재채용</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="notice-box">
+                                <a href="#">공지사항</a>
+                                <ul>
+                                    <li><a href="#">도미노뉴스</a></li>
+                                    <li><a href="#">보도자료</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- //header -->
+            <main id="main" class="Roboto">
+                <div id="slider">
+                    <div class="sliderWrap">
+                        <div class="slider s1">
+                            <a href="#"></a>
+                        </div>
+                        <div class="slider s2">
+                            <a href="#"></a>
+                        </div>
+                        <div class="slider s3">
+                            <a href="#"></a>
+                        </div>
+                        <div class="slider s4">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                    <div class="slide-count-wrap">
+                        <span class="slide-count">1 / 4</span>
+                        <a href="#" class="btn-play">btnPlay</a>
+                    </div>
+                </div>
+                <!-- slider -->
+
+                <div id="link">
+                    <div class="link__box">
+                        <div class="itemWrap">
+                            <div class="item">
+                                <a href="#">
+                                    <i class="ico-delivery"></i>
+                                    <span class="text">배달 주문</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <p>등급별 최대 30%</p>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <i class="ico-takeout"></i>
+                                    <span class="text">포장 주문</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <p>등급별 최대 30%</p>
+                            </div>
+
+                            <div class="item">
+                                <a href="#">
+                                    <i class="ico-quick3"></i>
+                                    <span class="text">퀵오더</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <p>
+                                    자주 이용하는 메뉴를<br />
+                                    더 빠르게 주문해보세요!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="event" class="gray">
+                    <div class="event_inner container">
+                        <div class="event__login">
+                            <div class="titleWrap">
+                                <div class="title">
+                                    도미노피자의<br /><strong
+                                        >특별한 매니아 혜택</strong
+                                    ><br />누려보세요!
+                                </div>
+                            </div>
+                            <div class="btnWrap">
+                                <a href="#" class="btn">로그인</a>
+                            </div>
+                        </div>
+                        <div class="event__box">
+                            <div>
+                                <a href="#"
+                                    ><img
+                                        src="assets/images/event01.png"
+                                        alt="회원가입 20%할인"
+                                /></a>
+                            </div>
+                            <div>
+                                <a href="#"
+                                    ><img
+                                        src="assets/images/event02.gif"
+                                        alt="도미노 매니아만의 혜택"
+                                /></a>
+                            </div>
+                            <div>
+                                <a href="#"
+                                    ><img
+                                        src="assets/images/event03.png"
+                                        alt="나만의 피자 먹고싶은 그 날!"
+                                /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card">
+                    <div class="card__inner">
+                        <div class="card__box">
+                            <div class="cardItem">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="assets/images/card01.jpg"
+                                            alt="도미노스팟"
+                                        />
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="cardItem">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="assets/images/card02.jpg"
+                                            alt="가맹점 모집"
+                                        />
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="cardItem">
+                                <a href="#">
+                                    <figure>
+                                        <img
+                                            src="assets/images/card03.jpg"
+                                            alt="단체주문 서비스"
+                                        />
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer id="footer" class="Roboto">
+                <div class="footer__inner container">
+                    <div class="footer__box">
+                        <div class="footer__order">
+                            <div class="footerlogo">
+                                <img
+                                    src="assets/images/dominologo.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <span class="tel">1577-3082</span>
+                        </div>
+
+                        <ul class="footer__contact">
+                            <li><a href="#">이용약관</a></li>
+                            <li class="on"><a href="#">개인정보처리방침</a></li>
+                            <li class="on"><a href="#">위치기반서비스</a></li>
+                            <li><a href="#">청소년보호방침</a></li>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">인재채용</a></li>
+                            <li><a href="#">가맹점모집</a></li>
+                            <li><a href="#">단체주문</a></li>
+                        </ul>
+
+                        <div class="footer__info">
+                            <p>
+                                06223 서울특별시 강남구 역삼로25길 35(역삼동,
+                                청오큐브타워) 청오디피케이㈜｜대표이사 :
+                                오광현,김영훈
+                            </p>
+                            <p>
+                                사업자 등록번호: 220-81-03371｜통신판매업신고:
+                                강남 5064호｜개인정보 보호책임자 : 윤여진｜민원
+                                책임자 : 이열우
+                            </p>
+                            <p>문의 : webmaster@dominos.co.kr</p>
+                            <p>
+                                Copyright ⓒ Domino’s Pizza. All rights reserved.
+                            </p>
+                            <p class="notice">
+                                청오디피케이㈜의 사전 서면동의 없이 도미노피자
+                                사이트(PC, 모바일, 앱)의 일체의 정보, 콘텐츠 및
+                                UI 등을 상업적 목적으로 전재, 전송, 스크래핑 등
+                                무단 사용할 수 없습니다.
+                            </p>
+                            <p>
+                                도미노피자에서 판매되는 모든 상품은
+                                청오디피케이㈜에서 책임지고 있습니다.
+                            </p>
+                        </div>
+
+                        <div class="footer__cont">
+                            <div class="select language">
+                                <select id="select__type">
                                     <option value="/main?locale=ko">KOR</option>
                                     <option value="/main?locale=en">ENG</option>
                                 </select>
                             </div>
-                        </a>
-                    </div>
-                </div>
-    
-                <nav class="header__menu">
-                    <ul>
-                        <li><a href="#">메뉴</a></li>
-                        <li><a href="#">e-쿠폰</a></li>
-                        <li><a href="#">상품권 선물</a></li>
-                        <li><a href="#">이벤트·제휴</a></li>
-                        <li><a href="#">매장검색</a></li>
-                        <li><a href="#">가맹점 모집</a></li>
-                    </ul>
-                    <a href="#" class="snb-more">더보기</a>
-                </nav>
-                <div class="snb-wrap">
-                    <div class="inner-box">
-                        <div class="mnu-wrap">
-                            <div class="mnu-box">
-                                <a href="#">도미노 서비스</a>
-                                <ul>
-                                    <li><a href="#">매니아 혜택</a></li>
-                                    <li><a href="#">도미노 모멘트</a></li>
-                                    <li><a href="#">퀵오더</a></li>
-                                    <li><a href="#">단체주문 서비스</a></li>
-                                </ul>
-                            </div>
-                            <div class="mnu-box">
-                                <a href="#">고객센터</a>
-                                <ul>
-                                    <li><a href="#">자주하는 질문</a></li>
-                                    <li><a href="#" onclick="qnaFormConfirm();"><span class="qnaForm-title">문의하기/칭찬</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="mnu-box">
-                                <a href="#">회사소개</a>
-                                <ul>
-                                    <li><a href="#">한국도미노피자</a></li>
-                                    <li><a href="#">광고갤러리</a></li>
-                                    <li><a href="#">사회공헌활동</a></li>
-                                    <li><a href="#">가맹점 모집</a></li>
-                                    <li><a href="#">인재채용</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notice-box">
-                            <a href="#">공지사항</a>
-                            <ul>
-                                <li><a href="#">도미노뉴스</a></li>
-                                <li><a href="#">보도자료</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </header>
-        <!-- //header -->
-        <main id="main">
-            <div id="slider">
-                <div class="sliderWrap">
-                    <div class="slider s1">
-                        <a href="#"></a>
-                    </div>
-                    <div class="slider s2">
-                        <a href="#"></a>
-                    </div>
-                    <div class="slider s3">
-                        <a href="#"></a>
-                    </div>
-                    <div class="slider s4">
-                        <a href="#"></a>
-                    </div>
-                </div>
-                <div class="slide-count-wrap">
-                    <span class="slide-count">1 / 4</span>
-                    <a href="#" class="btn-play">btnPlay</a>
-                </div>
-            </div>
-            <!-- slider -->
-    
-            <div id="link">
-                <div class="link__box">
-                    <div class="itemWrap">
-                        <div class="item">
-                            <a href="#">
-                                <i class="ico-delivery"></i>
-                                <span class="text">배달 주문</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <p>
-                                등급별 최대 30%
-                            </p>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <i class="ico-takeout"></i>
-                                <span class="text">포장 주문</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <p>
-                                등급별 최대 30%
-                            </p>
-                        </div>
-                        
-                        <div class="item">
-                            <a href="#">
-                                <i class="ico-quick3"></i>
-                                <span class="text">퀵오더</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <p>
-                                자주 이용하는 메뉴를<br>
-                                더 빠르게 주문해보세요!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="event" class="gray">
-                <div class="event_inner container">
-                    <div class="event__login">
-                        <div class="titleWrap">
-                            <div class="title">도미노피자의<br><strong>특별한 매니아 혜택</strong><br>누려보세요!</div>
-                        </div>
-                        <div class="btnWrap">
-                            <a href="#" class="btn">로그인</a>
-                        </div>
-                    </div>
-                    <div class="event__box">
-                        <div>
-                            <a href="#"><img src="assets/images/event01.png" alt="회원가입 20%할인"/></a>  
-                        </div>
-                        <div>
-                            <a href="#"><img src="assets/images/event02.gif" alt="도미노 매니아만의 혜택"/></a>  
-                        </div>
-                        <div>
-                            <a href="#"><img src="assets/images/event03.png" alt="나만의 피자 먹고싶은 그 날!"/></a>  
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div id="card">
-                <div class="card__inner">
-                    <div class="card__box">
-                        <div class="cardItem">
-                            <a href="#">
-                                <figure>
-                                    <img src="assets/images/card01.jpg" alt="도미노스팟">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="cardItem">
-                            <a href="#">
-                                <figure>
-                                    <img src="assets/images/card02.jpg" alt="가맹점 모집">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="cardItem">
-                            <a href="#">
-                                <figure>
-                                    <img src="assets/images/card03.jpg" alt="단체주문 서비스">
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer id="footer">
-            <div class="footer__inner container">
-                <div class="footer__box">
-                    <div class="footer__order">
-                        <div class="footerlogo"><img src="assets/images/dominologo.svg" alt=""></div>
-                        <span class="tel">1577-3082</span>
-                    </div>
-    
-                    <ul class="footer__contact">
-                        <li><a href="#">이용약관</a></li>
-                        <li class="on"><a href="#">개인정보처리방침</a></li>
-                        <li class="on"><a href="#">위치기반서비스</a></li>
-                        <li><a href="#">청소년보호방침</a></li>
-                        <li><a href="#">고객센터</a></li>
-                        <li><a href="#">인재채용</a></li>
-                        <li><a href="#">가맹점모집</a></li>
-                        <li><a href="#">단체주문</a></li>
-                    </ul>
-    
-                    <div class="footer__info">
-                        <p>06223 서울특별시 강남구 역삼로25길 35(역삼동, 청오큐브타워) 청오디피케이㈜｜대표이사 : 오광현,김영훈</p>
-                        <p>사업자 등록번호: 220-81-03371｜통신판매업신고: 강남 5064호｜개인정보 보호책임자 : 윤여진｜민원 책임자 : 이열우</p>
-                        <p>문의 : webmaster@dominos.co.kr</p>
-                        <p>Copyright ⓒ Domino’s Pizza. All rights reserved.</p>
-                        <p class="notice">청오디피케이㈜의 사전 서면동의 없이 도미노피자 사이트(PC, 모바일, 앱)의 일체의 정보, 콘텐츠 및 UI 등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다.</p>
-                        <p>도미노피자에서 판매되는 모든 상품은 청오디피케이㈜에서 책임지고 있습니다.</p>
-                    </div>
-    
-                    <div class="footer__cont">
-                        <div class="select language">
-                            <select id="select__type">
-                                <option value="/main?locale=ko">KOR</option>
-                                <option value="/main?locale=en">ENG</option>
-                            </select>
-                        </div>
-        
-                        <dl class="app__box">
-                            <dt>DOWNLOAD APP</dt>
-                            <dd>
-                                <a href="#"><i class="ico-ios"></i></a>
-                                <a href="#"><i class="ico-android"></i></a>
-                            </dd>
-                        </dl>
-        
-                        <div class="sns__box">
-                            <ul>
-                                <li><a href="#"><div class="ico-blog"></div></a></li>
-                                <li><a href="#"><div class="ico-insta"></div></a></li>
-                                <li><a href="#"><div class="ico-facebook"></div></a></li>
-                                <li><a href="#"><div class="ico-youtube"></div></a></li>
-                                <li><a href="#"><div class="ico-twitter"></div> </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="awards__area gray">
-                <div class="inner__box container">
-                    <ul>
-                        <li>
-                            <img src="assets/images/list_awards.png" alt="">
-                            <p>식품안전<br>경영시스템 인증</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/list_awards2.png" alt="">
-                            <p>지식경제부<br>우수디자인 선정</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/list_awards3.png" alt="">
-                            <p>2022년 고객이 가장 추천하는 기업<br>피자전문점 부문 10년 연속 1위</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/list_awards4.png" alt="">
-                            <p>2022년 한국산업 고객만족도<br>피자전문점 부문 8년 연속 1위</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/list_awards5.png" alt="">
-                            <p>2022 프리미엄브랜드지수<br>피자전문점 부문 7년 연속 1위 수상</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/list_awards6.png" alt="">
-                            <p>대학생 1000명이 선택한<br>2019 올해의 핫 브랜드 캠퍼스 잡앤조이 선정</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </div>
-    
-    
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="assets/script/script.js"></script>
-</body>
+                            <dl class="app__box">
+                                <dt>DOWNLOAD APP</dt>
+                                <dd>
+                                    <a href="#"><i class="ico-ios"></i></a>
+                                    <a href="#"><i class="ico-android"></i></a>
+                                </dd>
+                            </dl>
+
+                            <div class="sns__box">
+                                <ul>
+                                    <li>
+                                        <a href="#"
+                                            ><div class="ico-blog"></div
+                                        ></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            ><div class="ico-insta"></div
+                                        ></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            ><div class="ico-facebook"></div
+                                        ></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            ><div class="ico-youtube"></div
+                                        ></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            ><div class="ico-twitter"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="awards__area gray">
+                    <div class="inner__box container">
+                        <ul>
+                            <li>
+                                <img
+                                    src="assets/images/list_awards.png"
+                                    alt=""
+                                />
+                                <p>식품안전<br />경영시스템 인증</p>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/images/list_awards2.png"
+                                    alt=""
+                                />
+                                <p>지식경제부<br />우수디자인 선정</p>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/images/list_awards3.png"
+                                    alt=""
+                                />
+                                <p>
+                                    2022년 고객이 가장 추천하는 기업<br />피자전문점
+                                    부문 10년 연속 1위
+                                </p>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/images/list_awards4.png"
+                                    alt=""
+                                />
+                                <p>
+                                    2022년 한국산업 고객만족도<br />피자전문점
+                                    부문 8년 연속 1위
+                                </p>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/images/list_awards5.png"
+                                    alt=""
+                                />
+                                <p>
+                                    2022 프리미엄브랜드지수<br />피자전문점 부문
+                                    7년 연속 1위 수상
+                                </p>
+                            </li>
+                            <li>
+                                <img
+                                    src="assets/images/list_awards6.png"
+                                    alt=""
+                                />
+                                <p>
+                                    대학생 1000명이 선택한<br />2019 올해의 핫
+                                    브랜드 캠퍼스 잡앤조이 선정
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="assets/script/script.js"></script>
+    </body>
 </html>

@@ -47,6 +47,7 @@ $(function(){
 
 
 
+
 function openPopup() {
     var popup = document.querySelector('.popup-view');
     popup.style.display = 'block';

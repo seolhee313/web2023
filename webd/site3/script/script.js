@@ -11,23 +11,34 @@ $(function(){
     });
 
     // 슬라이드
+        
+    const $sliderWrap = $("#slider .slider__wrap");
+    const $slider = $(".slider");
+    const $sliderImg = $(".slider img");
+    const $sliderHeight = $sliderImg.height();
+    console.log($sliderHeight);
+    $sliderWrap.append($slider.first().clone(true));
+
     let currentIndex = 0;
-    const $sliderWrap = $(".sliderWrap");   // 이미지 보관: 움직이는 영역
-    const $slider = $(".slider");           // 각각의 이미지
-    const $sliderHeight = $slider.height(); // 이미지 세로값
-
-    $sliderWrap.prepend($slider.last().clone(true));
-    $sliderWrap.css("margin-top", `-${$sliderHeight}px`);
-
     setInterval(function(){
-        currentIndex++; // 현재 이미지를 1씩 증가
-        $sliderWrap.animate({marginTop: `-${$sliderHeight * currentIndex}px`}, 600);
+        currentIndex++;
+        
+        $sliderWrap.animate({top: -$sliderHeight * currentIndex}, 600);
 
-        if (currentIndex === $slider.length) {
+        console.log(currentIndex);
+        if(currentIndex === $slider.length){
             setTimeout(function(){
-                $sliderWrap.css("margin-top", `-${$sliderHeight}px`);
+                $sliderWrap.animate({top: 0}, 0);
                 currentIndex = 0;
-            }, 700);
-        }
+            });            
+        };
     }, 3000);
+
+     // 모달창
+     $(".link").click(function(){
+        $(".modal").show();
+    })
+    $(".modal a").click(function(){
+        $(".modal").hide();
+    })
 });

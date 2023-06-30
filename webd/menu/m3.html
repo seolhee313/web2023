@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 메뉴 M-2</title>
+    <title>웹디자인기능사 메뉴 M-3</title>
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/dracula.css">
     <link rel="stylesheet" href="../assets/css/modal.css">
@@ -82,10 +82,30 @@
             background-color: #9d9d9d;
         }
         /* nav */
+        #header {
+            position: relative;
+        }
+        #header::after {
+            content: '';
+            width: 100%;
+            height: 0px;
+            background-color: #808080;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            z-index: 1;
+            transition: all 400ms;
+        }
+        #header.on::after {
+            height: 155px;
+        }
+        .nav {
+            z-index: 1000;
+        }
         .nav > ul {
             display: flex;
             justify-content: right;
-            margin-top: 30px;
+            margin-top: 61px;
         }
         .nav > ul > li {
             position: relative;
@@ -100,8 +120,8 @@
         }
         .nav > ul > li > ul {
             position: absolute;
-            left: 0; 
-            top: 38px;
+            left: 0;
+            top: 39px;
             width: 100%;
             text-align: center;
             display: none;
@@ -109,26 +129,25 @@
         .nav > ul > li > ul > li > a {
             display: inline-block;
             padding: 10px;
-            background-color: #c1c1c1;
             width: 100%;
             box-sizing: border-box;
         }
         .nav > ul > li > ul > li > a:hover {
             background-color: #8f8f8f;
         }
-        /* 자바스크립트 CSS */
+        /* 자바스크립트용 CSS */
         .nav > ul > li > ul {
             display: block;
             height: 0;
             overflow: hidden;
-            transition: all 600ms;
+            transition: all 400ms;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="header">
-            <div class="logo">메뉴 가로 유형 (M-2)</div>
+            <div class="logo">메뉴 가로 유형 (M-3)</div>
             <nav class="nav">
                 <ul>
                     <li><a href="#">메뉴1</a>
@@ -255,10 +274,12 @@
 <pre><code class="language-js">
 $(function(){
     $(".nav > ul > li").mouseover(function(){
-        $(".nav > ul > li > ul").stop().slideDown();
+        $(".nav > ul > li > ul").stop().fadeIn(900);
+        $("#header").addClass("on");
     });
     $(".nav > ul > li").mouseout(function(){
-        $(".nav > ul > li > ul").stop().slideUp();
+        $(".nav > ul > li > ul").stop().fadeOut(100);
+        $("#header").removeClass("on");
     });
 });
 </code></pre>
@@ -401,10 +422,30 @@ a {
     background-color: #9d9d9d;
 }
 /* nav */
+#header {
+    position: relative;
+}
+#header::after {
+    content: '';
+    width: 100%;
+    height: 0px;
+    background-color: #808080;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: 1;
+    transition: all 400ms;
+}
+#header.on::after {
+    height: 155px;
+}
+.nav {
+    z-index: 1000;
+}
 .nav > ul {
     display: flex;
     justify-content: right;
-    margin-top: 30px;
+    margin-top: 61px;
 }
 .nav > ul > li {
     position: relative;
@@ -419,8 +460,8 @@ a {
 }
 .nav > ul > li > ul {
     position: absolute;
-    left: 0; 
-    top: 38px;
+    left: 0;
+    top: 39px;
     width: 100%;
     text-align: center;
     display: none;
@@ -428,19 +469,18 @@ a {
 .nav > ul > li > ul > li > a {
     display: inline-block;
     padding: 10px;
-    background-color: #c1c1c1;
     width: 100%;
     box-sizing: border-box;
 }
 .nav > ul > li > ul > li > a:hover {
     background-color: #8f8f8f;
 }
-/* 자바스크립트 CSS */
+/* 자바스크립트용 CSS */
 .nav > ul > li > ul {
     display: block;
     height: 0;
     overflow: hidden;
-    transition: all 600ms;
+    transition: all 400ms;
 }
 </code></pre>
                             </div>
@@ -465,28 +505,31 @@ a {
     <!-- <script>
         $(function(){
             $(".nav > ul > li").mouseover(function(){
-                $(".nav > ul > li > ul").stop().slideDown();
+                $(".nav > ul > li > ul").stop().fadeIn(900);
+                $("#header").addClass("on");
             });
             $(".nav > ul > li").mouseout(function(){
-                $(".nav > ul > li > ul").stop().slideUp();
+                $(".nav > ul > li > ul").stop().fadeOut(100);
+                $("#header").removeClass("on");
             });
         });
     </script> -->
     <script>
-        window.onload = function(){
-            let navList = document.querySelector(".nav > ul");
+        let navList = document.querySelector(".nav > ul");
 
-            navList.addEventListener("mouseover", function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "155px";
-                });
+        navList.addEventListener("mouseover", () => {
+            navList.querySelectorAll(".submenu").forEach(sub => {
+                sub.style.height = "155px";
             });
-            navList.addEventListener("mouseout", function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "0px";
-                });
+            document.getElementById("header").classList.add("on");
+        });
+
+        navList.addEventListener("mouseout", () => {
+            navList.querySelectorAll(".submenu").forEach(sub => {
+                sub.style.height = "0px";
             });
-        }
+            document.getElementById("header").classList.remove("on");
+        });
     </script>
 </body>
 </html>

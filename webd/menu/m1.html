@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인 기능사 실기 A유형 1번 레이아웃</title>
-
+    <title>웹디자인기능사 메뉴 M-1</title>
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/modal.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             font-family: 'GmarketSans';
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
         }
         #wrap {
             width: 1200px;
@@ -20,109 +27,114 @@
         }
         #header {
             width: 100%;
-            height: 100px;
             display: flex;
         }
-        .header {
+        #header .logo {
             width: 20%;
-            background-color: #eae4e9;
+            height: 100px;
+            background-color: #efefef;
         }
-        .nav {
+        #header .nav {
             width: 80%;
-            background-color: #fff1e6;
+            background-color: #e3e3e3;
         }
-        #section {
+        #slider {
             width: 100%;
             height: 300px;
-            background-color: #fde2e4;
+            background-color: #d9d9d9;
         }
-        #article {
+        #contents {
             width: 100%;
-            height: 200px;
             display: flex;
         }
-        .a1 {
-            width: 33.333%;
-            background-color: #fad2e1;
+        #contents .content1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #d1d1d1;
         }
-        .a2 {
-            width: 33.333%;
-            background-color: #e2ece9;
+        #contents .content2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #c7c7c7;
         }
-        .a3 {
-            width: 33.333%;
-            background-color: #bee1e6;
+        #contents .content3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #bcbcbc;
         }
         #footer {
             width: 100%;
-            height: 100px;
             display: flex;
         }
-        .f1 {
+        #footer .footer1 {
             width: 20%;
-            background-color: #f0efeb;
+            height: 100px;
+            background-color: #b1b1b1;
         }
-        .f2 {
+        #footer .footer2 {
             width: 60%;
-            background-color: #dfe7fd;
+            height: 100px;
+            background-color: #a3a3a3;
         }
-        .f3 {
+        #footer .footer3 {
             width: 20%;
-            background-color: #cddafd;
+            height: 100px;
+            background-color: #9d9d9d;
         }
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-        li {
-            list-style: none;
-        }
-
-        .nav {
-            width: 80%;
-        }
+        /* nav */
         .nav > ul {
             display: flex;
             justify-content: right;
-            padding: 30px 40px;
+            margin-top: 30px;
         }
         .nav > ul > li {
             position: relative;
         }
         .nav > ul > li > a {
-            background-color: #bccaee;
-            display: block;
-            padding: 10px 40px;
+            display: inline-block;
+            padding: 10px 50px;
+            background-color: #b0b0b0;
         }
         .nav > ul > li > a:hover {
-            background-color: #7e97d6;
+            background-color: #696969;
         }
         .nav > ul > li > ul {
             position: absolute;
             left: 0;
-            top: 40px;
-            background-color: #ccc;
+            top: 38px;
+            background-color: #c7c7c7;
             width: 100%;
+            text-align: center;
             display: none;
         }
-        /* .nav > ul > li > ul > li {} */
         .nav > ul > li > ul > li > a {
+            display: inline-block;
             padding: 10px;
-            display: block;
+            background-color: #c1c1c1;
+            width: 100%;
+            box-sizing: border-box;
         }
         .nav > ul > li > ul > li > a:hover {
-            background-color: #eceaea;
+            background-color: #8f8f8f;
+        }
+
+        /* 자바스크립트용 CSS */
+        .nav > ul > li > ul {
+            display: block;
+            height: 0;
+            /* height: 155px; */
+            overflow: hidden;
+            transition: all 600ms;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <header id="header">
-            <header class="header">로고</header>
+        <div id="header">
+            <div class="logo">메뉴 가로 유형 (M-1)</div>
             <nav class="nav">
                 <ul>
-                    <li>
-                        <a href="#">메뉴1</a>
+                    <li><a href="#">메뉴1</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴1-1</a></li>
                             <li><a href="#">서브메뉴1-2</a></li>
@@ -130,8 +142,7 @@
                             <li><a href="#">서브메뉴1-4</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">메뉴2</a>
+                    <li><a href="#">메뉴2</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴2-1</a></li>
                             <li><a href="#">서브메뉴2-2</a></li>
@@ -139,8 +150,7 @@
                             <li><a href="#">서브메뉴2-4</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">메뉴3</a>
+                    <li><a href="#">메뉴3</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴3-1</a></li>
                             <li><a href="#">서브메뉴3-2</a></li>
@@ -148,8 +158,7 @@
                             <li><a href="#">서브메뉴3-4</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">메뉴4</a>
+                    <li><a href="#">메뉴4</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴4-1</a></li>
                             <li><a href="#">서브메뉴4-2</a></li>
@@ -159,66 +168,331 @@
                     </li>
                 </ul>
             </nav>
-        </header>
-        <section id="section">이미지 슬라이드</section>
-        <article id="article">
-            <article class="a1">공지사항/갤러리</article>
-            <article class="a2">배너</article>
-            <article class="a3">바로가기</article>
-        </article>
-        <footer id="footer">
-            <footer class="f1">로고</footer>
-            <footer class="f2">COPYRIGHT</footer>
-            <footer class="f3">SNS</footer>
-        </footer> 
+        </div>
+        <!-- //header -->
+
+        <div id="slider">
+        </div>
+        <!-- //slider -->
+
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <!-- //contents -->
+
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+        <!-- //footer -->
+
+        <footer class="footer">
+            <div class="modal__wrap">
+                <div class="modal__btn">소스 보기</div>
+                <div class="modal__cont">
+                    <div class="modal__box">
+                        <div class="title">
+                            <span class="dot" aria-label="true"></span>
+                            <div class="tabs">
+                                <div class="active">
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#dcdcdc"></circle>
+                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#999"></path>
+                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#390DEA"></path>
+                                          </svg>
+                                    </span>
+                                    <em>Javascript</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#dcdcdc"></circle>
+                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#999"></path>
+                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#F27A0B"></path>
+                                          </svg>
+                                    </span>
+                                    <em>HTML</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#dcdcdc"></circle>
+                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#999"></path>
+                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#0A69F6"></path>
+                                          </svg>
+                                    </span>
+                                    <em>CSS</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="plus" aria-label="true">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+                            </span>
+                        </div>
+                        <div class="cont">
+                            <div class="active">
+<pre><code class="language-js">
+$(function(){
+    $(".nav > ul > li").mouseover(function(){
+        $(this).find(".submenu").stop().slideDown();
+    });
+    $(".nav > ul > li").mouseout(function(){
+        $(this).find(".submenu").stop().slideUp();
+    });
+});
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;div id="header"&gt;
+        &lt;div class="logo"&gt;&lt;/div&gt;
+        &lt;nav class="nav"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴1&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴1-1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴1-2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴1-3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴1-4&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴2&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴2-1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴2-2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴2-3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴2-4&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴3&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴3-1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴3-2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴3-3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴3-4&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴4&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴4-1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴4-2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴4-3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;서브메뉴4-4&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+    &lt;!-- //header --&gt;
+
+    &lt;div id="slider"&gt;
+    &lt;/div&gt;
+    &lt;!-- //slider --&gt;
+
+    &lt;div id="contents"&gt;
+        &lt;div class="content1"&gt;&lt;/div&gt;
+        &lt;div class="content2"&gt;&lt;/div&gt;
+        &lt;div class="content3"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- //contents --&gt;
+
+    &lt;div id="footer"&gt;
+        &lt;div class="footer1"&gt;&lt;/div&gt;
+        &lt;div class="footer2"&gt;&lt;/div&gt;
+        &lt;div class="footer3"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- //footer --&gt;
+&lt;/div&gt;
+&lt;!-- //wrap --&gt;
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+    font-family: 'GmarketSans';
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    width: 100%;
+    display: flex;
+}
+#header .logo {
+    width: 20%;
+    height: 100px;
+    background-color: #efefef;
+}
+#header .nav {
+    width: 80%;
+    background-color: #e3e3e3;
+}
+#slider {
+    width: 100%;
+    height: 300px;
+    background-color: #d9d9d9;
+}
+#contents {
+    width: 100%;
+    display: flex;
+}
+#contents .content1 {
+    width: 33.3333%;
+    height: 200px;
+    background-color: #d1d1d1;
+}
+#contents .content2 {
+    width: 33.3333%;
+    height: 200px;
+    background-color: #c7c7c7;
+}
+#contents .content3 {
+    width: 33.3333%;
+    height: 200px;
+    background-color: #bcbcbc;
+}
+#footer {
+    width: 100%;
+    display: flex;
+}
+#footer .footer1 {
+    width: 20%;
+    height: 100px;
+    background-color: #b1b1b1;
+}
+#footer .footer2 {
+    width: 60%;
+    height: 100px;
+    background-color: #a3a3a3;
+}
+#footer .footer3 {
+    width: 20%;
+    height: 100px;
+    background-color: #9d9d9d;
+}
+/* nav */
+.nav > ul {
+    display: flex;
+    justify-content: right;
+    margin-top: 30px;
+}
+.nav > ul > li {
+    position: relative;
+}
+.nav > ul > li > a {
+    display: inline-block;
+    padding: 10px 50px;
+    background-color: #b0b0b0;
+}
+.nav > ul > li > a:hover {
+    background-color: #696969;
+}
+.nav > ul > li > ul {
+    position: absolute;
+    left: 0;
+    top: 38px;
+    background-color: #c7c7c7;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.nav > ul > li > ul > li > a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #c1c1c1;
+    width: 100%;
+    box-sizing: border-box;
+}
+.nav > ul > li > ul > li > a:hover {
+    background-color: #8f8f8f;
+}
+
+/* 자바스크립트용 CSS */
+.nav > ul > li > ul {
+    display: block;
+    height: 0;
+    /* height: 155px; */
+    overflow: hidden;
+    transition: all 600ms;
+}
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
     </div>
+    <!-- //wrap -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <!-- <script>
+        $(function(){
+            $(".nav > ul > li").mouseover(function(){
+                $(this).find(".submenu").stop().slideDown();
+            });
+            $(".nav > ul > li").mouseout(function(){
+                $(this).find(".submenu").stop().slideUp();
+            });
+        });
+    </script> -->
     <script>
-        //제이쿼리 //메뉴 각자
-        //mouseover
-        $(".nav > ul > li").mouseover(function(){
-            $(this).find(".submenu").stop().slideDown();
-        });
-        //mouseout
-        $(".nav > ul > li").mouseout(function(){
-            $(this).find(".submenu").stop().slideUp();
-        });
-
-        // //제이쿼리 //메뉴 전체
-        // //mouseover
-        // $(".nav > ul > li").mouseover(function(){
-        //     $(".nav > ul > li").find(".submenu").stop().slideDown();
-        // });
-        // //mouseout
-        // $(".nav > ul > li").mouseout(function(){
-        //     $(".nav > ul > li").find(".submenu").stop().slideUp();
-        // });
-
-
-        // //자바 메뉴 하나씩
-        // document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //     li.addEventListener("mouseover", e => {
-        //         li.querySelector("ul").style.display = "block";
-        //     });
-        //     li.addEventListener("mouseout", e => {
-        //         li.querySelector("ul").style.display = "none";
-        //     });
-        // });
-
-        // //자바 메뉴 전체
-        // document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //     li.addEventListener("mouseover", e => {
-        //         document.querySelectorAll(".nav > ul > li > ul").forEach(ul => {
-        //             ul.style.display = "block";
-        //         });
-        //     });
-        //     li.addEventListener("mouseout", e => {
-        //         document.querySelectorAll(".nav > ul > li > ul").forEach(ul => {
-        //             ul.style.display = "none";
-        //         });
-        //     });
-        // });
+        window.onload = function(){
+            let navList = document.querySelectorAll(".nav > ul > li");
+            
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseover", function(){
+                    this.querySelector(".submenu").style.height = "155px";
+                });
+            });
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseout", function(){
+                    this.querySelector(".submenu").style.height = "0px";
+                });
+            });
+        }
     </script>
 </body>
 </html>

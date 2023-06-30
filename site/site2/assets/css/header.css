@@ -84,7 +84,7 @@
     justify-content: center;
     margin-right: 28px;
 }
-.header__menu.fixed {
+/* .header__menu.fixed {
     position: fixed;
     top: 0;
     left: 0;
@@ -99,7 +99,7 @@
 }
 .header__menu.fixed a {
     display: block;
-}
+} */
 
 .header__menu ul {
     display: flex;
